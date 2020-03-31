@@ -1,0 +1,15 @@
+site_name: ARPES Python tools
+
+nav:
+    - Home: index.md
+    - Getting Started: gs.md
+    - Importing Data : data_import.md
+    - Image Plot : image_plot.md
+    - k-space Conversion : k_conv.md
+    - Extracting Line Profile : line_profile.md
+    - Slicing plane : plane_slice.md
+    - Rotate map data : rotate.md
+    - Crop Image (2D data): crop.md
+    - Import/Export Igor text : igor_text.md
+
+theme: readthedocs
