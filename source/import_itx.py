@@ -8,7 +8,7 @@ Version: 20191207
 def import_itx(data_path):
     '''
     import_itx('itx_file.itx')
-    Imports Igor text data. This function support reading/importing 1-, 2-, and 3-dimensionl data waves.
+    Imports Igor text data. This function support reading/importing 1-, 2-, and 3-dimensional data waves.
     '''
     import numpy as np
     contents = open(data_path, "r").readlines()
@@ -29,12 +29,12 @@ def import_itx(data_path):
 
         return data, x
 
-    # Higher dimensionl data file
+    # Higher dimensional data file
     else:
         dimsize = (contents[1][contents[1].find('(')+1 : contents[1].find(')')]).split(',')
         dimsize = list(map(int, dimsize))
 
-        # 2-dimensionl data
+        # 2-dimensional data
         if (len(dimsize)==2):
             data = np.ndarray((dimsize[0], dimsize[1]))
             for ii in range(dimsize[0]):
@@ -56,7 +56,7 @@ def import_itx(data_path):
 
             return data, x, y
 
-        # 3-dimensionl data
+        # 3-dimensional data
         elif (len(dimsize)==3):
             data = np.ndarray((dimsize[0]*dimsize[2], dimsize[1]))
             for ii in range(dimsize[0]*dimsize[2]):

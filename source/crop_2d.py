@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Program: Crop image/ 2-dimensionl data
+Program: Crop image/ 2-dimensional data
 Version: 20191217
 @author: Pranab Das (Twitter: @pranab_das)
 """
