@@ -17,7 +17,7 @@ The **k_conv** function can convert two-dimensional Energy vs Theta data to Bind
     plt.set_cmap('magma_r')
     plt.show()
 
-Which would produce a plot like this:
+Which would produce a plot like this:  
 ![k-space-image-plot](./img/k-space-image-plot.png)
 
 ## k-space conversion for 3D Fermi map data

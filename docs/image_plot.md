@@ -17,5 +17,5 @@ This example provides basic example of image plot using **matplotlib**. There is
     plt.set_cmap('magma_r')
     plt.show()
 
-You should see a plot like this upon successful execution:
+You should see a plot like this upon successful execution:  
 ![plot-sample-spectra](./img/plot-sample-spectra.png)

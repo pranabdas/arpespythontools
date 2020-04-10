@@ -18,7 +18,7 @@ We can slice our 3D Fermi map data in order to get a particular plane using **pl
     plt.ylabel("$\\theta$ (deg)")
     plt.show()
 
-This should give you an iso-energy surface like this:
+This should give you an iso-energy surface like this:  
 ![iso-energy-surface](./img/iso-energy-surface.png)
 
 How about if we want the slice along another axis? All we need is transpose the data, and provide the correct axis input.
