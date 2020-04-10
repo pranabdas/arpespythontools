@@ -3,14 +3,14 @@
 The purpose of this module is to provide necessary tools for analyzing ARPES data.
 
 + [Getting started](gs.md)
-+ [Importing data](data_import.md)
-+ [Image plot](image_plot.md)
-+ [k-space conversion](k_conv.md)
-+ [Extracting line profile](line_profile.md)
-+ [Slicing plane from 3D volume data](plane_slice.md)
++ [Importing data](data-import.md)
++ [Image plot](image-plot.md)
++ [k-space conversion](k-conv.md)
++ [Extracting line profile](line-profile.md)
++ [Slicing plane from 3D volume data](plane-slice.md)
 + [Rotate map data](rotate.md)
 + [Crop image](crop.md)
-+ [Import/export Igor text](igor_text.md)
++ [Import/export Igor text](igor-text.md)
 
 
 GitHub project page - <https://github.com/pranabdas/arpes-python-tools>  
