@@ -1,6 +1,8 @@
-# ARPES Python tools
+#### ARPES Python tools
 
-The purpose of this module is to provide necessary tools for analyzing ARPES data.
+The purpose of this module is to provide necessary tools for analyzing ARPES data. 
+
+Table of Contents: 
 
 + [Getting started](gs.md)
 + [Importing data](data-import.md)

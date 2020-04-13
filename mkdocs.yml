@@ -1,20 +1,21 @@
 site_name: ARPES Python tools
 site_url: https://pranabdas.github.io/
+repo_url: https://github.com/pranabdas/
+repo_name: homepage 
 site_description: Documentation for ARPES Python Tools by Pranab Das.
 site_author: Pranab Das 
 
 nav:
     - Home: index.md
-    - Documentation: 
-        - Getting Started: gs.md
-        - Importing Data : data-import.md
-        - Image Plot : image-plot.md
-        - k-space Conversion : k-conv.md
-        - Extracting Line Profile : line-profile.md
-        - Slicing plane : plane-slice.md
-        - Rotate map data : rotate.md
-        - Crop Image (2D data): crop.md
-        - Import/Export Igor text : igor-text.md
+    - Getting Started: gs.md
+    - Importing Data : data-import.md
+    - Image Plot : image-plot.md
+    - k-space Conversion : k-conv.md
+    - Extracting Line Profile : line-profile.md
+    - Slicing plane : plane-slice.md
+    - Rotate map data : rotate.md
+    - Crop Image (2D data): crop.md
+    - Import/Export Igor text : igor-text.md
     - About: about.md 
 
 theme: 
