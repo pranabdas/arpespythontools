@@ -19,10 +19,15 @@ nav:
     - About: about.md 
 
 theme: 
-    name: readthedocs
+    name: null 
+    custom_dir: myreadthedocs 
+    static_templates:
+        - 404.html
+
+    include_search_page: true
+    search_index_only: false
+
     highlightjs: true
-    hljs_languages:
-        - yaml
-        - python
+    hljs_languages: python
 
 copyright: © Copyright 2020 <a href="https://pranabdas.github.io">Pranab Das</a>. All rights reserved.  
