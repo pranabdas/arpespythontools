@@ -2,7 +2,7 @@
 
 The purpose of this module is to provide necessary tools to analyze ARPES data.
 
-The documentation is available at - <https://pranabdas.github.io/tutorials/arpespythontools/>
+The documentation is available at - <https://pranabdas.github.io/docs/arpespythontools/>
 
 The sample data set is available at - <https://dx.doi.org/10.17632/rfhhh54g9m>
 
