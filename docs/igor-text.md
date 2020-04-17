@@ -2,7 +2,7 @@
 
 If you need to work with Igor Program, **ARPES Python Tools** provides a way to import and export data in Igor text (**.itx**) format. **import_itx** and **export_itx** functions can import and export 1-dimensionl, 2-dimensionl, and 3-dimensionl data, respectively.
 
-    import ARPES_Python_tools as arp  
+    import arpespythontools as arp  
 
     # import itx file
     data, x = arp.import_itx('path/data.itx') # 1D wave

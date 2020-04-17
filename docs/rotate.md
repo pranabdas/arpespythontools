@@ -4,7 +4,7 @@ If your Fermi map measurement was not done keeping the high symmetry directions 
 
 This function needs the map data (3-dimensional array with first dimension along the energy, second and third dimensions are kx and ky, respectively.). It also needs kx and ky vectors as input. Provide the required angle to rotate in degree. The function returns rotated data, and new KX and KY vectors. Let's see an example:
 
-    import ARPES_Python_tools as arp
+    import arpespythontools as arp
     import matplotlib.pyplot as plt
     %matplotlib inline
 

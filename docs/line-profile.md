@@ -2,7 +2,7 @@
 
 How can we extract line profile from our two-dimensional image data? The function **line_profile** does the work. Let's say we want to extract an energy distribution curve from our ARPES spectrum.
 
-    import ARPES_Python_tools as arp
+    import arpespythontools as arp
     [data, energy, angle] = arp.load_ses_spectra('sample_spectra.txt')
 
     # We want to extract line profile between angles (-3, 3)

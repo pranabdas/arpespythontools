@@ -2,7 +2,7 @@
 
 We can crop images (two-dimensionl data) using **crop_2d** function.
 
-    import ARPES_Python_tools as arp
+    import arpespythontools as arp
 
     # let's import our sample data
     [data, x, y] = arp.load_ses_spectra('sample_spectrum.txt')

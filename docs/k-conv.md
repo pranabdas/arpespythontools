@@ -1,7 +1,7 @@
 ## k-space conversion for single spectra
 The **k_conv** function can convert two-dimensional Energy vs Theta data to Binding energy vs **k** (momentum). Here Binding energy below the Fermi energy is positive convention used.
 
-    import ARPES_Python_tools as arp  
+    import arpespythontools as arp  
     [data, energy, angle] = arp.load_ses_spectra('sample_spectra.txt')
     [data_k, e_bin, k] = arp.k_conv(data, energy, angle, 16.67) # Fermi energy = 16.67 eV  
 

@@ -152,7 +152,7 @@
                 <h2 id="rotate-fermi-map-data">Rotate Fermi map data</h2>
 <p>If your Fermi map measurement was not done keeping the high symmetry directions along the slit direction (or perpendicular to the slit direction), and you need to rotate the collected data in order to make the high symmetry directions along the x- or y-coordinate, the <strong>rotate</strong> function comes handy.</p>
 <p>This function needs the map data (3-dimensional array with first dimension along the energy, second and third dimensions are kx and ky, respectively.). It also needs kx and ky vectors as input. Provide the required angle to rotate in degree. The function returns rotated data, and new KX and KY vectors. Let's see an example:</p>
-<pre><code>import ARPES_Python_tools as arp
+<pre><code>import arpespythontools as arp
 import matplotlib.pyplot as plt
 %matplotlib inline
 

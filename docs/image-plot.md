@@ -2,7 +2,7 @@
 
 This example provides basic example of image plot using **matplotlib**. There is a huge list of customization possible using **matplotlib**. You can read **matplotlib** documentation : <https://matplotlib.org/> for advanced customization.
 
-    import ARPES_Python_tools as arp  
+    import arpespythontools as arp  
     [data, energy, angle] = arp.load_ses_spectra('sample_spectra.txt')
 
     # Plot image

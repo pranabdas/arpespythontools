@@ -2,7 +2,7 @@
 
 We can slice our 3D Fermi map data in order to get a particular plane using **plane_slice** function. Say, we need a constant energy cut.
 
-    import ARPES_Python_tools as arp
+    import arpespythontools as arp
     [data, energy, angle] = arp.load_ses_spectra('sample_spectra.txt')
     # We want the iso-energy surface integrated between the energy values 15.6 and 15.8 eV
     iso_energy_surf = arp.plane_slice(data, energy, 15.6, 15.8)
