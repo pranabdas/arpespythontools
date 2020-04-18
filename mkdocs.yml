@@ -20,7 +20,7 @@ nav:
 
 theme: 
     name: null 
-    custom_dir: myreadthedocs 
+    custom_dir: simplicity 
     static_templates:
         - 404.html
 
