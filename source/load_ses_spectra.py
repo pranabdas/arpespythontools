@@ -8,26 +8,65 @@ Version: 20191205
 """
 def load_ses_spectra(filename) :
     import numpy as np
+    import urllib
+    
+    if (filename[:7]=='http://') or (filename[:8]=='https://'):
+        web=True
+    else:
+        web=False
+        
+    if (web):
+        try: 
+            headers = {'User-Agent': 'Mozilla/5.0'}
+            req = urllib.request.Request(url = filename, headers = headers)
+            contents = urllib.request.urlopen(req).read().decode()
+            contents = contents.splitlines()
+        except:
+            print('Could not read url.')
 
-    fid = open(filename, 'r')
-    if fid.mode == 'r' :
-        contents = fid.readlines()
-    fid.close()
+    else:
+        fid = open(filename, 'r')
+        if fid.mode == 'r' :
+            contents = fid.read()
+        fid.close()
+        contents = contents.splitlines()
 
-    energy_length = contents[7]
-    start_string = contents[7].find("=") + 1
-    end_string = contents[7].find("\n")
-    energy_length = int(contents[7][start_string : end_string])
+    lineNumberEnergyLength = -1 
+    lineNumberAngleLength = -1 
+    # lineNumberEnergy = -1 
+    lineNumberAngle = -1 
+    lineNumberData = -1 
 
-    angle_length = contents[10]
-    start_string = contents[10].find("=") + 1
-    end_string = contents[10].find("\n")
-    angle_length = int(contents[10][start_string : end_string])
+    for line in np.arange(len(contents)):
+        if (contents[line].find('Dimension 1 size') != -1):
+            lineNumberEnergyLength = line 
 
-    angle = contents[11]
-    start_string = contents[11].find("=") + 1
-    end_string = contents[11].find("\n")
-    angle_temp = contents[11][start_string : end_string]
+        if (contents[line].find('Dimension 2 size') != -1): 
+            lineNumberAngleLength = line 
+
+        # if (contents[line].find('Dimension 1 scale') != -1): 
+        #     lineNumberEnergy = line 
+
+        if (contents[line].find('Dimension 2 scale') != -1): 
+            lineNumberAngle = line 
+
+        if (contents[line].find('Data 1') != -1): 
+            lineNumberData = line 
+
+    energy_length = contents[lineNumberEnergyLength]
+    start_string = contents[lineNumberEnergyLength].find("=") + 1
+    end_string = len(contents[lineNumberEnergyLength])
+    energy_length = int(contents[lineNumberEnergyLength][start_string : end_string])
+
+    angle_length = contents[lineNumberAngleLength]
+    start_string = contents[lineNumberAngleLength].find("=") + 1
+    end_string = len(contents[lineNumberAngleLength])
+    angle_length = int(contents[lineNumberAngleLength][start_string : end_string])
+
+    angle = contents[lineNumberAngle]
+    start_string = contents[lineNumberAngle].find("=") + 1
+    end_string = len(contents[lineNumberAngle])
+    angle_temp = contents[lineNumberAngle][start_string : end_string]
 
     angle = np.linspace(0, 0, angle_length)
 
@@ -42,8 +81,8 @@ def load_ses_spectra(filename) :
     data = np.ndarray((energy_length, angle_length))
 
     for ii in range(energy_length):
-        data_temp = contents[57 + ii]
-        end_string = data_temp.find("\n")
+        data_temp = contents[lineNumberData + 1 + ii]
+        end_string = len(data_temp)
         data_temp = data_temp[1 : end_string]
 
         start_string = 0
