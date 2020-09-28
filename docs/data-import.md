@@ -1,17 +1,23 @@
-## Importing ARPES data
+### Importing ARPES data
 At the moment, this module can only import data produced by Scienta-Omicron SES program. For the Spectral scans, we will use the plaintext (.txt) files as input, and in case of Fermi map data, we will need the ZIP files as input.
 
 First thing first, import arpespythontools in your program  
 
     import arpespythontools as arp
 
-### Load ARPES Spectra from SES plaintext file
+##### Load ARPES Spectra from SES plaintext file
 
     [data, energy, angle] = arp.load_ses_spectra('sample_spectra.txt')
 
-Here, `data` is a two dimensional numpy array; x-dimension is along energy and y-dimension is along angle/theta. `energy` and `angle` are one dimensional vectors of kinetic energy in eV and angle values in degree, respectively.
+Here, `data` is a two dimensional numpy array; x-dimension is along energy and y-dimension is along angle/theta. `energy` and `angle` are one dimensional vectors of kinetic energy in eV and angle values in degree, respectively. 
 
-### Load Fermi Map data from SES ZIP file
+Note that it is also possible to import the text data from an url source instead of local file path. 
+
+```
+[data, energy, angle] = arp.load_ses_spectra('https://data.mendeley.com/datasets/rfhhh54g9m/2/files/c3ef4285-ed19-447a-b7bf-effd94a62fbb/sample_spectrum.txt')
+```
+
+##### Load Fermi Map data from SES ZIP file
 
     [map_data, energy, theta, phi] = arp.load_ses_map('sample_map_data.zip')
 

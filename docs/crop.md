@@ -1,4 +1,4 @@
-## Crop Image (2-Dimensionl data)
+### Crop Image (2-Dimensionl data)
 
 We can crop images (two-dimensionl data) using **crop_2d** function.
 
@@ -17,7 +17,7 @@ We can crop images (two-dimensionl data) using **crop_2d** function.
     plt.set_cmap('magma_r')
     plt.show()
 
-![plot-sample-spectra](./img/plot-sample-spectra.png)
+![plot-sample-spectra](./img/plot-sample-spectra.png){:style="width:500px"} 
 
 Now, we want to crop and see only the Dirac cone part. We want to crop the energy range (16, 16.8) and angle range (-6, 4).
 
@@ -32,6 +32,6 @@ Now, we want to crop and see only the Dirac cone part. We want to crop the energ
     plt.set_cmap('magma_r')
     plt.show()
 
-![crop-image](./img/crop-image.png)
+![crop-image](./img/crop-image.png){:style="width:500px"} 
 
 This is what we wanted.

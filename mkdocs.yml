@@ -1,26 +1,23 @@
 site_name: ARPES Python tools
-site_url: https://pranabdas.github.io/
-repo_url: https://github.com/pranabdas/
-repo_name: homepage 
+repo_url: https://pranabdas.github.io/
 site_description: Documentation for ARPES Python Tools by Pranab Das.
-site_author: Pranab Das 
+site_author: Pranab Das
 
 nav:
-    - Home: index.md
+    - Table of Contents: index.md
     - Getting Started: gs.md
-    - Importing Data : data-import.md
-    - Image Plot : image-plot.md
-    - k-space Conversion : k-conv.md
-    - Extracting Line Profile : line-profile.md
-    - Slicing plane : plane-slice.md
-    - Rotate map data : rotate.md
+    - Importing Data: data-import.md
+    - Image Plot: image-plot.md
+    - k-space Conversion: k-conv.md
+    - Extracting Line Profile: line-profile.md
+    - Slicing plane: plane-slice.md
+    - Rotate map data: rotate.md
     - Crop Image (2D data): crop.md
-    - Import/Export Igor text : igor-text.md
-    - About: about.md 
+    - Import/Export Igor text: igor-text.md
 
-theme: 
-    name: null 
-    custom_dir: simplicity 
+theme:
+    name: null
+    custom_dir: simplicity
     static_templates:
         - 404.html
 
@@ -28,8 +25,11 @@ theme:
     search_index_only: false
 
     highlightjs: true
-    hljs_languages: python
+    hljs_languages: [python]
 
-copyright: © Copyright 2020 <a href="https://pranabdas.github.io">Pranab Das</a>. All rights reserved.  
+markdown_extensions:
+    - pymdownx.arithmatex
+    - attr_list
 
-# google_analytics: [UA-163317742-1, https://pranabdas.github.io/]
+extra_javascript:
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
