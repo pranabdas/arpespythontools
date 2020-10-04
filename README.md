@@ -1,9 +1,18 @@
 # ARPES Python tools
 
-The purpose of this module is to provide necessary tools to analyze ARPES data.
+The purpose of this module is to provide necessary tools to analyze ARPES data. 
 
-The documentation is available at - <https://pranabdas.github.io/docs/arpespythontools/>
+### Quick start
+Download or clone the repository:
+```
+git clone https://github.com/pranabdas/arpespythontools.git
+```
 
-The sample data set is available at - <https://dx.doi.org/10.17632/rfhhh54g9m>
+Add the path and import in your program:
+```
+import sys 
+sys.path.append("/parent/arpespythontools/path/")
+import arpespythontools as arp
+```
 
-**Disclaimer:** This program is under development. There could be bugs. I hope I will have time to update, bug-fix and add new features regularly, so please check back often. If you find some bugs, or think some features would be helpful, please let me know. You can find contact details in my homepage - <https://pranabdas.github.io>  
+More detailed documentation is available at - <https://pranabdas.github.io/docs/arpespythontools/> 
