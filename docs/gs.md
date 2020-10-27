@@ -15,14 +15,66 @@ pip3 install numpy scipy matplotlib
 You can download/clone the module from GitHub - [https://github.com/pranabdas/arpespythontools](https://github.com/pranabdas/arpespythontools){:target="_blank"}
 
 ```
-git clone https://github.com/pranabdas/arpespythontools.git
+git clone --depth 1 https://github.com/pranabdas/arpespythontools.git
 ```
 
-**Importing ARPES Python tools in your programs:**  
+**Importing ARPES python tools in your programs:**  
 You can import the module by  `import arpespythontools as arp` so that later in the code you can refer to the module as `arp` in short.
 ```py 
 import sys
 sys.path.append("/parent/arpespythontools/path/")
+import arpespythontools as arp
+```
+
+**Run ARPES python tools along with Jupyter in Docker:**
+Dockerfile: 
+```dockerfile
+# Start from Ubuntu 20.04 LTS
+FROM ubuntu:focal
+
+# Update OS
+RUN apt update && apt upgrade -y
+
+# Install software packages 
+RUN apt install -y python3 python3-pip git fonts-open-sans
+
+# Install pip packages 
+RUN pip3 install jupyterlab numpy scipy matplotlib
+
+# bashrc settings
+RUN echo 'alias jupyter-notebook="jupyter-notebook --allow-root --no-browser"' \
+>> $HOME/.bashrc
+
+# clone code from git repository and remove some packages
+WORKDIR /root
+RUN git clone --depth 1 https://github.com/pranabdas/arpespythontools.git
+
+# leave in `/home` which we can map with the host
+WORKDIR /home
+```
+
+Build the Docker image:
+```
+docker build -t arptools .
+```
+
+Run Docker (you can either forward a specific port or map host network):
+```
+docker run -ti -p 8888:8888 -v ${pwd}:/home arptools bash
+docker run -ti --net=host -v /host/path:/home arptools bash
+```
+
+Launch Jupyter notebook inside the container: 
+```
+jupyter-notebook
+jupyter-notebook --ip 0.0.0.0 
+jupyter-notebook --ip 0.0.0.0 --port 9999
+```
+
+Include in your notebook:
+```py
+import sys
+sys.path.append("/root")
 import arpespythontools as arp
 ```
 
