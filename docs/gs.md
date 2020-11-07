@@ -12,7 +12,7 @@ pip3 install numpy scipy matplotlib
 ```
 
 **Installation of ARPES Python tools:**  
-You can download/clone the module from GitHub - [https://github.com/pranabdas/arpespythontools](https://github.com/pranabdas/arpespythontools){:target="_blank"}
+You can download/clone the module from GitHub - [https://github.com/pranabdas/arpespythontools](https://github.com/pranabdas/arpespythontools) 
 
 ```
 git clone --depth 1 https://github.com/pranabdas/arpespythontools.git
@@ -26,8 +26,9 @@ sys.path.append("/parent/arpespythontools/path/")
 import arpespythontools as arp
 ```
 
-**Run ARPES python tools along with Jupyter in Docker:**
-Dockerfile: 
+**Run ARPES python tools along with Jupyter notebook in Docker:** 
+
+[Dockerfile](https://github.com/pranabdas/arpespythontools/blob/master/Dockerfile): 
 ```dockerfile
 # Start from Ubuntu 20.04 LTS
 FROM ubuntu:focal
@@ -67,8 +68,6 @@ docker run -ti --net=host -v /host/path:/home arptools bash
 Launch Jupyter notebook inside the container: 
 ```
 jupyter-notebook
-jupyter-notebook --ip 0.0.0.0 
-jupyter-notebook --ip 0.0.0.0 --port 9999
 ```
 
 Include in your notebook:

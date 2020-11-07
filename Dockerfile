@@ -21,8 +21,8 @@ RUN apt install -y python3 python3-pip git fonts-open-sans
 RUN pip3 install jupyterlab numpy scipy matplotlib
 
 # bashrc settings
-RUN echo 'alias jupyter-notebook="jupyter-notebook --allow-root --no-browser"' \
->> $HOME/.bashrc
+RUN echo 'alias jupyter-notebook=\
+"jupyter-notebook --allow-root --no-browser --ip 0.0.0.0"' >> $HOME/.bashrc
 
 # clone code from git repository and remove some packages
 WORKDIR /root
