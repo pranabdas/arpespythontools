@@ -7,8 +7,8 @@ You will need [Python 3](https://www.python.org/){:target="_blank"}, and followi
 + [matplotlib](https://matplotlib.org/){:target="_blank"}
 + [scipy](https://www.scipy.org/){:target="_blank"}
 
-```py
-pip3 install numpy scipy matplotlib
+```sh
+pip3 install --upgrade numpy scipy matplotlib
 ```
 
 **Installation of ARPES Python tools:**  
@@ -16,6 +16,11 @@ You can download/clone the module from GitHub - [https://github.com/pranabdas/ar
 
 ```
 git clone --depth 1 https://github.com/pranabdas/arpespythontools.git
+```
+
+You can install the required python packages from the `requirements.txt` specification:
+```sh
+pip3 install --upgrade -r requirements.txt
 ```
 
 **Importing ARPES python tools in your programs:**  
@@ -43,8 +48,8 @@ RUN apt install -y python3 python3-pip git fonts-open-sans
 RUN pip3 install jupyterlab numpy scipy matplotlib
 
 # bashrc settings
-RUN echo 'alias jupyter-notebook="jupyter-notebook --allow-root --no-browser"' \
->> $HOME/.bashrc
+RUN echo 'alias jupyter-notebook=\
+"jupyter-notebook --allow-root --no-browser --ip 0.0.0.0"' >> $HOME/.bashrc
 
 # clone code from git repository and remove some packages
 WORKDIR /root

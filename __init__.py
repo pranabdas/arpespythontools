@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Purpose: Import all the functions of Python tools for ARPES data analysis
+Purpose: Python libraries for ARPES data analysis
 Version: 20201027
 @author: Pranab Das (Twitter: @pranab_das)
 """
