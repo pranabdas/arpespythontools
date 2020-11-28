@@ -7,9 +7,11 @@ Version: 20191208
 """
 def export_itx(path, data, x=[], y=[], z =[], wave_name='wave', x_label='x-label', y_label='y-label', z_label='z-label'):
     '''
-    export_itx(path, data, x=[], y=[], z =[], wave_name='wave', x_label='x-label', y_label='y-label', z_label='z-label')
+    export_itx(path, data, x=[], y=[], z =[], wave_name='wave', 
+    x_label='x-label', y_label='y-label', z_label='z-label')
 
-    Exports Igor text data. This function support writing/exporting 1-, 2-, and 3-dimensional data waves.
+    Exports Igor text data. This function support writing/exporting 1-, 2-, and
+    3-dimensional data waves.
     '''
     import numpy as np
 
@@ -48,13 +50,15 @@ def export_itx(path, data, x=[], y=[], z =[], wave_name='wave', x_label='x-label
                 fid.write('\n')
             fid.write('END\n')
             fid.write(('X SetScale/P x {0}, {1}, "{2}", {3}; \
-            SetScale/P y 0, 0, "", {3}; \n'.format(x_offset, x_delta, x_label, wave_name)))
+            SetScale/P y 0, 0, "", {3}; \n'.format(x_offset, x_delta, x_label, \
+                wave_name)))
         fid.close()
 
     # 2-dimensional array
     if (len(dimsize) == 2):
         with open(path, 'w') as fid:
-            fid.write('IGOR\nWAVES/N=({0},{1})\t{2}\nBEGIN\n'.format(dimsize[0], dimsize[1], wave_name))
+            fid.write('IGOR\nWAVES/N=({0},{1})\t{2}\nBEGIN\n'.format(\
+                dimsize[0], dimsize[1], wave_name))
             for ii in range(len(x)):
                 for jj in range(len(y)):
                     if (data[ii][jj] == 0):
@@ -64,13 +68,17 @@ def export_itx(path, data, x=[], y=[], z =[], wave_name='wave', x_label='x-label
                 fid.write('\n')
             fid.write('\n')
             fid.write('END\n')
-            fid.write(('X SetScale/P x {0}, {1}, "{2}", {3}; SetScale/P y {4}, {5}, "{6}", {7}; SetScale d 0,0,"", {8}\n'.format(x_offset, x_delta, x_label, wave_name, y_offset, y_delta, y_label, wave_name, wave_name)))
+            fid.write(('X SetScale/P x {0}, {1}, "{2}", {3}; SetScale/P y {4},\
+                {5}, "{6}", {7}; SetScale d 0,0,"", {8}\n'.format(x_offset, \
+                x_delta, x_label, wave_name, y_offset, y_delta, y_label, \
+                wave_name, wave_name)))
         fid.close()
 
     # 3-dimensional array
     if (len(dimsize) == 3):
         with open(path, 'w') as fid:
-            fid.write('IGOR\nWAVES/N=({0},{1},{2})\t{3}\nBEGIN\n'.format(dimsize[0], dimsize[1], dimsize[2], wave_name))
+            fid.write('IGOR\nWAVES/N=({0},{1},{2})\t{3}\nBEGIN\n'.format(\
+                dimsize[0], dimsize[1], dimsize[2], wave_name))
             for kk in range(len(z)):
                 for ii in range(len(x)):
                     for jj in range(len(y)):
@@ -81,5 +89,9 @@ def export_itx(path, data, x=[], y=[], z =[], wave_name='wave', x_label='x-label
                     fid.write('\n')
                 fid.write('\n')
             fid.write('END\n')
-            fid.write(('X SetScale/P x {0}, {1}, "{2}", {3}; SetScale/P y {4}, {5}, "{6}", {7}; SetScale/P z {8}, {9}, "{10}", {11}; SetScale d 0,0,"", {12}\n'.format(x_offset, x_delta, x_label, wave_name, y_offset, y_delta, y_label, wave_name, z_offset, z_delta, z_label, wave_name, wave_name)))
+            fid.write(('X SetScale/P x {0}, {1}, "{2}", {3}; SetScale/P y {4},\
+                {5}, "{6}", {7}; SetScale/P z {8}, {9}, "{10}", {11}; \
+                SetScale d 0,0,"", {12}\n'.format(x_offset, x_delta, x_label,\
+                wave_name, y_offset, y_delta, y_label, wave_name, z_offset, \
+                z_delta, z_label, wave_name, wave_name)))
         fid.close()

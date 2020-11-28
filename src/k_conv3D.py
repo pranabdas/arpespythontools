@@ -10,9 +10,13 @@ Version: 20191207
 def k_conv3D(data, energy, theta, phi, fermi_energy):
     '''
     [data_k, e_bin, kx, ky] = k_conv3D(data, energy, theta, phi, fermi_energy)
-    This function requires intensity data as three dimensional array (x-dimension is along energy, y-dimension is along theta, z-dimension is along phi), and energy theta and phi as one dimensional array. Also we need to provide the position of Fermi energy.
+    This function requires intensity data as three dimensional array 
+    (x-dimension is along energy, y-dimension is along theta, z-dimension is 
+    along phi), and energy theta and phi as one dimensional array. Also we need
+    to provide the position of Fermi energy.
 
-    Then the function returns intensity in k-space, binding energy, kx and ky vectors.
+    Then the function returns intensity in k-space, binding energy, kx and ky 
+    vectors.
     '''
     import numpy as np
     from scipy import interpolate

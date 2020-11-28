@@ -1,19 +1,33 @@
 # -*- coding: utf-8 -*-
 """
 Purpose: To load ARPES MAP data from the ZIP file produced by Scienta SES program.
-Version: 20191205
+Version: 20201128
 @author: Pranab Das (Twitter: @pranab_das)
 [data, energy, theta, phi] = load_map_data("map_data.zip")
 """
-def load_ses_map(data_path) :
+def load_ses_map(filename) :
     import numpy as np
     import zipfile
+    from io import BytesIO
+    from urllib.request import urlopen
 
     # Check the path contains the zip file
-    if (data_path[-4:].lower() != '.zip'):
+    if (filename[-4:].lower() != '.zip'):
         print('Please provide a .zip file!')
-
-    map_data = zipfile.ZipFile(data_path, 'r')
+    
+    if (filename[:7]=='http://') or (filename[:8]=='https://'):
+        web=True
+    else:
+        web=False
+        
+    if (web):
+        try: 
+            filename = urlopen(filename)
+            map_data = zipfile.ZipFile(BytesIO(filename.read()))
+        except:
+            print('Could not read url.')
+    else:
+        map_data = zipfile.ZipFile(filename, 'r')
 
     ini_file = map_data.open('viewer.ini')
     contents = ini_file.readlines()

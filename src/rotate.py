@@ -8,7 +8,9 @@ Version: 20191215
 def rotate(data, angle, x, y):
     '''
     data_r, KX, KY = rotate(data, 45, x, y)
-    This program assumes you input 3-dimensional data with energy in the first dimension, x and y as second and third dimesions. Provide the angle in degree. The rotation is made around the center/ Gamma point (x = 0, y = 0).
+    This program assumes you input 3-dimensional data with energy in the first 
+    dimension, x and y as second and third dimesions. Provide the angle in 
+    degree. The rotation is made around the center/ Gamma point (x = 0, y = 0).
     '''
     import numpy as np
     from scipy import interpolate

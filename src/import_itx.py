@@ -8,7 +8,8 @@ Version: 20191207
 def import_itx(data_path):
     '''
     import_itx('itx_file.itx')
-    Imports Igor text data. This function support reading/importing 1-, 2-, and 3-dimensional data waves.
+    Imports Igor text data. This function support reading/importing 1-, 2-, and
+    3-dimensional data waves.
     '''
     import numpy as np
     contents = open(data_path, "r").readlines()
