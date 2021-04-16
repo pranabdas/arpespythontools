@@ -14,6 +14,7 @@ module.exports = {
   themeConfig: {
     prism: {
       theme: require("prism-react-renderer/themes/dracula"),
+      additionalLanguages: ["docker"],
     },
     navbar: {
       title: "ARPES Python Tools",

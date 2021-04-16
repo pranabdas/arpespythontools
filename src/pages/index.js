@@ -33,7 +33,7 @@ const features = [
     title: "Download",
     description: (
       <>
-        Download the ZIP archive of the package &nbsp;
+        Download the ZIP archive of the package{" "}
         <a href="https://github.com/pranabdas/arpespythontools/releases">
           here
         </a>

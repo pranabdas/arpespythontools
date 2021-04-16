@@ -10,39 +10,44 @@ installed in your computer:
 - [matplotlib](https://matplotlib.org/)
 - [scipy](https://www.scipy.org/)
 
-```console
+```bash
 pip install --upgrade numpy scipy matplotlib
 ```
 
 ### Getting ARPES Python tools
-You can download/clone the module from GitHub -
-<https://github.com/pranabdas/arpespythontools/releases>
+You can clone the module using git:
 
-```console
+```bash
 git clone --depth 1 https://github.com/pranabdas/arpespythontools.git
 ```
 
+Or you can directly download the package [here](
+https://github.com/pranabdas/arpespythontools/releases).
+
 You can install the required python packages from the `requirements.txt`
 specification:
-```console
+```bash
 pip install --upgrade -r requirements.txt
 ```
 
 ### Importing ARPES python tools in your programs
-You can import the module by  `import arpespythontools as arp` so that later in
-the code you can refer to the module as `arp` in short.
+We can import the module by `import arpespythontools as arp` so that later in
+the code we can refer to the module as `arp` in short.
 ```python
 import sys
 sys.path.append("/parent/arpespythontools/path/")
 import arpespythontools as arp
 ```
+
 If you put the library inside your working directory, your don't need first two
 lines above.
 
-### Run ARPES python tools along with Jupyter notebook in Docker container
+### Run Python and Jupyter notebook in Docker container
 
-[Dockerfile](https://github.com/pranabdas/arpespythontools/blob/master/Dockerfile):
-```dockerfile
+I have a [Dockerfile](
+https://github.com/pranabdas/arpespythontools/blob/master/Dockerfile), you can
+adjust according to your needs.
+```dockerfile title="Dockerfile"
 # Start from Ubuntu 20.04 LTS
 FROM ubuntu:focal
 
@@ -68,18 +73,18 @@ WORKDIR /home
 ```
 
 Build the Docker image:
-```console
+```bash
 docker build -t arptools .
 ```
 
 Run Docker (you can either forward a specific port or map host network):
-```console
-docker run -ti -p 8888:8888 -v ${pwd}:/home arptools bash
+```bash
+docker run -ti -p 8888:8888 -v ${PWD}:/home arptools bash
 docker run -ti --net=host -v /host/path:/home arptools bash
 ```
 
 Launch Jupyter notebook inside the container:
-```console
+```bash
 jupyter-notebook
 ```
 
@@ -90,6 +95,6 @@ sys.path.append("/root")
 import arpespythontools as arp
 ```
 
-### Sample data used in this tutorial
-You can find the sample data set used in this tutorial here -
-<http://dx.doi.org/10.17632/rfhhh54g9m>
+### Example data used in this tutorial
+You can find the sample data set used in this tutorial [here](
+http://dx.doi.org/10.17632/rfhhh54g9m).
