@@ -1,8 +1,11 @@
-### Extracting line profile
+---
+title: Extracting line profile
+---
+How can we extract line profile from our two-dimensional image data? The
+function `line_profile` does the work. Let's say we want to extract an energy
+distribution curve from our ARPES spectrum.
 
-How can we extract line profile from our two-dimensional image data? The function **line_profile** does the work. Let's say we want to extract an energy distribution curve from our ARPES spectrum.
-
-```py
+```python
 import arpespythontools as arp
 [data, energy, angle] = arp.load_ses_spectra('sample_spectra.txt')
 
@@ -19,11 +22,13 @@ plt.xlabel('$E_{kin}$ (eV)')
 plt.ylabel('Intensity (a.u)')
 plt.show()
 ```
-![edc-plot](./img/edc.png){:style="width:500px"} 
+![edc-plot](../static/img/edc.png)
 
-How about if we want the momentum distribution curve instead? That means we have to extract line profile along the other axis, which can be  done by transposing the data, and interchanging the axes:
+How about if we want the momentum distribution curve instead? That means we have
+to extract line profile along the other axis, which can be  done by transposing
+the data, and interchanging the axes:
 
-```py
+```python
 # extract line profile between energy values (16.5, 16.7)
 mdc = arp.line_profile(data.T, angle, energy, 16.5, 16.7)
 
@@ -37,4 +42,4 @@ plt.xlabel('$\\theta$ (deg)')
 plt.ylabel('Intensity (a.u)')
 plt.show()
 ```
-![edc-plot](./img/mdc.png){:style="width:500px"} 
+![edc-plot](../static/img/mdc.png)

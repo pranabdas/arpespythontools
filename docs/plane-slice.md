@@ -1,11 +1,13 @@
-### Slicing planes from 3D volume data
+---
+title: Slicing volume data
+---
+We can slice our 3D Fermi map data in order to get a particular plane using
+`plane_slice` function. Say, we need a constant energy cut.
 
-We can slice our 3D Fermi map data in order to get a particular plane using **plane_slice** function. Say, we need a constant energy cut.
-
-```py
+```python
 import arpespythontools as arp
-[data, energy, theta, phi] = arp.load_ses_map('/Users/Pranab/Desktop/sample_map_data.zip')
-# We want the iso-energy surface integrated between the energy values 15.6 and 15.8 eV
+[data, energy, theta, phi] = arp.load_ses_map('sample_map_data.zip')
+# We want iso-energy surface integrated between energy values 15.6 and 15.8 eV
 iso_energy_surf = arp.plane_slice(data, energy, 15.6, 15.8)
 
 # Plot image
@@ -19,12 +21,13 @@ plt.xlabel('$\\phi$ (deg)')
 plt.ylabel("$\\theta$ (deg)")
 plt.show()
 ```
-This should give you an iso-energy surface like this:  
-![iso-energy-surface](./img/iso-energy-surface.png){:style="width:500px"} 
+This should give you an iso-energy surface like this:
+![iso-energy-surface](../static/img/iso-energy-surface.png)
 
-How about if we want the slice along another axis? All we need is transpose the data, and provide the correct axis input.
+How about if we want the slice along another axis? All we need is transpose the
+data, and provide the correct axis input.
 
-```py
+```python
 # integrating phi values between (-0.5, 0.5) degrees
 phi_slice = arp.plane_slice(data.transpose([2, 0, 1]), phi, -0.5, 0.5)
 
@@ -39,4 +42,4 @@ plt.xlabel("$\\theta$ (deg)")
 plt.ylabel('$E_{kin}$ (eV)')
 plt.show()
 ```
-![phi-slice](./img/phi-slice.png){:style="width:500px"} 
+![phi-slice](../static/img/phi-slice.png)

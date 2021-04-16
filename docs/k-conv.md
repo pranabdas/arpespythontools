@@ -1,18 +1,26 @@
-### k-space conversion for single spectra
-The electron analyzer records the intensities in angle and kinetic energy. In order to convert convert into k-space we can the following formula: 
-$$ E_{bin} + W_ϕ + E_{kin} = h\nu $$
+---
+title: k-space conversion
+---
+The electron analyzer records the intensities in angle and kinetic energy. In
+order to convert convert into k-space we can the following formula:
 
-$$ k_{\parallel} = \sqrt{\frac{2m}{\hbar^2} E_{kin}} \sin(\theta) $$
+$$E_{bin} + W_ϕ + E_{kin} = h\nu$$
 
-The input data is in uniform grid of angle (degree) and energy. After point-wise conversion, we no longer have uniform grid in k-space. In order to store the data in uniform grid, we make use of interpolation. 
+$$k_{\parallel} = \sqrt{\frac{2m}{\hbar^2} E_{kin}} \sin(\theta)$$
 
-The **k_conv** function can convert two-dimensional Energy vs Theta data to Binding energy vs **k** (momentum). Here Binding energy below the Fermi energy is positive convention used. 
+The input data is in uniform grid of angle (degree) and energy. After point-wise
+conversion, we no longer have uniform grid in k-space. In order to store the
+data in uniform grid, we make use of interpolation.
 
-```py
-import arpespythontools as arp  
+The `k_conv` function can convert two-dimensional Energy vs Theta data to
+Binding energy vs $k$ (momentum). Here Binding energy below the Fermi energy is
+positive convention used.
+
+```python
+import arpespythontools as arp
 [data, energy, angle] = arp.load_ses_spectra('sample_spectra.txt')
-[data_k, e_bin, k] = arp.k_conv(data, energy, angle, 16.67) 
-# Fermi energy = 16.67 eV  
+[data_k, e_bin, k] = arp.k_conv(data, energy, angle, 16.67)
+# Fermi energy = 16.67 eV
 
 # Plot image
 import matplotlib.pyplot as plt
@@ -26,15 +34,17 @@ plt.ylabel('$E_{bin}$ (eV)')
 plt.set_cmap('magma_r')
 plt.show()
 ```
-Which would produce a plot like this:  
-![k-space-image-plot](./img/k-space-image-plot.png){:style="width:500px"} 
+Which would produce a plot like this:
+![k-space-image-plot](../static/img/k-space-image-plot.png)
 
-##### k-space conversion for 3D Fermi map data
-Similarly, we can convert three dimensional (Energy, theta, phi)  Fermi map data to **k**-space by using **k_conv3D** function.
+### k-space conversion for 3D Fermi map data
+Similarly, we can convert three dimensional (Energy, theta, phi)  Fermi map data
+to $k$-space by using `k_conv3D` function.
 
-```py
+```python
 [data, energy, theta, phi] = arp.load_ses_map('sample_map_data.zip')
 [data_k, e_bin, kx, ky] = arp.k_conv3D(data, energy, theta, phi, 16.67)
 # Fermi energy = 16.67 eV
 ```
-Depending on the size of data and computing power, the program might take few minutes to complete the calculations.
+Depending on the size of data and computing power, the program might take
+several minutes to complete the calculations.
