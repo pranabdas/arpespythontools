@@ -1,12 +1,12 @@
 ---
 title: Slicing volume data
 ---
-We can slice our 3D Fermi map data in order to get a particular plane using
+We can slice our 3D Fermi map data in order to get a particular plane using the
 `plane_slice` function. Say, we need a constant energy cut.
 
 ```python
 import arpespythontools as arp
-[data, energy, theta, phi] = arp.load_ses_map('sample_map_data.zip')
+data, energy, theta, phi = arp.load_ses_map('sample_map_data.zip')
 # We want iso-energy surface integrated between energy values 15.6 and 15.8 eV
 iso_energy_surf = arp.plane_slice(data, energy, 15.6, 15.8)
 
@@ -25,7 +25,7 @@ This should give you an iso-energy surface like this:
 ![iso-energy-surface](../static/img/iso-energy-surface.png)
 
 How about if we want the slice along another axis? All we need is transpose the
-data, and provide the correct axis input.
+data, and provide the correct axis order.
 
 ```python
 # integrating phi values between (-0.5, 0.5) degrees

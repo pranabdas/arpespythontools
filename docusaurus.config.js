@@ -13,11 +13,21 @@ module.exports = {
   projectName: "arpespythontools", // Usually your repo name.
   themeConfig: {
     prism: {
-      theme: require("prism-react-renderer/themes/dracula"),
+      theme: require("prism-react-renderer/themes/github"),
+      darkTheme: require("prism-react-renderer/themes/dracula"),
       additionalLanguages: ["docker"],
     },
+    hideableSidebar: true,
+    // colorMode: {
+    //   defaultMode: "dark",
+    //   switchConfig: {
+    //     // darkIcon: '☾',
+    //     // lightIcon: "☀️"
+    //   },
+    // },
     navbar: {
       title: "ARPES Python Tools",
+      // hideOnScroll: true,
       logo: {
         alt: "Logo",
         src: "img/favicon.ico",
@@ -67,10 +77,10 @@ module.exports = {
   ],
   stylesheets: [
     {
-      href: "https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css",
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css",
       type: "text/css",
       integrity:
-        "sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X",
+        "sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc",
       crossorigin: "anonymous",
     },
   ],
