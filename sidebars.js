@@ -2,7 +2,7 @@ module.exports = {
   docs: [
     {
       type: "category",
-      label: "Docusaurus Tutorial",
+      label: "Docs",
       items: [
         "gs",
         "data-import",

@@ -6,7 +6,7 @@ a huge list of customization possible using **matplotlib**. You can consult
 [matplotlib](https://matplotlib.org) documentation for advanced customization.
 ```python
 import arpespythontools as arp
-[data, energy, angle] = arp.load_ses_spectra('sample_spectra.txt')
+data, energy, angle = arp.load_ses_spectra('sample_spectra.txt')
 
 # Plot image
 import matplotlib.pyplot as plt

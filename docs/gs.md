@@ -1,5 +1,6 @@
 ---
 title: Getting started
+sidebar_label: Setup
 slug: /
 ---
 ### Requirements
@@ -39,7 +40,7 @@ sys.path.append("/parent/arpespythontools/path/")
 import arpespythontools as arp
 ```
 
-If you put the library inside your working directory, your don't need first two
+If you put the library inside your working directory, you don't need first two
 lines above.
 
 ### Run Python and Jupyter notebook in Docker container
@@ -77,7 +78,8 @@ Build the Docker image:
 docker build -t arptools .
 ```
 
-Run Docker (you can either forward a specific port or map host network):
+Run Docker (you can either forward a specific port or if are using Linux, map
+host network):
 ```bash
 docker run -ti -p 8888:8888 -v ${PWD}:/home arptools bash
 docker run -ti --net=host -v /host/path:/home arptools bash

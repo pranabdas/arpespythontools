@@ -1,14 +1,12 @@
 ---
 title: Crop Image
 ---
-
-We can crop images (two-dimensionl data) using **crop_2d** function.
-
+We can crop images (two-dimensionl data) using the `crop_2d` function:
 ```python
 import arpespythontools as arp
 
 # let's import our sample data
-[data, x, y] = arp.load_ses_spectra('sample_spectrum.txt')
+data, x, y = arp.load_ses_spectra('sample_spectrum.txt')
 
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -22,7 +20,7 @@ plt.show()
 ```
 ![plot-sample-spectra](../static/img/plot-sample-spectra.png)
 
-Now, we want to crop and see only the Dirac cone part. We want to crop the
+Now, we want to crop and focus only on the Dirac cone part. We want to crop the
 energy range (16, 16.8) and angle range (-6, 4).
 
 ```python
