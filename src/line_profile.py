@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 """
 Program: Extracts line profile from 2D data.
-Version: 20191205
+Version: 20210522
 @author: Pranab Das (Twitter: @pranab_das)
 """
-def line_profile(data, x, y, y_min, y_max) :
+def line_profile(data, y, y_min, y_max) :
     import numpy as np
 
     for ii in range(len(y)) :

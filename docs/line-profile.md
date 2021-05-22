@@ -11,7 +11,7 @@ import arpespythontools as arp
 data, energy, angle = arp.load_ses_spectra('sample_spectra.txt')
 
 # extract line profile between angles (-3, 3)
-edc = arp.line_profile(data, energy, angle, -3, 3)
+edc = arp.line_profile(data, angle, -3, 3)
 
 # Plot image
 import matplotlib.pyplot as plt
@@ -31,7 +31,7 @@ transposing the data, and interchanging the axes:
 
 ```python
 # extract line profile between energy values (16.5, 16.7)
-mdc = arp.line_profile(data.T, angle, energy, 16.5, 16.7)
+mdc = arp.line_profile(data.T, energy, 16.5, 16.7)
 
 # Plot image
 import matplotlib.pyplot as plt

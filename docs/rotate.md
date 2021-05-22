@@ -30,9 +30,7 @@ plt.show()
 This is how a constant energy cut looks like before rotation:
 ![rotate-before](../static/img/rotate-before.png)
 
-Now, we can rotate the data. Note that rotating involves some heavy
-interpolation. So, this might take several tens of minutes to complete depending
-on the size of data array and computational power.
+Now, we can rotate the data.
 
 ```python
 data_r, theta_r, phi_r = arp.rotate(data, 45, theta, phi)
@@ -45,3 +43,11 @@ plt.show()
 ```
 Let us plot a slice again. This is what we get after the rotation.
 ![rotate-after](../static/img/rotate-after.png)
+
+:::caution
+
+Note that rotating involves some heavy interpolation. So, this might take
+several tens of minutes to complete depending on the size of data array and
+computational power.
+
+:::

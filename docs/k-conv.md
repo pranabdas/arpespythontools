@@ -58,5 +58,10 @@ data, energy, theta, phi = arp.load_ses_map('sample_map_data.zip')
 data_k, e_bin, kx, ky = arp.k_conv3D(data, energy, theta, phi, 16.67)
 # Fermi energy = 16.67 eV
 ```
+
+:::caution
+
 Depending on the size of data and computing power, the program might take
 several minutes to complete the calculations.
+
+:::
