@@ -6,7 +6,7 @@ We can slice our 3D Fermi map data in order to get a particular plane using the
 
 ```python
 import arpespythontools as arp
-[data, energy, theta, phi] = arp.load_ses_map('sample_map_data.zip')
+data, energy, theta, phi = arp.load_ses_map('sample_map_data.zip')
 # We want iso-energy surface integrated between energy values 15.6 and 15.8 eV
 iso_energy_surf = arp.plane_slice(data, energy, 15.6, 15.8)
 
@@ -22,6 +22,7 @@ plt.ylabel("$\\theta$ (deg)")
 plt.show()
 ```
 This should give you an iso-energy surface like this:
+
 ![iso-energy-surface](../static/img/iso-energy-surface.png)
 
 How about if we want the slice along another axis? All we need is transpose the
@@ -42,4 +43,5 @@ plt.xlabel("$\\theta$ (deg)")
 plt.ylabel('$E_{kin}$ (eV)')
 plt.show()
 ```
+
 ![phi-slice](../static/img/phi-slice.png)

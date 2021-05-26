@@ -11,7 +11,7 @@ import arpespythontools as arp
 data, energy, angle = arp.load_ses_spectra('sample_spectra.txt')
 
 # extract line profile between angles (-3, 3)
-edc = arp.line_profile(data, energy, angle, -3, 3)
+edc = arp.line_profile(data, angle, -3, 3)
 
 # Plot image
 import matplotlib.pyplot as plt
@@ -23,6 +23,7 @@ plt.xlabel('$E_{kin}$ (eV)')
 plt.ylabel('Intensity (a.u)')
 plt.show()
 ```
+
 ![edc-plot](../static/img/edc.png)
 
 How about if we want the momentum distribution curve (MDC) instead? That means
@@ -31,7 +32,7 @@ transposing the data, and interchanging the axes:
 
 ```python
 # extract line profile between energy values (16.5, 16.7)
-mdc = arp.line_profile(data.T, angle, energy, 16.5, 16.7)
+mdc = arp.line_profile(data.T, energy, 16.5, 16.7)
 
 # Plot image
 import matplotlib.pyplot as plt
@@ -43,4 +44,5 @@ plt.xlabel('$\\theta$ (deg)')
 plt.ylabel('Intensity (a.u)')
 plt.show()
 ```
+
 ![edc-plot](../static/img/mdc.png)

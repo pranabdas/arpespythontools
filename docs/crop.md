@@ -1,5 +1,5 @@
 ---
-title: Crop Image
+title: Crop image
 ---
 We can crop images (two-dimensionl data) using the `crop_2d` function:
 ```python
@@ -18,6 +18,7 @@ plt.ylabel('$E_{kin}$ (eV)')
 plt.set_cmap('magma_r')
 plt.show()
 ```
+
 ![plot-sample-spectra](../static/img/plot-sample-spectra.png)
 
 Now, we want to crop and focus only on the Dirac cone part. We want to crop the
@@ -35,6 +36,7 @@ plt.ylabel('$E_{kin}$ (eV)')
 plt.set_cmap('magma_r')
 plt.show()
 ```
+
 ![crop-image](../static/img/crop-image.png)
 
-This is what we wanted.
+That's what we wanted to achieve.

@@ -4,14 +4,20 @@ title: k-space conversion
 The electron analyzer records the intensities in angle and kinetic energy. In
 order to convert convert into k-space we can use the following formula:
 
-$$E_{bin} + W_ϕ + E_{kin} = h\nu$$
+$$
+E_{bin} + W_ϕ + E_{kin} = h\nu
+$$
 
-$$k_{\parallel} = \sqrt{\frac{2m}{\hbar^2} E_{kin}} \sin(\theta)$$
+$$
+k_{\parallel} = \sqrt{\frac{2m}{\hbar^2} E_{kin}} \sin(\theta)
+$$
 
 :::info
+
 In the above expression, photon momentum is ignored, which is good approximation
 for photon energies in UV range or lower. If high photon energy is used (e.g.,
 soft-x-ray), we will need correction for photon momentum.
+
 :::
 
 The input data is in uniform grid of angle (degree) and energy. After point-wise
@@ -24,8 +30,8 @@ positive convention used.
 
 ```python
 import arpespythontools as arp
-[data, energy, angle] = arp.load_ses_spectra('sample_spectra.txt')
-[data_k, e_bin, k] = arp.k_conv(data, energy, angle, 16.67)
+data, energy, angle = arp.load_ses_spectra('sample_spectra.txt')
+data_k, e_bin, k = arp.k_conv(data, energy, angle, 16.67)
 # Fermi energy = 16.67 eV
 
 # Plot image
@@ -41,6 +47,7 @@ plt.set_cmap('magma_r')
 plt.show()
 ```
 Which would produce a plot like this:
+
 ![k-space-image-plot](../static/img/k-space-image-plot.png)
 
 ### k-space conversion for 3D Fermi map data
@@ -52,5 +59,10 @@ data, energy, theta, phi = arp.load_ses_map('sample_map_data.zip')
 data_k, e_bin, kx, ky = arp.k_conv3D(data, energy, theta, phi, 16.67)
 # Fermi energy = 16.67 eV
 ```
-Depending on the size of data and computing power, the program might take
-several minutes to complete the calculations.
+
+:::caution
+
+Depending on the size of data matrix and computing power, the `k_conv3D` might
+take several minutes to complete.
+
+:::

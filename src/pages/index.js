@@ -20,10 +20,10 @@ const features = [
     title: "Python and Open source",
     description: (
       <>
-        All the modules are available under MIT License and free of charge to
-        use, modify, and extend. Visit the{" "}
+        All the modules are available under MIT License for free of charge to
+        use, modify, and extend. Visit project reposity at {" "}
         <a href="https://github.com/pranabdas/arpespythontools">
-          Github repository
+          GitHub
         </a>
         .
       </>
@@ -33,7 +33,7 @@ const features = [
     title: "Download",
     description: (
       <>
-        Download the ZIP archive of the package{" "}
+        In case you do not use git, download the ZIP archive of the package {" "}
         <a href="https://github.com/pranabdas/arpespythontools/releases">
           here
         </a>

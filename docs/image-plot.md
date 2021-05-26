@@ -3,7 +3,7 @@ title: Image plot
 ---
 This example provides basic example of image plot using **matplotlib**. There is
 a huge list of customization possible using **matplotlib**. You can consult
-[matplotlib](https://matplotlib.org) documentation for advanced customization.
+[matplotlib](https://matplotlib.org) documentation for advanced customizations.
 ```python
 import arpespythontools as arp
 data, energy, angle = arp.load_ses_spectra('sample_spectra.txt')
@@ -20,5 +20,7 @@ plt.ylabel('$E_{kin}$ (eV)')
 plt.set_cmap('magma_r')
 plt.show()
 ```
+
 You should see a plot like this upon successful execution:
+
 ![plot-sample-spectra](../static/img/plot-sample-spectra.png)
