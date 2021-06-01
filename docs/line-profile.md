@@ -45,4 +45,4 @@ plt.ylabel('Intensity (a.u)')
 plt.show()
 ```
 
-![edc-plot](../static/img/mdc.png)
+![mdc-plot](../static/img/mdc.png)

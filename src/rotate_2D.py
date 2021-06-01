@@ -46,16 +46,16 @@ def rotate_2D(data, rotation, x, y):
     x_temp, y_temp = np.copy(data_r), np.copy(data_r)
 
     mask = np.full([int(abs(data.shape[0]*np.cos(rotation)) + \
-                           abs(data.shape[1]*np.sin(rotation))), \
-                       int(abs(data.shape[0]*np.sin(rotation)) + \
-                           abs(data.shape[1]*np.cos(rotation)))], False, dtype=bool)
+                        abs(data.shape[1]*np.sin(rotation))), \
+                    int(abs(data.shape[0]*np.sin(rotation)) + \
+                        abs(data.shape[1]*np.cos(rotation)))], False, dtype=bool)
 
     for ii in range(mask.shape[0]):
         for jj in range(mask.shape[1]):
             x_temp[ii, jj], y_temp[ii, jj] = rot_matrix @[[X_grid[ii, jj]], [Y_grid[ii, jj]]]
             if x_temp[ii, jj] < x_start or x_temp[ii, jj] > x_end or \
                y_temp[ii, jj] < y_start or y_temp[ii, jj] > y_end:
-                mask[ii, jj] = 1
+                mask[ii, jj] = True
 
     interp = interpolate.RectBivariateSpline(x, y, data)
     data_r = interp.ev(x_temp, y_temp)

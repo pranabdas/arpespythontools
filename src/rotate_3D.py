@@ -46,9 +46,9 @@ def rotate_3D(data, rotation, x, y):
     x_temp, y_temp = np.copy(data_r), np.copy(data_r)
 
     mask = np.full([int(abs(data.shape[1]*np.cos(rotation)) + \
-                           abs(data.shape[2]*np.sin(rotation))), \
-                       int(abs(data.shape[1]*np.sin(rotation)) + \
-                           abs(data.shape[2]*np.cos(rotation)))], False, dtype=bool)
+                        abs(data.shape[2]*np.sin(rotation))), \
+                    int(abs(data.shape[1]*np.sin(rotation)) + \
+                        abs(data.shape[2]*np.cos(rotation)))], False, dtype=bool)
 
     for ii in range(mask.shape[0]):
         for jj in range(mask.shape[1]):
