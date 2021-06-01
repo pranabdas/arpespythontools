@@ -5,7 +5,6 @@ module.exports = {
       label: "Docs",
       items: [
         "gs",
-        "modules",
         {
           type: "category",
           label: "Examples",
@@ -21,6 +20,7 @@ module.exports = {
             "igor-text",
           ],
         },
+        "glossary",
         "license",
       ],
     },

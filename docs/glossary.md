@@ -1,5 +1,5 @@
 ---
-title: Modules
+title: Glossary
 ---
 Full list of **arpespythontools** modules/ routines in alphabetical order:
 
@@ -153,19 +153,37 @@ URL address.
 - `angle` : 1D vector (numpy ndarry) of angle values in degree.
 - `energy` : 1D vector (numpy ndarry) of kinetic energy values in eV.
 
-## rotate
+## rotate_2D
+```python
+data_r, theta_r, phi_r = arp.rotate_2D(data, angle, theta, phi)
+```
+Rotates 2D array with rotation axis perpendicular to the plane. Center of
+rotation is at theta=0, phi=0.
+
+**Inputs:**
+- `data` : 2D array. The data will be rotated perpendicular to the plane.
+- `angle` : amount of rotation in degree. Positive value rotates clockwise.
+- `theta` : 1D array of axis scaling along the second dimension of `data`.
+- `phi` : 1D array of axis scaling along the third dimension of `data`.
+
+**Outputs:**
+- `data_r` : rotated 2D matrix. Data points outside of interpolation range is
+set to `NaN` (not a number).
+- `theta_r` : 1D array of axis scaling along the second dimension of `data_r`.
+- `phi_r` : 1D array of axis scaling along the third dimension of `data_r`.
+
+## rotate_3D
 ```python
 data_r, theta_r, phi_r = arp.rotate(data, angle, theta, phi)
 ```
-Rotates the volume data (3D matrix) perpendicular to the first dimension. Center
-of rotation is theta=0, phi=0.
+Rotates the volume data (3D matrix) with respect to the first dimension. Center
+of rotation is at theta=0, phi=0.
 
 **Inputs:**
 - `data` : 3D array. First, second, and third dimensions are along energy,
 theta, and phi, respectively. The data will be rotated perpendicular to energy,
 i.e., in the theta-phi plane.
-- `angle` : amount of rotation in degree. Positive value rotes counter
-clockwise.
+- `angle` : amount of rotation in degree. Positive value rotates clockwise.
 - `theta` : 1D array of axis scaling along the second dimension of `data`.
 - `phi` : 1D array of axis scaling along the third dimension of `data`.
 

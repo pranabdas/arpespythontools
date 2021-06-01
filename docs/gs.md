@@ -75,8 +75,8 @@ RUN pip3 install jupyterlab numpy scipy matplotlib
 # jupyterlab settings
 RUN mkdir /etc/jupyter && \
     (echo "c.ServerApp.ip = '0.0.0.0'" && \
-    echo "c.ServerApp.allow_root = True" && \
-    echo "c.ServerApp.open_browser = False") \
+     echo "c.ServerApp.allow_root = True" && \
+     echo "c.ServerApp.open_browser = False") \
         >> /etc/jupyter/jupyter_server_config.py
 
 # clone arpespythontools to `/root` directory
