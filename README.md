@@ -1,38 +1,38 @@
-# ARPES Python tools
-The purpose of this module is to provide necessary routines to analyze and
-visualize ARPES data. Please find detailed documentation at
-<https://pranabdas.github.io/arpespythontools/>
+<h1 align="center">
+  <p align="center">ARPES Python Tools</p>
+</h1>
 
-### Quick start
-Download or clone the repository:
+
+<p align="center">
+  <a href="https://github.com/pranabdas/arpespythontools/actions/workflows/python-tests.yml"><img src="https://github.com/pranabdas/arpespythontools/actions/workflows/python-tests.yml/badge.svg" alt="Python tests status"></a>
+  <a href="https://github.com/pranabdas/arpespythontools/blob/master/LICENSE"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=A31F34"></a>
+</p>
+
+This python library helps you load, analyze and visualize ARPES data.
+
+## Quick start
+
+Clone or [download](https://github.com/pranabdas/arpespythontools/releases) the
+repository:
 ```console
-git clone --depth 1 https://github.com/pranabdas/arpespythontools.git
+git clone https://github.com/pranabdas/arpespythontools.git
 ```
 
-Include path of parent `arpespythontools` folder (unless you place it in your
-project directory) and `import` in your program:
+Include path of parent `arpespythontools` folder (not required if you place it
+under your working directory) and `import` in your program:
+
 ```python
 import sys
 sys.path.append("/parent/arpespythontools/path/")
 import arpespythontools as arp
 ```
 
-### Documentation development
-```console
-npm install
+Use the modules:
+
+```python
+data, energy, angle = arp.load_ses_spectra("sample_spectrum.txt")
+data_k, e_bin, k = arp.k_conv(data, energy, angle, 16.67)
 ```
 
-Serve locally:
-```console
-npm start
-```
-
-Build:
-```console
-npm run build
-```
-
-Deploy to GitHub pages:
-```console
-npm run gh-deploy
-```
+Please find the detailed documentation here:
+<https://pranabdas.github.io/arpespythontools/>

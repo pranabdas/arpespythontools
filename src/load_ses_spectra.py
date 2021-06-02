@@ -8,15 +8,15 @@ Version: 20191205
 """
 def load_ses_spectra(filename) :
     import numpy as np
-    import urllib
-    
+    import urllib.request
+
     if (filename[:7]=='http://') or (filename[:8]=='https://'):
         web=True
     else:
         web=False
-        
+
     if (web):
-        try: 
+        try:
             headers = {'User-Agent': 'Mozilla/5.0'}
             req = urllib.request.Request(url = filename, headers = headers)
             contents = urllib.request.urlopen(req).read().decode()
@@ -31,27 +31,27 @@ def load_ses_spectra(filename) :
         fid.close()
         contents = contents.splitlines()
 
-    lineNumberEnergyLength = -1 
-    lineNumberAngleLength = -1 
-    # lineNumberEnergy = -1 
-    lineNumberAngle = -1 
-    lineNumberData = -1 
+    lineNumberEnergyLength = -1
+    lineNumberAngleLength = -1
+    # lineNumberEnergy = -1
+    lineNumberAngle = -1
+    lineNumberData = -1
 
     for line in np.arange(len(contents)):
         if (contents[line].find('Dimension 1 size') != -1):
-            lineNumberEnergyLength = line 
+            lineNumberEnergyLength = line
 
-        if (contents[line].find('Dimension 2 size') != -1): 
-            lineNumberAngleLength = line 
+        if (contents[line].find('Dimension 2 size') != -1):
+            lineNumberAngleLength = line
 
-        # if (contents[line].find('Dimension 1 scale') != -1): 
-        #     lineNumberEnergy = line 
+        # if (contents[line].find('Dimension 1 scale') != -1):
+        #     lineNumberEnergy = line
 
-        if (contents[line].find('Dimension 2 scale') != -1): 
-            lineNumberAngle = line 
+        if (contents[line].find('Dimension 2 scale') != -1):
+            lineNumberAngle = line
 
-        if (contents[line].find('Data 1') != -1): 
-            lineNumberData = line 
+        if (contents[line].find('Data 1') != -1):
+            lineNumberData = line
 
     energy_length = contents[lineNumberEnergyLength]
     start_string = contents[lineNumberEnergyLength].find("=") + 1
