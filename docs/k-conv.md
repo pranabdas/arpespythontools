@@ -66,3 +66,11 @@ Depending on the size of data matrix and computing power, the `k_conv3D` might
 take several minutes to complete.
 
 :::
+
+:::tip
+
+For advanced 3D visualization of Fermi map data, you may have a look at
+[this example](https://pranabdas.github.io/python-tutorial/matplotlib/3d-vol)
+from my Python tutorial.
+
+:::

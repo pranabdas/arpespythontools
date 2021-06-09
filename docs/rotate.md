@@ -45,14 +45,15 @@ Let us plot a slice again. This is what we get after the rotation.
 
 ![rotate-after](../static/img/rotate-after.png)
 
-## Rotate 3D volume data
+## Rotate 3D Fermi map data
 
-Instead of rotating only one slice, we can also rotate the full 3D volume data.
+Instead of rotating only one slice, we can also rotate the full 3D array.
 `rotate_3D` function needs the 3D map data (with first dimension along the
 energy, second and third dimensions are $k_x$ and $k_y$, respectively.) as
-input. It also needs $k_x$ and $k_y$ vectors as input as well. Provide the
-required angle to rotate in degree as before. The function returns rotated data,
-and new $k_x'$ and $k_y'$ vectors. Let's see an example:
+input. It needs $k_x$ and $k_y$ vectors as input as well. Provide the required
+angle to rotate in degree as before. Axis of rotation is the first axis (i.e.,
+energy) The function returns rotated data, and new $k_x'$ and $k_y'$ vectors.
+Let's see an example:
 
 ```python
 data_r, theta_r, phi_r = arp.rotate_3D(data, 45, theta, phi)
