@@ -10,15 +10,8 @@ plane_slice = plane_slice(data, x, x_min, x_max)
 def plane_slice(data, x, x_min, x_max) :
     import numpy as np
 
-    for ii in range(len(x)) :
-        if x[ii] >= x_min :
-            index_min = ii
-            break
-
-    for ii in range(len(x)) :
-        if x[ii] > x_max :
-            index_max = ii - 1
-            break
+    index_min = np.argmin(abs(x - x_min))
+    index_max = np.argmin(abs(x - x_max))
 
     plane_slice = np.zeros([data.shape[1], data.shape[2]])
 

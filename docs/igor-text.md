@@ -1,5 +1,5 @@
 ---
-title: Import/ export Igor text
+title: Import / export Igor text
 ---
 If you need to work with the Igor Program, `arpespythontools` provides a way to
 import and export data in Igor text (`.itx`) format. `import_itx` and

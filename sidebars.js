@@ -1,28 +1,22 @@
 module.exports = {
   docs: [
+    "gs",
     {
       type: "category",
-      label: "Docs",
+      label: "Hands-on",
+      collapsed: false,
       items: [
-        "gs",
-        {
-          type: "category",
-          label: "Examples",
-          collapsed: false,
-          items: [
-            "data-import",
-            "image-plot",
-            "k-conv",
-            "line-profile",
-            "plane-slice",
-            "rotate",
-            "crop",
-            "igor-text",
-          ],
-        },
-        "glossary",
-        "license",
+        "data-import",
+        "visualization",
+        "k-conv",
+        "line-profile",
+        "plane-slice",
+        "rotate",
+        "xps",
+        "igor-text",
       ],
     },
+    "glossary",
+    "license",
   ],
 };
