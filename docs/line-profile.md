@@ -18,13 +18,13 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 # Above line is specific to Jupyter Notebook
 plt.figure(figsize = (8, 6))
-plt.plot(energy, edc)
+plt.plot(energy, edc/max(edc))
 plt.xlabel('$E_{kin}$ (eV)')
 plt.ylabel('Intensity (a.u)')
 plt.show()
 ```
 
-![edc-plot](../static/img/edc.png)
+![edc-plot](/img/edc.png)
 
 How about if we want the momentum distribution curve (MDC) instead? That means
 we have to extract line profile along the other axis, which can be  done by
@@ -39,10 +39,24 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 # Above line is specific to Jupyter Notebook
 plt.figure(figsize = (8, 6))
-plt.plot(angle, mdc)
+plt.plot(angle, mdc/max(mdc))
 plt.xlabel('$\\theta$ (deg)')
 plt.ylabel('Intensity (a.u)')
 plt.show()
 ```
 
-![mdc-plot](../static/img/mdc.png)
+![mdc-plot](/img/mdc.png)
+
+:::tip
+
+If you do not need to specify the integration limits i.e., you want to sum over
+full angle (in case of EDC) or energy (in case MDC) range, it is simpler to use
+`numpy.sum` method instead.
+
+```python
+import numpy as np
+edc = np.sum(data, axis=1)
+mdc = np.sum(data, axis=0)
+```
+
+:::

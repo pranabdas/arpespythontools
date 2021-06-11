@@ -23,4 +23,4 @@ plt.show()
 
 You should see a plot like this upon successful execution:
 
-![plot-sample-spectra](../static/img/plot-sample-spectra.png)
+![plot-sample-spectra](/img/plot-sample-spectra.png)

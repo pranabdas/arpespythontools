@@ -48,7 +48,7 @@ plt.show()
 ```
 Which would produce a plot like this:
 
-![k-space-image-plot](../static/img/k-space-image-plot.png)
+![k-space-image-plot](/img/k-space-image-plot.png)
 
 ### k-space conversion for 3D Fermi map data
 Similarly, we can convert three dimensional (Energy, theta, phi)  Fermi map data
