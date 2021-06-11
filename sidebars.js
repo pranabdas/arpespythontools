@@ -17,6 +17,7 @@ module.exports = {
             "plane-slice",
             "rotate",
             "crop",
+            "xps",
             "igor-text",
           ],
         },

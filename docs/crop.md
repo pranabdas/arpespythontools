@@ -19,7 +19,7 @@ plt.set_cmap('magma_r')
 plt.show()
 ```
 
-![plot-sample-spectra](../static/img/plot-sample-spectra.png)
+![plot-sample-spectra](/img/plot-sample-spectra.png)
 
 Now, we want to crop and focus only on the Dirac cone part. We want to crop the
 energy range (16, 16.8) and angle range (-6, 4).
@@ -37,6 +37,6 @@ plt.set_cmap('magma_r')
 plt.show()
 ```
 
-![crop-image](../static/img/crop-image.png)
+![crop-image](/img/crop-image.png)
 
 That's what we wanted to achieve.

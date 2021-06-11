@@ -23,7 +23,7 @@ plt.show()
 ```
 This should give you an iso-energy surface like this:
 
-![iso-energy-surface](../static/img/iso-energy-surface.png)
+![iso-energy-surface](/img/iso-energy-surface.png)
 
 How about if we want the slice along another axis? All we need is transpose the
 data, and provide the correct axis order.
@@ -44,4 +44,4 @@ plt.ylabel('$E_{kin}$ (eV)')
 plt.show()
 ```
 
-![phi-slice](../static/img/phi-slice.png)
+![phi-slice](/img/phi-slice.png)

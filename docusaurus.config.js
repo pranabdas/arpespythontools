@@ -13,7 +13,7 @@ module.exports = {
   projectName: "arpespythontools", // Usually your repo name.
   themeConfig: {
     prism: {
-      theme: require("prism-react-renderer/themes/nightOwlLight"),
+      theme: require("prism-react-renderer/themes/github"),
       darkTheme: require("prism-react-renderer/themes/nightOwl"),
       additionalLanguages: ["docker"],
     },
