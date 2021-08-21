@@ -12,6 +12,7 @@ module.exports = {
         "line-profile",
         "plane-slice",
         "rotate",
+        "enhancements",
         "xps",
         "igor-text",
       ],

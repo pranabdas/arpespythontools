@@ -65,6 +65,11 @@ module.exports = {
               target: "_self",
             },
             {
+              label: "OpenMX tutorial",
+              to: "https://pranabdas.github.io/openmx/",
+              target: "_self",
+            },
+            {
               label: "Python Tutorial",
               to: "https://pranabdas.github.io/python-tutorial/",
               target: "_self",

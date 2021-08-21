@@ -8,6 +8,7 @@ import arpespythontools as arp
 ```
 
 ## crop_2d
+
 ```python
 data_crop, x_crop, y_crop = arp.crop_2d(data, x, y, x_min, x_max, y_min, y_max)
 ```
@@ -26,7 +27,35 @@ Returns cropped 2D array and corresponding axes scaling vectors defined by
 - `x_crop` : corresponding x-scaling vector.
 - `y_crop` : corresponding y-scaling vector.
 
+
+## cv2d
+
+```python
+cv2d, x, y = arp.cv2d(data, x, y, bw=5, c1=0.001, c2=0.001, w='default')
+```
+
+Calculates two-dimensional curvature. The details about the curvature method can
+be found here: P. Zhang et. al., *A precise method for visualizing dispersive
+features in image plots*, [Review of Scientific Instruments **82**, 043712
+(2011)](https://doi.org/10.1063/1.3585113).
+
+**Inputs:**
+- `data` : 2D spectra.
+- `x` : 1D array of energy.
+- `y` : 1D array of theta values.
+- `bw` : box width for box-car smoothing (optional).
+- `c1`, `c2` : free parameters as described in the above reference (optional).
+- `w` : scaling weight (optional).
+
+**Outputs:**
+- `cv2d` : 2D array of curvature. Output array has different shape than the
+input array as the edges are removed due to smoothing artifacts.
+- `x` : cropped input `x` array to match `cv2d` dimension.
+- `y` : cropped input `y` array to match `cv2d` dimension.
+
+
 ## export_itx
+
 ```python
 arp.export_itx(path, data, x=[], y=[], z =[], wave_name='wave', \
     x_label='x-label', y_label='y-label', z_label='z-label')
@@ -42,7 +71,9 @@ applied.
 - `wave_name` (optional) : Igor wave name.
 - `x-`, `y-`, `z-label` (optional) : labels for `x`, `y` and `z`, respectively.
 
+
 ## import_itx
+
 ```python
 data, x, y, z = arp.import_itx(name)
 ```
@@ -57,7 +88,9 @@ Loads data and its axes scaling from Igor text (`.itx`) format.
 - `x`, `y`, `z` : axes scales. Number of output returned depends on the input
 wave dimension.
 
+
 ## k_conv
+
 ```python
 data_k, e_bin, k = arp.k_conv(data, energy, angle, fermi_energy)
 ```
@@ -77,7 +110,9 @@ the interpolation range is set to `NaN` (not a number).
 energy is positive convention is used.
 - `k` : 1D array of momentum (k) values in $$\mathring{A}^{-1}$$.
 
+
 ## k_conv3D
+
 ```python
 data_k, e_bin, kx, ky = arp.k_conv3D(data, energy, theta, phi, fermi_energy)
 ```
@@ -101,7 +136,33 @@ energy is positive convention is used.
 - `kx`, `ky` : 1D array of momentum (k) values in $$\mathring{A}^{-1}$$ along
 the slit, and perpendicular to the slit directions, respectively.
 
+
+## laplacian
+
+```python
+diff2, x, y = arp.laplacian(data, x, y, bw=5, w='default')
+```
+
+Laplacian (second order partial derivatives with respect to both energy and
+angle) of the spectra.
+
+**Inputs:**
+- `data` : 2D spectra.
+- `x` : 1D array of energy.
+- `y` : 1D array of theta values.
+- `bw` : box width for box-car smoothing (optional).
+- `w` : scaling weight (optional).
+
+**Outputs:**
+- `diff2` : 2D array of spectra after taking second order partial derivative
+w.r.t. both energy and angle. This array has different shape than the input
+array as the edges are removed due to smoothing artifacts.
+- `x` : cropped input `x` array to match `diff2` dimension.
+- `y` : cropped input `y` array to match `diff2` dimension.
+
+
 ## line_profile
+
 ```python
 edc = arp.line_profile(data, y, y_min, y_max)
 ```
@@ -119,6 +180,7 @@ along the first dimension.
 
 
 ## load_ses_map
+
 ```python
 data, energy, theta, phi = arp.load_map_data(name)
 ```
@@ -137,7 +199,9 @@ perpendicular to the slit direction).
 - `theta`: 1D vector of theta values in degree.
 - `phi` : 1D vector of phi values in degree.
 
+
 ## load_ses_spectra
+
 ```python
 data, angle, energy = arp.load_ses_spectra(name)
 ```
@@ -153,7 +217,9 @@ URL address.
 - `angle` : 1D vector (numpy ndarry) of angle values in degree.
 - `energy` : 1D vector (numpy ndarry) of kinetic energy values in eV.
 
+
 ## rotate_2D
+
 ```python
 data_r, theta_r, phi_r = arp.rotate_2D(data, angle, theta, phi)
 ```
@@ -172,7 +238,9 @@ set to `NaN` (not a number).
 - `theta_r` : 1D array of axis scaling along the second dimension of `data_r`.
 - `phi_r` : 1D array of axis scaling along the third dimension of `data_r`.
 
+
 ## rotate_3D
+
 ```python
 data_r, theta_r, phi_r = arp.rotate(data, angle, theta, phi)
 ```
@@ -193,7 +261,9 @@ set to `NaN` (not a number).
 - `theta_r` : 1D array of axis scaling along the second dimension of `data_r`.
 - `phi_r` : 1D array of axis scaling along the third dimension of `data_r`.
 
+
 ## slice_plane
+
 ```python
 surf = arp.slice_plane(data, x, x_min, x_max)
 ```

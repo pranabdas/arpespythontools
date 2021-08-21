@@ -1,5 +1,6 @@
 ---
 title: Import / export Igor text
+sidebar_label: Igor text
 ---
 If you need to work with the Igor Program, `arpespythontools` provides a way to
 import and export data in Igor text (`.itx`) format. `import_itx` and
@@ -14,7 +15,7 @@ data, x, y = arp.import_itx('path/data.itx')  # 2D wave
 data, x, y, z = arp.import_itx('path/data.itx')  # 3D wave
 
 # export itx file
-export_itx("path/data.itx", data, x=[], y=[], z =[], wave_name='wave',\
+arp.export_itx("path/data.itx", data, x=[], y=[], z =[], wave_name='wave',\
     x_label='x-label', y_label='y-label', z_label='z-label')
 ```
 While importing, `data` contains the 1D, 2D or 3D data. `x`, `y`, `z` are the

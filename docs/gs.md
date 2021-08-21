@@ -9,9 +9,10 @@ installed in your computer:
 - [numpy](https://numpy.org/)
 - [matplotlib](https://matplotlib.org/)
 - [scipy](https://www.scipy.org/)
+- [astropy](https://www.astropy.org)
 
 ```bash
-pip install --upgrade numpy scipy matplotlib jupyterlab
+pip install --upgrade numpy scipy matplotlib astropy jupyterlab
 ```
 
 I will be using Jupyter notebook to write and execute our python codes. Of
