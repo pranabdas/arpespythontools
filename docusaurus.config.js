@@ -1,6 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const math = require("remark-math");
 const katex = require("rehype-katex");
+// import math from 'remark-math';
 module.exports = {
   title: "ARPES Python Tools",
   tagline: "Import, analyze and visualize ARPES data",
@@ -89,10 +90,6 @@ module.exports = {
               href: "https://pranabdas.github.io/docs/condmat-notes/",
             },
             {
-              label: "FullProf Tutorial",
-              href: "https://pranabdas.github.io/docs/fullprof/",
-            },
-            {
               label: "Javascript Tutorial",
               href: "https://pranabdas.github.io/docs/js-learning/",
             },
@@ -142,9 +139,9 @@ module.exports = {
   ],
   stylesheets: [
     {
-      href: "https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css",
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css",
       type: "text/css",
-      integrity: "sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn",
+      integrity: "sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET",
       crossorigin: "anonymous",
     },
   ],

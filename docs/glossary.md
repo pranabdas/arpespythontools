@@ -43,7 +43,8 @@ features in image plots*, [Review of Scientific Instruments **82**, 043712
 - `data` : 2D spectra.
 - `x` : 1D array of energy.
 - `y` : 1D array of theta values.
-- `bw` : box width for box-car smoothing (optional).
+- `bw` : width for box-car smoothing, integer number of points (default value =
+5).
 - `c1`, `c2` : free parameters as described in the above reference (optional).
 - `w` : scaling weight (optional).
 
@@ -150,7 +151,8 @@ angle) of the spectra.
 - `data` : 2D spectra.
 - `x` : 1D array of energy.
 - `y` : 1D array of theta values.
-- `bw` : box width for box-car smoothing (optional).
+- `bw` : width for box-car smoothing, integer number of points (default value =
+5).
 - `w` : scaling weight (optional).
 
 **Outputs:**

@@ -8,8 +8,8 @@ Version: 20191207
 def k_conv(data, energy, angle, fermi_energy) :
     '''
     [data_k, e_bin, k] = k_conv(data, energy, angle, fermi_energy)
-    This function requires intensity data as two dimensional array (x-dimension 
-    is along energy, and y-dimension along angle), and energy and angle as one 
+    This function requires intensity data as two dimensional array (x-dimension
+    is along energy, and y-dimension along angle), and energy and angle as one
     dimensional array. Also we need to provide the position of Fermi energy.
 
     Then the function returns intensity in k-space, binding energy and k vector.

@@ -35,3 +35,9 @@ data_k, e_bin, k = arp.k_conv(data, energy, angle, 16.67)
 
 Please find the detailed documentation here:
 <https://pranabdas.github.io/arpespythontools/>
+
+## Development
+Run tests locally:
+```python
+python3 -m unittest tests.py
+```
