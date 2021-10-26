@@ -1,5 +1,5 @@
 """
-Program: ARPES Python Tools source files. 
+Program: ARPES Python Tools source files.
 Version: 20191217
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 """

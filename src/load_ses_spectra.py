@@ -3,7 +3,7 @@
 """
 Program: To load ARPES data from SES text output file.
 Version: 20191205
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 [data, energy, angle] = load_arpes_text_data("example_spectrum.txt")
 """
 def load_ses_spectra(filename) :

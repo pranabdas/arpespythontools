@@ -3,9 +3,9 @@
 """
 Program: Rotate 2D array perpendicular to the plane
 Version: 20210601
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 """
-def rotate_2D(data, rotation, x, y):
+def rotate_2d(data, rotation, x, y):
     import numpy as np
     from scipy import interpolate
 

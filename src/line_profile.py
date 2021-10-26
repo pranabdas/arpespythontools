@@ -3,7 +3,7 @@
 """
 Program: Extracts line profile from 2D data.
 Version: 20210611
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 """
 def line_profile(data, y, y_min, y_max) :
     import numpy as np

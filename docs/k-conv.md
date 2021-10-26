@@ -52,17 +52,17 @@ Which would produce a plot like this:
 
 ### k-space conversion for 3D Fermi map data
 Similarly, we can convert three dimensional (Energy, theta, phi)  Fermi map data
-to $k$-space by using `k_conv3D` function.
+to $k$-space by using `k_conv3d` function.
 
 ```python
 data, energy, theta, phi = arp.load_ses_map('sample_map_data.zip')
-data_k, e_bin, kx, ky = arp.k_conv3D(data, energy, theta, phi, 16.67)
+data_k, e_bin, kx, ky = arp.k_conv3d(data, energy, theta, phi, 16.67)
 # Fermi energy = 16.67 eV
 ```
 
 :::caution
 
-Depending on the size of data matrix and computing power, the `k_conv3D` might
+Depending on the size of data matrix and computing power, the `k_conv3d` might
 take several minutes to complete.
 
 :::

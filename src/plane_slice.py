@@ -3,7 +3,7 @@
 """
 Program: Extracts plane slice from 3D volume data.
 Version: 20191205
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 
 plane_slice = plane_slice(data, x, x_min, x_max)
 """

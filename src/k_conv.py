@@ -3,7 +3,7 @@
 """
 Purpose: Ek vs energy to Ebin vs k conversion of ARPES spectra
 Version: 20191207
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 """
 def k_conv(data, energy, angle, fermi_energy) :
     '''

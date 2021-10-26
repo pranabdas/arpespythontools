@@ -4,12 +4,12 @@
 Program: This program converts 3D ARPES Fermi map data from real space to
 k-space.
 Version: 20191207
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 """
 
-def k_conv3D(data, energy, theta, phi, fermi_energy):
+def k_conv3d(data, energy, theta, phi, fermi_energy):
     '''
-    [data_k, e_bin, kx, ky] = k_conv3D(data, energy, theta, phi, fermi_energy)
+    [data_k, e_bin, kx, ky] = k_conv3d(data, energy, theta, phi, fermi_energy)
     This function requires intensity data as three dimensional array
     (x-dimension is along energy, y-dimension is along theta, z-dimension is
     along phi), and energy theta and phi as one dimensional array. Also we need

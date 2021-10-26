@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 Program: Python unittest
-Version: 20210602
-@author: Pranab Das (Twitter: @pranab_das)
+Version: 20211026
+@author: Pranab Das (GitHub: @pranabdas)
 Run    : python3 test.py
 or     : python3 -m unittest test.py
 """
@@ -11,12 +11,12 @@ import unittest
 from src.load_ses_spectra import load_ses_spectra
 from src.load_ses_map import load_ses_map
 from src.k_conv import k_conv
-from src.k_conv3D import k_conv3D
+from src.k_conv3d import k_conv3d
 from src.crop_2d import crop_2d
 from src.line_profile import line_profile
 from src.plane_slice import plane_slice
-from src.rotate_2D import rotate_2D
-from src.rotate_3D import rotate_3D
+from src.rotate_2d import rotate_2d
+from src.rotate_3d import rotate_3d
 
 # load the data from url. If you have the data files locally, you may replace
 # the urls with local file path
@@ -55,8 +55,8 @@ class Test(unittest.TestCase):
         self.assertAlmostEqual(e_bin[200], 0.27)
         self.assertAlmostEqual(k[200], -0.09881188)
 
-    def test_k_conv3D(self):
-        data_k, e_bin, kx, ky = k_conv3D(data_map, energy_map, theta, phi, 16.67)
+    def test_k_conv3d(self):
+        data_k, e_bin, kx, ky = k_conv3d(data_map, energy_map, theta, phi, 16.67)
         self.assertEqual(data_k.shape, (365, 571, 51))
         self.assertEqual(len(e_bin), 365)
         self.assertEqual(len(kx), 571)
@@ -87,8 +87,8 @@ class Test(unittest.TestCase):
         surf = plane_slice(data_map.transpose([2, 0, 1]), phi, -0.5, 0.5)
         self.assertAlmostEqual(surf[175, 25], 43.88159006)
 
-    def test_rotate_2D(self):
-        data_r, theta_r, phi_r = rotate_2D(data_map[150, :, :], 45, theta, phi)
+    def test_rotate_2d(self):
+        data_r, theta_r, phi_r = rotate_2d(data_map[150, :, :], 45, theta, phi)
         self.assertEqual(data_r.shape, (439, 439))
         self.assertEqual(len(theta_r), 439)
         self.assertEqual(len(phi_r), 439)
@@ -96,8 +96,8 @@ class Test(unittest.TestCase):
         self.assertAlmostEqual(theta_r[200], -0.88572823)
         self.assertAlmostEqual(phi_r[400], 8.15602716)
 
-    def test_rotate_3D(self):
-        data_r, theta_r, phi_r = rotate_3D(data_map, 45, theta, phi)
+    def test_rotate_3d(self):
+        data_r, theta_r, phi_r = rotate_3d(data_map, 45, theta, phi)
         self.assertEqual(data_r.shape, (365, 439, 439))
         self.assertEqual(len(theta_r), 439)
         self.assertEqual(len(phi_r), 439)

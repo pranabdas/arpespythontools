@@ -23,3 +23,11 @@ corresponding axis scaling. While exporting, axis scaling is optional. In case
 `x`, `y`, `z` is not provided the default scaling (`DimOffset=0`, and
 `DimDelta=1`) would be applied. Similarly, you can provide wave name, and axis
 labels (optional) as well.
+
+
+:::note
+
+If you need to read Igor Binary Waves (`.ibw` format), you can check out this
+Python implementation: <https://github.com/wking/igor>.
+
+:::

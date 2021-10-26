@@ -14,7 +14,7 @@ module.exports = {
         "rotate",
         "enhancements",
         "xps",
-        "igor-text",
+        "igor",
       ],
     },
     "glossary",

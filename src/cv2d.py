@@ -3,7 +3,7 @@
 """
 Program: 2D curvature of a spectra
 Version: 20210821
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 """
 
 def cv2d(data, x, y, bw=5, c1=0.001, c2=0.001, w='default'):

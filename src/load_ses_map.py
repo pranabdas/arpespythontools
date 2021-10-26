@@ -2,7 +2,7 @@
 """
 Purpose: To load ARPES MAP data from the ZIP file produced by Scienta SES program.
 Version: 20211003
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 [data, energy, theta, phi] = load_map_data("map_data.zip")
 """
 def load_ses_map(filename):

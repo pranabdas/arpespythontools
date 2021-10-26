@@ -112,10 +112,10 @@ energy is positive convention is used.
 - `k` : 1D array of momentum (k) values in $$\mathring{A}^{-1}$$.
 
 
-## k_conv3D
+## k_conv3d
 
 ```python
-data_k, e_bin, kx, ky = arp.k_conv3D(data, energy, theta, phi, fermi_energy)
+data_k, e_bin, kx, ky = arp.k_conv3d(data, energy, theta, phi, fermi_energy)
 ```
 Transforms the Fermi map data from real space to k-space.
 
@@ -220,10 +220,10 @@ URL address.
 - `energy` : 1D vector (numpy ndarry) of kinetic energy values in eV.
 
 
-## rotate_2D
+## rotate_2d
 
 ```python
-data_r, theta_r, phi_r = arp.rotate_2D(data, angle, theta, phi)
+data_r, theta_r, phi_r = arp.rotate_2d(data, angle, theta, phi)
 ```
 Rotates 2D array with rotation axis perpendicular to the plane. Center of
 rotation is at theta=0, phi=0.
@@ -241,10 +241,10 @@ set to `NaN` (not a number).
 - `phi_r` : 1D array of axis scaling along the third dimension of `data_r`.
 
 
-## rotate_3D
+## rotate_3d
 
 ```python
-data_r, theta_r, phi_r = arp.rotate(data, angle, theta, phi)
+data_r, theta_r, phi_r = arp.rotate_3d(data, angle, theta, phi)
 ```
 Rotates the volume data (3D matrix) with respect to the first dimension. Center
 of rotation is at theta=0, phi=0.

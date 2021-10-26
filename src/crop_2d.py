@@ -3,7 +3,7 @@
 """
 Program: Crop image/ 2-dimensional data
 Version: 20191217
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 """
 
 

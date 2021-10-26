@@ -3,7 +3,7 @@
 """
 Program: Import Igor text data.
 Version: 20191207
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 """
 def import_itx(data_path):
     '''

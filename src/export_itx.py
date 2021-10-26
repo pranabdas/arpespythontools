@@ -3,11 +3,11 @@
 """
 Purpose: Igor text (.itx) file writer
 Version: 20191208
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 """
 def export_itx(path, data, x=[], y=[], z =[], wave_name='wave', x_label='x-label', y_label='y-label', z_label='z-label'):
     '''
-    export_itx(path, data, x=[], y=[], z =[], wave_name='wave', 
+    export_itx(path, data, x=[], y=[], z =[], wave_name='wave',
     x_label='x-label', y_label='y-label', z_label='z-label')
 
     Exports Igor text data. This function support writing/exporting 1-, 2-, and

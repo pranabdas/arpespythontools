@@ -3,9 +3,9 @@
 """
 Program: Rotate 3D array, axis of rotation is along first dimension
 Version: 20210601
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 """
-def rotate_3D(data, rotation, x, y):
+def rotate_3d(data, rotation, x, y):
     import numpy as np
     from scipy import interpolate
 

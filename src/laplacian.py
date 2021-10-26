@@ -3,7 +3,7 @@
 """
 Program: Second derivative/ Laplacian of 2D spectra
 Version: 20210821
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 """
 def laplacian(data, x, y, bw=5, w='default'):
     import numpy as np
