@@ -209,3 +209,7 @@ h4 {
 .dropdown__link:hover, .dropdown__link--active {
   background-color: var(--ifm-menu-color-background-hover);
 }
+
+.navbar__search-input {
+  font-size: 1rem;
+}

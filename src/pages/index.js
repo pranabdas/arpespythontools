@@ -21,7 +21,7 @@ const features = [
     description: (
       <>
         All the modules are available under MIT License for free of charge to
-        use, modify, and extend. Visit project reposity at {" "}
+        use, modify, and extend. Visit project repository at {" "}
         <a href="https://github.com/pranabdas/arpespythontools">
           GitHub
         </a>
