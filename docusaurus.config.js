@@ -139,6 +139,7 @@ async function config() {
               "https://github.com/pranabdas/arpespythontools/blob/master/",
             remarkPlugins: [math],
             rehypePlugins: [katex],
+            breadcrumbs: true,
           },
           theme: {
             customCss: require.resolve("./src/css/custom.css"),

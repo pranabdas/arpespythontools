@@ -184,26 +184,30 @@ html[data-theme='dark'] .navbar {
   color: #666;
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 600px) {
   .container {
     --ifm-spacing-horizontal: 1.5rem;
   }
 }
 
+.markdown h1:first-child {
+    font-size: 2em;
+}
+
 h1 {
-    font-size: 2em !important;
+  font-size: 2em;
 }
 
 h2 {
-  font-size: 1.5em !important;
+  font-size: 1.5em;
 }
 
 h3 {
-  font-size: 1.17em !important;
+  font-size: 1.17em;
 }
 
 h4 {
-  font-size: 1em !important;
+  font-size: 1em;
 }
 
 .dropdown__link:hover, .dropdown__link--active {
@@ -212,4 +216,8 @@ h4 {
 
 .navbar__search-input {
   font-size: 1rem;
+}
+
+.hero__title {
+  font-size: 2em;
 }

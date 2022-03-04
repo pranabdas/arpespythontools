@@ -5,6 +5,10 @@ module.exports = {
       type: "category",
       label: "Hands-on",
       collapsed: false,
+      link: {
+        type: "generated-index",
+        description: "We will go through following hands-on topics:"
+      },
       items: [
         "data-import",
         "visualization",
