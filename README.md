@@ -1,9 +1,8 @@
-<h1 align="center">
-  <p align="center">ARPES Python Tools</p>
-</h1>
+<h1 align="center">ARPES Python Tools</h1>
 
 <p align="center">
   <a href="https://github.com/pranabdas/arpespythontools/actions/workflows/python-tests.yml"><img src="https://github.com/pranabdas/arpespythontools/actions/workflows/python-tests.yml/badge.svg" alt="Python tests status"></a>
+  <a href="https://github.com/pranabdas/arpespythontools/actions/workflows/deploy-gh-pages.yml"><img src="https://github.com/pranabdas/arpespythontools/actions/workflows/deploy-gh-pages.yml/badge.svg" alt="Deploy gh-pages status"></a>
   <a href="https://github.com/pranabdas/arpespythontools/blob/master/LICENSE"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=A31F34"></a>
 </p>
 

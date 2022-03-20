@@ -25,7 +25,7 @@ intensity = arp.line_profile(data, angle, -2.5, 2.5)
 # if you need in terms of binding energy:
 # e_bin = fermi_energy - e_kin
 
-xps_data = data = np.array([energy, intensity]).T
+xps_data = np.array([energy, intensity]).T
 np.savetxt("xps_data.x_y", xps_data)
 ```
 
