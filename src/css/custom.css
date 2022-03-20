@@ -1,5 +1,5 @@
 :root {
-  --color-primary: #0099ff;
+  --color-primary: #0076df;
   --color-secondary: #ED297A;
   --color-white: #F5F6F7;
   --color-black: #000;
@@ -25,6 +25,8 @@
   --ifm-color-primary-lightest: var(--color-primary);
   --ifm-toc-border-color: var(--border-color);
   --ifm-global-shadow-lw: 0px;
+  --ifm-table-head-background: rgba(0, 0, 0, 0.06);
+  --ifm-table-row-hover-color: rgba(0, 0, 0, 0.01);
 }
 
 html[data-theme='dark'] {
@@ -37,6 +39,8 @@ html[data-theme='dark'] {
   --ifm-toc-link-color: var(--color-white);
   --ifm-tabs-color: var(--color-white);
   --ifm-background-surface-color: #161b22;
+  --ifm-table-head-background: rgba(255, 255, 255, 0.14);
+  --ifm-table-row-hover-color: rgba(255, 255, 255, 0.05);
 }
 
 .hero--primary {
@@ -57,7 +61,7 @@ html[data-theme='dark'] .hero--primary {
 }
 
 .hero--primary .button--outline:hover {
-  background-color: rgba(0, 193, 255, .95);
+  opacity: 0.85;
   color: var(--color-white);
   transition: 0.2s;
 }
@@ -68,7 +72,7 @@ html[data-theme='dark'] .hero--primary .button--outline {
 }
 
 html[data-theme='dark'] .hero--primary .button--outline:hover {
-  background-color: rgba(0, 193, 255, .95);
+  opacity: 0.85;
   color: var(--color-white);
   transition: 0.2s;
 }
@@ -220,4 +224,8 @@ h4 {
 
 .hero__title {
   font-size: 2em;
+}
+
+tr:hover td {
+  background: var(--ifm-table-row-hover-color);
 }
