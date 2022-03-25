@@ -20,27 +20,21 @@ import numpy as np
 
 data, energy, angle = arp.load("xps_data.txt")
 intensity = arp.line_profile(data, angle, -2.5, 2.5)
-
-# energy is in terms of kinetic energy (eV)
-# if you need in terms of binding energy:
-# e_bin = fermi_energy - e_kin
-
-
 ```
 
-Here the energy is in terms of kinetic energy, if you require it in terms of
-binding energy:
+If you require energy in terms of binding energy instead of kinetic energy, you
+can convert using:
 
 $$
-E_bin = E_F - E_kin
+E_{bin} = E_F - E_{kin}
 $$
 
 $$
 E_F = h\nu - W_{\phi}
 $$
 
-where $E_F$ is the Fermi energy, and $W_{\phi}$ is work function which is about
-4.5 eV for our setup.
+where $E_F$ is Fermi energy, and $W_{\phi}$ is work function which is about 4.5
+eV for our setup.
 
 :::tip
 
