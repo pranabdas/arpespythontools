@@ -20,17 +20,21 @@ import numpy as np
 
 data, energy, angle = arp.load("xps_data.txt")
 intensity = arp.line_profile(data, angle, -2.5, 2.5)
-
-# energy is in terms of kinetic energy (eV)
-# if you need in terms of binding energy:
-# e_bin = fermi_energy - e_kin
-
-xps_data = np.array([energy, intensity]).T
-np.savetxt("xps_data.x_y", xps_data)
 ```
 
-In the above example, we have saved the data in two column (`.x_y`) format,
-which is suitable for importing to other XPS analysis software (like CasaXPS).
+If you require energy in terms of binding energy instead of kinetic energy, you
+can convert using:
+
+$$
+E_{bin} = E_F - E_{kin}
+$$
+
+$$
+E_F = h\nu - W_{\phi}
+$$
+
+where $E_F$ is Fermi energy, and $W_{\phi}$ is work function which is about 4.5
+eV for our setup.
 
 :::tip
 
@@ -43,3 +47,24 @@ intensity = np.sum(data, axis=1)
 ```
 
 :::
+
+### Save/export XPS data
+
+```python
+xps_data = np.array([energy, intensity]).T
+np.savetxt("xps_data.x_y", xps_data)
+```
+
+In the above example, we have saved the data in two column (`.x_y`) format,
+which is suitable for importing to other XPS analysis software (like CasaXPS).
+
+We may also use the module `save_xps` to save data.
+
+```python
+arp.save_xps(energy, intensity, "xps_data.x_y")
+```
+
+If you need to load the two column data using python:
+```python
+energy, intensity = np.loadtxt("xps_data.x_y", unpack=True)
+```

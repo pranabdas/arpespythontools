@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Purpose: Python libraries for ARPES data analysis
-Version: 20210821
+Version: 20220325
 @author: Pranab Das (GitHub: @pranabdas)
 """
 from arpespythontools.src.crop_2d import crop_2d
@@ -18,3 +18,4 @@ from arpespythontools.src.load_ses_spectra import load_ses_spectra
 from arpespythontools.src.plane_slice import plane_slice
 from arpespythontools.src.rotate_2d import rotate_2d
 from arpespythontools.src.rotate_3d import rotate_3d
+from arpespythontools.src.save_xps import save_xps
