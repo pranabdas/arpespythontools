@@ -64,7 +64,7 @@ We may also use the module `save_xps` to save data.
 arp.save_xps(energy, intensity, "xps_data.x_y")
 ```
 
-If you need to load the two column data:
+If you need to load the two column data using python:
 ```python
 energy, intensity = np.loadtxt("xps_data.x_y", unpack=True)
 ```
