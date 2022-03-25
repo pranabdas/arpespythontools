@@ -58,7 +58,7 @@ np.savetxt("xps_data.x_y", xps_data)
 In the above example, we have saved the data in two column (`.x_y`) format,
 which is suitable for importing to other XPS analysis software (like CasaXPS).
 
-We can also use the module `save_xps` to save data.
+We may alternatively use the module `save_xps` to save data.
 
 ```python
 arp.save_xps(energy, intensity, "xps_data.x_y")
