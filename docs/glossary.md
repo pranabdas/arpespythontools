@@ -220,6 +220,23 @@ URL address.
 - `energy` : 1D vector (numpy ndarry) of kinetic energy values in eV.
 
 
+## plane_slice
+
+```python
+surf = arp.plane_slice(data, x, x_min, x_max)
+```
+Returns the 2D slice along the first dimension of `data` and integrated in the
+width [x_min, x_max].
+
+**Inputs:**
+- `data` : 3D matrix.
+- `x` : axes scaling along the first dimension.
+- `x_min`, `x_max` : integration bounds.
+
+**Outputs:**
+- `surf` : 2D array.
+
+
 ## rotate_2d
 
 ```python
@@ -264,18 +281,16 @@ set to `NaN` (not a number).
 - `phi_r` : 1D array of axis scaling along the third dimension of `data_r`.
 
 
-## slice_plane
+## save_xps
 
 ```python
-surf = arp.slice_plane(data, x, x_min, x_max)
+arp.save_xps(energy, intensity, "xps_data.x_y")
 ```
-Returns the 2D slice along the first dimension of `data` and integrated in the
-width [x_min, x_max].
+Save XPS energy and intensity in two column plaintext file.
 
 **Inputs:**
-- `data` : 3D matrix.
-- `x` : axes scaling along the first dimension.
-- `x_min`, `x_max` : integration bounds.
+- `energy` : one dimensional vector
+- `intensity` : one dimensional vector
+- `filename` : string value corresponding to filename.
 
-**Outputs:**
-- `surf` : 2D array.
+No output is returned, only the data file is saved at specified filename.
