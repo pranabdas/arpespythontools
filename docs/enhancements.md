@@ -1,6 +1,7 @@
 ---
 title: Enhancing spectral features
 sidebar_label: Enhancing spectra
+keywords: ["data processing", "data refinement", "second derivative", "laplacian", "curvature method", "2d curvature"]
 ---
 
 Sometimes our spectra are not well resolved. In such cases, we may perform some

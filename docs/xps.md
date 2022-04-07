@@ -68,3 +68,10 @@ If you need to load the two column data using python:
 ```python
 energy, intensity = np.loadtxt("xps_data.x_y", unpack=True)
 ```
+
+:::tip
+
+You can try our [webapp](http://pranabdas.github.io/xps/) to convert SES spectra
+into energy vs intensity two column format.
+
+:::

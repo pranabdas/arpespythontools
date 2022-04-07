@@ -1,6 +1,7 @@
 ---
 title: Getting started
 slug: /
+keywords: ["arpes", "data analysis", "data visualization", "python", "matplotlib", "scienta-omicron", "scienta", "ses"]
 ---
 ### Prerequisite
 You will need [Python 3](https://www.python.org/), and following Python packages

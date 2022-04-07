@@ -54,46 +54,31 @@ def load_ses_spectra(filename) :
             lineNumberData = line
 
     energy_length = contents[lineNumberEnergyLength]
-    start_string = contents[lineNumberEnergyLength].find("=") + 1
-    end_string = len(contents[lineNumberEnergyLength])
-    energy_length = int(contents[lineNumberEnergyLength][start_string : end_string])
+    energy_length = int(energy_length.split("=")[-1])
 
     angle_length = contents[lineNumberAngleLength]
-    start_string = contents[lineNumberAngleLength].find("=") + 1
-    end_string = len(contents[lineNumberAngleLength])
-    angle_length = int(contents[lineNumberAngleLength][start_string : end_string])
+    angle_length = int(angle_length.split("=")[-1])
 
-    angle = contents[lineNumberAngle]
-    start_string = contents[lineNumberAngle].find("=") + 1
-    end_string = len(contents[lineNumberAngle])
-    angle_temp = contents[lineNumberAngle][start_string : end_string]
+    angle = contents[lineNumberAngle].split("=")[-1]
+    angle = angle.split(" ")
 
-    angle = np.linspace(0, 0, angle_length)
+    for ii in range(len(angle)):
+        angle[ii] = float(angle[ii])
 
-    start_string = 0
-    for ii in range(angle_length):
-        end_string = angle_temp.find(" ", start_string)
-        angle[ii] = float(angle_temp[start_string : end_string])
-        start_string = end_string + 1
+    angle = np.array(angle)
 
     energy = np.linspace(0, 0, energy_length)
-
     data = np.ndarray((energy_length, angle_length))
 
     for ii in range(energy_length):
-        data_temp = contents[lineNumberData + 1 + ii]
-        end_string = len(data_temp)
-        data_temp = data_temp[1 : end_string]
+        data_row = contents[lineNumberData + 1 + ii]
+        data_row = data_row.split(" ")
+        data_row = list(filter(None, data_row))
 
-        start_string = 0
-        for jj in range(angle_length + 1):
-            end_string = data_temp.find("  ", start_string)
-            if jj == 0 :
-                energy[ii] = float(data_temp[start_string : end_string])
-                start_string = end_string + 1
-            elif jj > 0 :
-                data[ii][jj - 1] = float(data_temp[start_string : \
-                         end_string])
-                start_string = end_string + 1
+        for jj in range(len(data_row)):
+            data_row[jj] = float(data_row[jj])
+
+        energy[ii] = data_row[0]
+        data[ii, :] = data_row[1:]
 
     return data, energy, angle

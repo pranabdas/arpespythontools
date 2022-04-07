@@ -1,6 +1,7 @@
 ---
 title: Loading ARPES data
 sidebar_label: Importing data
+keywords: ["arpes data", "ses", "scienta", "scienta-omicron"]
 ---
 At the moment, this module can only import data produced by Scienta-Omicron SES
 program. For the spectral scans, we will use the plaintext (`.txt`) output file

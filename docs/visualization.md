@@ -1,5 +1,6 @@
 ---
 title: Data visualization
+keywords: ["ARPES data visualization", "data visualization", "matplotlib", "python data visualization"]
 ---
 This example provides basic example of image plot using **matplotlib**. There is
 a huge list of customization possible using **matplotlib**. You can consult
