@@ -61,7 +61,7 @@ two lines above.
 I have a [Dockerfile](
 https://github.com/pranabdas/arpespythontools/blob/master/Dockerfile), you can
 adjust according to your needs.
-```dockerfile title="Dockerfile"
+```dockerfile title="Dockerfile" showLineNumbers
 # Start from Ubuntu 20.04 LTS
 FROM ubuntu:focal
 

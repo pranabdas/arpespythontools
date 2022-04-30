@@ -14,7 +14,7 @@ about (-3, 3) degree. Often there are some artifacts on the edge of detector, so
 we can restrict only to the central part with integration limits for line
 profile.
 
-```python
+```python showLineNumbers
 import arpespythontools as arp
 import numpy as np
 
@@ -71,7 +71,8 @@ energy, intensity = np.loadtxt("xps_data.x_y", unpack=True)
 
 :::tip
 
-You can try our [webapp](http://pranabdas.github.io/xps/) to convert SES spectra
-into energy vs intensity two column format.
+If you only need to obtain integrated intensity from the SES spectra for XPS
+data analysis, you may try our [web application](
+https://pranabdas.github.io/xps/).
 
 :::

@@ -22,7 +22,7 @@ https://github.com/zhangpengphi/curvature) implemented by Prof. P. Zhang.
 
 Here is our original data:
 
-```python
+```python showLineNumbers
 url = 'https://pranabdas.github.io/drive/datasets/arpes/sample_spectrum.txt'
 data, energy, angle = arp.load_ses_spectra(url)
 
@@ -46,7 +46,7 @@ $$
 Since the $x$ and $y$ scales represent different quantities (units), we also
 have a weight factor $w$.
 
-```python
+```python showLineNumbers
 # diff2, x, y = arp.laplacian(data, x, y, bw=5, w='default')
 diff2, x, y = arp.laplacian(data, energy, angle)
 
@@ -77,7 +77,7 @@ precise method for visualizing dispersive features in image plots*, [Review of
 Scientific Instruments **82**, 043712 (2011)](https://doi.org/10.1063/1.3585113).
 
 
-```python
+```python showLineNumbers
 # cv2d, x, y = arp.cv2d(data, x, y, bw=5, c1=0.001, c2=0.001, w='default')
 cv2d, x, y = arp.cv2d(data, energy, angle)
 

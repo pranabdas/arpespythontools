@@ -12,7 +12,7 @@ Remember positive rotation angle rotates clockwise, and center of rotation is at
 `rotate_2d` can rotate a 2D array with respect to its surface normal. Let's get
 some Fermi map data first.
 
-```python
+```python showLineNumbers
 import arpespythontools as arp
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -33,7 +33,7 @@ This is how a constant energy cut looks like before rotation:
 
 Now, we can rotate only a single slice first.
 
-```python
+```python showLineNumbers
 data_r, theta_r, phi_r = arp.rotate_2d(data[150, :, :], 45, theta, phi)
 
 # Plot one slice
@@ -56,7 +56,7 @@ angle to rotate in degree as before. Axis of rotation is the first axis (i.e.,
 energy). The function returns rotated data, new $k_x'$ and $k_y'$ vectors.
 Let's see an example:
 
-```python
+```python showLineNumbers
 data_r, theta_r, phi_r = arp.rotate_3d(data, 45, theta, phi)
 
 # we can plot a slice after rotation to get the above result

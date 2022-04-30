@@ -5,7 +5,7 @@ keywords: ["ARPES data visualization", "data visualization", "matplotlib", "pyth
 This example provides basic example of image plot using **matplotlib**. There is
 a huge list of customization possible using **matplotlib**. You can consult
 [matplotlib](https://matplotlib.org) documentation for advanced customizations.
-```python
+```python showLineNumbers
 import arpespythontools as arp
 data, energy, angle = arp.load_ses_spectra('sample_spectra.txt')
 
@@ -32,7 +32,7 @@ We can crop images (two-dimensionl data) using the `crop_2d` function. Say, we
 want to crop and focus only on the Dirac cone part. We want to crop the energy
 range (16, 16.8) and angle range (-6, 4).
 
-```python
+```python showLineNumbers
 # data_crop, x_crop, y_crop = crop_2d(data, x, y, x_min, x_max, y_min, y_max)
 data_crop, x_crop, y_crop = arp.crop_2d(data, x, y, 16, 16.8, -6, 4)
 

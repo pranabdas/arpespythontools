@@ -37,7 +37,8 @@ const features = [
         <a href="https://github.com/pranabdas/arpespythontools/releases">
           here
         </a>
-        .
+        . If you need to export integrated intensity for XPS analysis, you may
+        use this <a href="https://pranabdas.github.io/xps/">webapp</a>.
       </>
     ),
   },
