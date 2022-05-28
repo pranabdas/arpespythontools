@@ -24,7 +24,10 @@ plt.ylabel('Intensity (a.u)')
 plt.show()
 ```
 
-![edc-plot](/img/edc.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/edc.webp").default} />
+  <img src={require("/img/edc.png").default} alt="edc" />
+</picture>
 
 How about if we want the momentum distribution curve (MDC) instead? That means
 we have to extract line profile along the other axis, which can be  done by
@@ -45,7 +48,10 @@ plt.ylabel('Intensity (a.u)')
 plt.show()
 ```
 
-![mdc-plot](/img/mdc.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/mdc.webp").default} />
+  <img src={require("/img/mdc.png").default} alt="mdc" />
+</picture>
 
 :::tip
 
