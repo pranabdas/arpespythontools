@@ -16,14 +16,14 @@
     "gh-deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.21",
-    "@docusaurus/preset-classic": "2.0.0-beta.21",
-    "@easyops-cn/docusaurus-search-local": "^0.27.0",
+    "@docusaurus/core": "2.0.0-rc.1",
+    "@docusaurus/preset-classic": "2.0.0-rc.1",
+    "@easyops-cn/docusaurus-search-local": "^0.30.2",
     "@mdx-js/react": "^1.6.22",
     "@svgr/webpack": "^5.5.0",
-    "clsx": "^1.1.1",
+    "clsx": "^1.2.1",
     "file-loader": "^6.2.0",
-    "prism-react-renderer": "^1.3.3",
+    "prism-react-renderer": "^1.3.5",
     "raw-loader": "^4.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -44,6 +44,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^4.0.0"
   }
 }

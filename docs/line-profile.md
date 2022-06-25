@@ -25,7 +25,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/edc.webp").default} />
+  <source type="image/webp" srcSet={require("/img/edc.webp").default} />
   <img src={require("/img/edc.png").default} alt="edc" />
 </picture>
 
@@ -49,7 +49,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/mdc.webp").default} />
+  <source type="image/webp" srcSet={require("/img/mdc.webp").default} />
   <img src={require("/img/mdc.png").default} alt="mdc" />
 </picture>
 

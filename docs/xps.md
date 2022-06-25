@@ -18,7 +18,7 @@ profile.
 import arpespythontools as arp
 import numpy as np
 
-data, energy, angle = arp.load("xps_data.txt")
+data, energy, angle = arp.load_ses_spectra("xps_data.txt")
 intensity = arp.line_profile(data, angle, -2.5, 2.5)
 ```
 

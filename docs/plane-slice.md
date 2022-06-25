@@ -24,7 +24,7 @@ plt.show()
 This should give you an iso-energy surface like this:
 
 <picture>
-  <source type="image/webp" srcset={require("/img/iso-energy-surface.webp").default} />
+  <source type="image/webp" srcSet={require("/img/iso-energy-surface.webp").default} />
   <img src={require("/img/iso-energy-surface.png").default} alt="iso-energy-surface" />
 </picture>
 
@@ -48,6 +48,6 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/phi-slice.webp").default} />
+  <source type="image/webp" srcSet={require("/img/phi-slice.webp").default} />
   <img src={require("/img/phi-slice.png").default} alt="phi-slice" />
 </picture>
