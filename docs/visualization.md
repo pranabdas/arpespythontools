@@ -25,7 +25,7 @@ plt.show()
 You should see a plot like this upon successful execution:
 
 <picture>
-  <source type="image/webp" srcset={require("/img/plot-sample-spectra.webp").default} />
+  <source type="image/webp" srcSet={require("/img/plot-sample-spectra.webp").default} />
   <img src={require("/img/plot-sample-spectra.png").default} alt="plot-sample-spectra" />
 </picture>
 
@@ -49,7 +49,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/crop-image.webp").default} />
+  <source type="image/webp" srcSet={require("/img/crop-image.webp").default} />
   <img src={require("/img/crop-image.png").default} alt="crop-image" />
 </picture>
 

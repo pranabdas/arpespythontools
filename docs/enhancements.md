@@ -35,7 +35,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/plot-sample-spectra.webp").default} />
+  <source type="image/webp" srcSet={require("/img/plot-sample-spectra.webp").default} />
   <img src={require("/img/plot-sample-spectra.png").default} alt="plot-sample-spectra" />
 </picture>
 
@@ -59,7 +59,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/laplacian.webp").default} />
+  <source type="image/webp" srcSet={require("/img/laplacian.webp").default} />
   <img src={require("/img/laplacian.png").default} alt="laplacian" />
 </picture>
 
@@ -93,7 +93,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/cv2d.webp").default} />
+  <source type="image/webp" srcSet={require("/img/cv2d.webp").default} />
   <img src={require("/img/cv2d.png").default} alt="cv2d" />
 </picture>
 

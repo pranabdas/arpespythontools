@@ -8,8 +8,8 @@
 #                : sys.path.append("/root")
 #                : import arpespythontools as arp
 
-# Start from Ubuntu 20.04 LTS
-FROM ubuntu:focal
+# Start from Ubuntu 22.04 LTS
+FROM ubuntu:jammy
 
 # Update OS
 RUN apt update && apt upgrade -y
