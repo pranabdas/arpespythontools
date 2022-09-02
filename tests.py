@@ -2,16 +2,19 @@
 # -*- coding: utf-8 -*-
 """
 Program: Python unittest
-Version: 20211026
+Version: 20220902
 @author: Pranab Das (GitHub: @pranabdas)
-Run    : python3 test.py
-or     : python3 -m unittest test.py
+Run    : python3 tests.py
+or     : python3 -m unittest tests.py
 """
 import unittest
+from numpy import testing
 from src.load_ses_spectra import load_ses_spectra
 from src.load_ses_map import load_ses_map
 from src.k_conv import k_conv
 from src.k_conv3d import k_conv3d
+from src.k_conv3d_mp import k_conv3d_mp
+from src.k_conv3d_mp_alt import k_conv3d_mp_alt
 from src.crop_2d import crop_2d
 from src.line_profile import line_profile
 from src.plane_slice import plane_slice
@@ -65,6 +68,32 @@ class Test(unittest.TestCase):
         self.assertAlmostEqual(e_bin[250], -0.40999999)
         self.assertAlmostEqual(kx[300], 0.01603355)
         self.assertAlmostEqual(ky[30], 0.03809519)
+
+    def test_k_conv3d_mp(self):
+        data_k, e_bin, kx, ky = k_conv3d_mp(data_map, energy_map, theta, phi, 16.67)
+        self.assertEqual(data_k.shape, (365, 571, 51))
+        self.assertEqual(len(e_bin), 365)
+        self.assertEqual(len(kx), 571)
+        self.assertEqual(len(ky), 51)
+        # self.assertAlmostEqual(data_k[200, 300, 25], 79.90909761)
+        self.assertAlmostEqual(e_bin[250], -0.40999999)
+        self.assertAlmostEqual(kx[300], 0.01603355)
+        self.assertAlmostEqual(ky[30], 0.03809519)
+        data_k_, _, _, _ = k_conv3d(data_map, energy_map, theta, phi, 16.67)
+        testing.assert_array_equal(data_k, data_k_)
+
+    def test_k_conv3d_mp_alt(self):
+        data_k, e_bin, kx, ky = k_conv3d_mp_alt(data_map, energy_map, theta, phi, 16.67)
+        self.assertEqual(data_k.shape, (365, 571, 51))
+        self.assertEqual(len(e_bin), 365)
+        self.assertEqual(len(kx), 571)
+        self.assertEqual(len(ky), 51)
+        # self.assertAlmostEqual(data_k[200, 300, 25], 79.90909761)
+        self.assertAlmostEqual(e_bin[250], -0.40999999)
+        self.assertAlmostEqual(kx[300], 0.01603355)
+        self.assertAlmostEqual(ky[30], 0.03809519)
+        data_k_, _, _, _ = k_conv3d_mp(data_map, energy_map, theta, phi, 16.67)
+        testing.assert_almost_equal(data_k, data_k_)
 
     def test_crop_2d(self):
         data_crop, x_crop, y_crop = crop_2d(data, energy, angle, 16, 16.8, -6, 4)

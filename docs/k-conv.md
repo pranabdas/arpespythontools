@@ -69,3 +69,12 @@ Depending on the size of data matrix and computing power, the `k_conv3d` might
 take several minutes to complete.
 
 :::
+
+### Multiprocessing version
+
+There is also a multiprocessing implementation of the `k_conv3d`, which should
+be up to as many times faster as many processor cores are available.
+
+```python
+data_k, e_bin, kx, ky = arp.k_conv3d_mp(data, energy, theta, phi, 16.67)
+```

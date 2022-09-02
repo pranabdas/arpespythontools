@@ -138,6 +138,34 @@ energy is positive convention is used.
 the slit, and perpendicular to the slit directions, respectively.
 
 
+## k_conv3d_mp
+
+```python
+data_k, e_bin, kx, ky = arp.k_conv3d_mp(data, energy, theta, phi, fermi_energy)
+```
+Multiprocessing implementation of `k_conv3d`. Should be up to as many times
+faster as many processor cores are available. Transforms the Fermi map data from
+real space to k-space.
+
+**Inputs:**
+- `data` : 3D matrix of intensity values in real space. Dimension 1 is along
+kinetic energy, Dimension 2 is along theta, and Dimension 3 along phi.
+- `energy` : 1D array of kinetic energy values in eV.
+- `theta` : 1D array of theta values in degree. This is the direction along the
+slit.
+- `phi` : 1D array of phi values in degree. This is the direction perpendicular
+to the slit.
+- `fermi_energy` (number) : Fermi energy value in eV in terms of kinetic energy.
+
+**Outputs:**
+- `data_k` : 3D matrix of intensity values in k-space. Intensity values outside
+the interpolation range is set to `NaN` (not a number).
+- `e_bin` : 1D array of Binding energy values in eV. Binding energy below Fermi
+energy is positive convention is used.
+- `kx`, `ky` : 1D array of momentum (k) values in $$\mathring{A}^{-1}$$ along
+the slit, and perpendicular to the slit directions, respectively.
+
+
 ## laplacian
 
 ```python
