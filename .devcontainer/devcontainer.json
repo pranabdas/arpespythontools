@@ -1,0 +1,44 @@
+{
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-22.04",
+    // https://github.com/microsoft/vscode-dev-containers/tree/main/containers
+    "features": {
+      "ghcr.io/devcontainers/features/python:1": {
+        "version": "3.11",
+        "installJupyterlab": true
+      },
+      "node": {
+        "version": "18"
+      }
+    },
+    "settings": {
+      "telemetry.telemetryLevel": "off",
+      "telemetry.enableCrashReporter": false,
+      "telemetry.enableTelemetry": false,
+      "workbench.settings.enableNaturalLanguageSearch": false,
+      "editor.wordWrap": "on",
+      "editor.tabSize": 4,
+      "files.insertFinalNewline": true,
+      "files.trimTrailingWhitespace": true,
+      "editor.fontSize": 14,
+      "editor.minimap.enabled": false,
+      "editor.rulers": [
+        80
+      ],
+      "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#fdb88056"
+      },
+      "workbench.colorTheme": "Dracula At Night",
+      "terminal.integrated.fontSize": 13
+    },
+    "extensions": [
+      "bceskavich.theme-dracula-at-night",
+      "streetsidesoftware.code-spell-checker",
+      "SirTori.indenticator",
+      "unifiedjs.vscode-mdx",
+      "mutantdino.resourcemonitor",
+      "ms-python.vscode-pylance",
+      "ms-python.python"
+    ],
+    "postCreateCommand": "if [ -f requirements.txt ]; then pip install -r requirements.txt; fi",
+    "waitFor": "postCreateCommand"
+  }

@@ -61,6 +61,11 @@ async function config() {
                   target: "_self",
                 },
                 {
+                  label: "C and C++ Programming",
+                  to: "https://pranabdas.github.io/c-cpp/",
+                  target: "_self",
+                },
+                {
                   label: "Condensed Matter Notes",
                   to: "https://pranabdas.github.io/condmat-notes/",
                   target: "_self",
@@ -98,6 +103,11 @@ async function config() {
                 {
                   label: "Quantum Espresso Tutorial",
                   to: "https://pranabdas.github.io/espresso/",
+                  target: "_self",
+                },
+                {
+                  label: "Rust Programming",
+                  to: "https://pranabdas.github.io/rust/",
                   target: "_self",
                 },
                 {
