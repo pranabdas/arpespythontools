@@ -9,17 +9,11 @@ def laplacian(data, x, y, bw=5, w='default'):
     import numpy as np
     from astropy.convolution import convolve, Box2DKernel
     # https://docs.astropy.org/en/latest/api/astropy.convolution.Box2DKernel.html
-
+    # https://docs.astropy.org/en/latest/api/astropy.convolution.convolve.html#astropy.convolution.convolve
     if (w=='default'):
         w = data.shape[0]/data.shape[1]
 
-    data_smth = convolve(data, Box2DKernel(bw))
-
-    # crop the edges
-    bo = int(bw/2 + 1)
-    data_smth = data_smth[bo:-bo, bo:-bo]
-    x = x[bo:-bo]
-    y = y[bo:-bo]
+    data_smth = convolve(data, Box2DKernel(bw), boundary='extend')
 
     # Laplacian
     diff2 = np.gradient(np.gradient(data_smth, axis=0), axis=0) + \
@@ -32,4 +26,4 @@ def laplacian(data, x, y, bw=5, w='default'):
     #             jj <= bo+1 or jj >= data.shape[1]-bo-1):
     #             diff2[ii][jj] = np.nan
 
-    return diff2, x, y
+    return diff2

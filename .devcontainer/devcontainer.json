@@ -2,10 +2,6 @@
     "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-22.04",
     // https://github.com/microsoft/vscode-dev-containers/tree/main/containers
     "features": {
-      "ghcr.io/devcontainers/features/python:1": {
-        "version": "3.11",
-        "installJupyterlab": true
-      },
       "node": {
         "version": "18"
       }
@@ -39,6 +35,6 @@
       "ms-python.vscode-pylance",
       "ms-python.python"
     ],
-    "postCreateCommand": "if [ -f requirements.txt ]; then pip install -r requirements.txt; fi",
+    "postCreateCommand": "bash ./.devcontainer/postCreateCommands.sh",
     "waitFor": "postCreateCommand"
   }

@@ -31,7 +31,7 @@ Returns cropped 2D array and corresponding axes scaling vectors defined by
 ## cv2d
 
 ```python
-cv2d, x, y = arp.cv2d(data, x, y, bw=5, c1=0.001, c2=0.001, w='default')
+cv2d = arp.cv2d(data, x, y, bw=5, c1=0.001, c2=0.001, w='default')
 ```
 
 Calculates two-dimensional curvature. The details about the curvature method can
@@ -49,10 +49,8 @@ features in image plots*, [Review of Scientific Instruments **82**, 043712
 - `w` : scaling weight (optional).
 
 **Outputs:**
-- `cv2d` : 2D array of curvature. Output array has different shape than the
-input array as the edges are removed due to smoothing artifacts.
-- `x` : cropped input `x` array to match `cv2d` dimension.
-- `y` : cropped input `y` array to match `cv2d` dimension.
+- `cv2d` : 2D array of curvature. Output array has the same shape as the input
+array.
 
 
 ## export_itx
@@ -169,7 +167,7 @@ the slit, and perpendicular to the slit directions, respectively.
 ## laplacian
 
 ```python
-diff2, x, y = arp.laplacian(data, x, y, bw=5, w='default')
+diff2 = arp.laplacian(data, x, y, bw=5, w='default')
 ```
 
 Laplacian (second order partial derivatives with respect to both energy and
@@ -185,10 +183,7 @@ angle) of the spectra.
 
 **Outputs:**
 - `diff2` : 2D array of spectra after taking second order partial derivative
-w.r.t. both energy and angle. This array has different shape than the input
-array as the edges are removed due to smoothing artifacts.
-- `x` : cropped input `x` array to match `diff2` dimension.
-- `y` : cropped input `y` array to match `diff2` dimension.
+w.r.t. both energy and angle. This array has the same shape as input array.
 
 
 ## line_profile

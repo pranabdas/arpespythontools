@@ -50,8 +50,8 @@ Since the $x$ and $y$ scales represent different quantities (units), we also
 have a weight factor $w$.
 
 ```python showLineNumbers
-# diff2, x, y = arp.laplacian(data, x, y, bw=5, w='default')
-diff2, x, y = arp.laplacian(data, energy, angle)
+# diff2 = arp.laplacian(data, x, y, bw=5, w='default')
+diff2 = arp.laplacian(data, energy, angle)
 
 plt.imshow(diff2, vmax=0, cmap='terrain_r')
 plt.axis('off')
@@ -84,8 +84,8 @@ Scientific Instruments **82**, 043712 (2011)](https://doi.org/10.1063/1.3585113)
 
 
 ```python showLineNumbers
-# cv2d, x, y = arp.cv2d(data, x, y, bw=5, c1=0.001, c2=0.001, w='default')
-cv2d, x, y = arp.cv2d(data, energy, angle)
+# cv2d = arp.cv2d(data, x, y, bw=5, c1=0.001, c2=0.001, w='default')
+cv2d = arp.cv2d(data, energy, angle)
 
 plt.imshow(cv2d, vmax=0, cmap='terrain_r')
 plt.axis('off')
