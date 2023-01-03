@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Program: Python unittest
-Version: 20220902
+Version: 20230103
 @author: Pranab Das (GitHub: @pranabdas)
 Run    : python3 tests.py
 or     : python3 -m unittest tests.py
@@ -97,9 +97,9 @@ class Test(unittest.TestCase):
 
     def test_crop_2d(self):
         data_crop, x_crop, y_crop = crop_2d(data, energy, angle, 16, 16.8, -6, 4)
-        self.assertEqual(data_crop.shape, (160, 321))
-        self.assertEqual(len(x_crop), 160)
-        self.assertEqual(len(y_crop), 321)
+        self.assertEqual(data_crop.shape, (161, 322))
+        self.assertEqual(len(x_crop), 161)
+        self.assertEqual(len(y_crop), 322)
         self.assertAlmostEqual(data_crop[100, 100], 358.26367950)
         self.assertAlmostEqual(x_crop[50], 16.25)
         self.assertAlmostEqual(y_crop[50], -4.449648)
