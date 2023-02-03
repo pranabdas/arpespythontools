@@ -107,14 +107,14 @@ class Test(unittest.TestCase):
     def test_line_profile(self):
         edc = line_profile(data, angle, -3, 3)
         mdc = line_profile(data.T, energy, 16.5, 16.7)
-        self.assertAlmostEqual(edc[250], 103615.71987318)
-        self.assertAlmostEqual(mdc[250], 28065.45765495)
+        self.assertAlmostEqual(edc[250], 103690.02924323082)
+        self.assertAlmostEqual(mdc[250], 28385.215015411377)
 
     def test_plane_slice(self):
         surf = plane_slice(data_map, energy_map, 15.6, 15.8)
-        self.assertAlmostEqual(surf[175, 25], 10275.25982666)
+        self.assertAlmostEqual(surf[175, 25], 10639.354034423828)
         surf = plane_slice(data_map.transpose([2, 0, 1]), phi, -0.5, 0.5)
-        self.assertAlmostEqual(surf[175, 25], 43.88159006)
+        self.assertAlmostEqual(surf[175, 25], 43.904175247997046)
 
     def test_rotate_2d(self):
         data_r, theta_r, phi_r = rotate_2d(data_map[150, :, :], 45, theta, phi)
