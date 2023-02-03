@@ -1,5 +1,5 @@
-numpy
-matplotlib
-scipy
-jupyterlab
 astropy
+jupyterlab
+matplotlib
+numpy
+scipy
