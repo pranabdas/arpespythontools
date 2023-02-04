@@ -45,11 +45,13 @@ pip install --upgrade -r requirements.txt
 ```
 
 ### Importing arpespythontools
+
 We can import the module by `import arpespythontools as arp` so that later in
 the code we can refer to the module as `arp` in short.
 ```python
 import sys
-sys.path.append("/parent/arpespythontools/path/")
+sys.path.append("/workspaces/projects/")
+# module is path is `/workspaces/projects/arpespythontools`
 import arpespythontools as arp
 ```
 
@@ -58,9 +60,9 @@ two lines above.
 
 ### Run Python and Jupyter notebook in Docker container
 
-I have a [Dockerfile](
-https://github.com/pranabdas/arpespythontools/blob/master/Dockerfile), you can
-adjust according to your needs.
+If you want to setup and run python in a container, I have a
+[Dockerfile](https://github.com/pranabdas/arpespythontools/blob/master/Dockerfile),
+please adjust according to your needs.
 ```dockerfile title="Dockerfile" showLineNumbers
 # Start from Ubuntu 22.04 LTS
 FROM ubuntu:jammy
