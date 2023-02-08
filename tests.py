@@ -251,18 +251,54 @@ class Test(unittest.TestCase):
         self.assertEqual(data_r.shape, (439, 439))
         self.assertEqual(len(theta_r), 439)
         self.assertEqual(len(phi_r), 439)
-        # self.assertAlmostEqual(data_r[200, 250], 143.48184917)
+        self.assertAlmostEqual(data_r[200, 250], 143.48184917, places=3)
         self.assertAlmostEqual(theta_r[200], -0.88572823)
         self.assertAlmostEqual(phi_r[400], 8.15602716)
+
+    def test2_rotate_2d(self):
+        data_r, theta_r, phi_r = rotate_2d(flip(data_map[150, :, :], 0), 45, theta[::-1], phi)
+        self.assertEqual(data_r.shape, (439, 439))
+        self.assertEqual(len(theta_r), 439)
+        self.assertEqual(len(phi_r), 439)
+        self.assertAlmostEqual(flip(data_r, 0)[200, 250], 143.48184917, places=3)
+        self.assertAlmostEqual(theta_r[::-1][200], -0.88572823)
+        self.assertAlmostEqual(phi_r[400], 8.15602716)
+
+    def test3_rotate_2d(self):
+        data_r, theta_r, phi_r = rotate_2d(flip(data_map[150, :, :], 1), 45, theta, phi[::-1])
+        self.assertEqual(data_r.shape, (439, 439))
+        self.assertEqual(len(theta_r), 439)
+        self.assertEqual(len(phi_r), 439)
+        self.assertAlmostEqual(flip(data_r, 1)[200, 250], 143.48184917, places=3)
+        self.assertAlmostEqual(theta_r[200], -0.88572823)
+        self.assertAlmostEqual(phi_r[::-1][400], 8.15602716)
 
     def test_rotate_3d(self):
         data_r, theta_r, phi_r = rotate_3d(data_map, 45, theta, phi)
         self.assertEqual(data_r.shape, (365, 439, 439))
         self.assertEqual(len(theta_r), 439)
         self.assertEqual(len(phi_r), 439)
-        # self.assertAlmostEqual(data_r[200, 250, 150], 1.80742301)
+        self.assertAlmostEqual(data_r[200, 250, 150], 1.80742301, places=3)
         self.assertAlmostEqual(theta_r[200], -0.88572823)
         self.assertAlmostEqual(phi_r[400], 8.15602716)
+
+    def test2_rotate_3d(self):
+        data_r, theta_r, phi_r = rotate_3d(flip(data_map, 1), 45, theta[::-1], phi)
+        self.assertEqual(data_r.shape, (365, 439, 439))
+        self.assertEqual(len(theta_r), 439)
+        self.assertEqual(len(phi_r), 439)
+        self.assertAlmostEqual(flip(data_r, 1)[200, 250, 150], 1.80742301, places=3)
+        self.assertAlmostEqual(theta_r[::-1][200], -0.88572823)
+        self.assertAlmostEqual(phi_r[400], 8.15602716)
+
+    def test3_rotate_3d(self):
+        data_r, theta_r, phi_r = rotate_3d(flip(data_map, 2), 45, theta, phi[::-1])
+        self.assertEqual(data_r.shape, (365, 439, 439))
+        self.assertEqual(len(theta_r), 439)
+        self.assertEqual(len(phi_r), 439)
+        self.assertAlmostEqual(flip(data_r, 2)[200, 250, 150], 1.80742301, places=3)
+        self.assertAlmostEqual(theta_r[200], -0.88572823)
+        self.assertAlmostEqual(phi_r[::-1][400], 8.15602716)
 
 
 if __name__ == "__main__":

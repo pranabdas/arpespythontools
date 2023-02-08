@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Program: Rotate 3D array, axis of rotation is along first dimension
-Version: 20210601
+Version: 20230208
 @author: Pranab Das (GitHub: @pranabdas)
 """
 
@@ -10,6 +10,19 @@ Version: 20210601
 def rotate_3d(data, rotation, x, y):
     import numpy as np
     from scipy import interpolate
+
+    # transform x and y in increasing order
+    is_x_flipped = False
+    if (x[0] > x[-1]):
+        is_x_flipped = True
+        x = np.flip(x)
+        data = np.flip(data, 1)
+
+    is_y_flipped = False
+    if (y[0] > y[-1]):
+        is_y_flipped = True
+        y = np.flip(y)
+        data = np.flip(data, 2)
 
     data[np.isnan(data)] = 0
     rotation = np.deg2rad(rotation)
@@ -66,6 +79,15 @@ def rotate_3d(data, rotation, x, y):
         data_r = interp.ev(x_temp, y_temp)
         data_r[mask] = np.nan
         data_3r.append(data_r)
+
+    # transform back into original order
+    if is_x_flipped:
+        X = np.flip(X)
+        data_3r = np.flip(data_3r, 1)
+
+    if is_y_flipped:
+        Y = np.flip(Y)
+        data_3r = np.flip(data_3r, 2)
 
     data_3r = np.array(data_3r)
     return data_3r, X, Y
