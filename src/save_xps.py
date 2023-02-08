@@ -8,8 +8,8 @@ Version: 20220325
 
 
 def save_xps(energy, intensity, filename=""):
-    import numpy as np
     import datetime
+    import numpy as np
 
     if (filename == ""):
         filename = "XPS_data_" + datetime.datetime.now().strftime("%Y%m%d%H%M%S") + ".x_y"

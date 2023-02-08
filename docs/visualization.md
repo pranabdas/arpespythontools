@@ -17,7 +17,7 @@ plt.figure(figsize = (8, 6))
 plt.imshow(data, origin = 'lower', aspect = 'auto', \
             extent = (angle[0], angle[-1], energy[0], energy[-1]))
 plt.xlabel("$\\theta$ (deg)")
-plt.ylabel('$E_{kin}$ (eV)')
+plt.ylabel("$E_{kin}$ (eV)")
 plt.set_cmap('magma_r')
 plt.show()
 ```
@@ -43,7 +43,7 @@ plt.figure(figsize = (8, 8))
 plt.imshow(data_crop, origin = 'lower', aspect = 'auto', \
             extent = (y_crop[0], y_crop[-1], x_crop[0], x_crop[-1]))
 plt.xlabel("$\\theta$ (deg)")
-plt.ylabel('$E_{kin}$ (eV)')
+plt.ylabel("$E_{kin}$ (eV)")
 plt.set_cmap('magma_r')
 plt.show()
 ```

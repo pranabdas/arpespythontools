@@ -6,19 +6,21 @@ Version: 20191205
 @author: Pranab Das (GitHub: @pranabdas)
 [data, energy, angle] = load_arpes_text_data("example_spectrum.txt")
 """
-def load_ses_spectra(filename) :
+
+
+def load_ses_spectra(filename):
     import numpy as np
     import urllib.request
 
-    if (filename[:7]=='http://') or (filename[:8]=='https://'):
-        web=True
+    if (filename[:7] == 'http://') or (filename[:8] == 'https://'):
+        web = True
     else:
-        web=False
+        web = False
 
     if (web):
         try:
             headers = {'User-Agent': 'Mozilla/5.0'}
-            req = urllib.request.Request(url = filename, headers = headers)
+            req = urllib.request.Request(url=filename, headers=headers)
             contents = urllib.request.urlopen(req).read().decode()
             contents = contents.splitlines()
         except:
@@ -26,7 +28,7 @@ def load_ses_spectra(filename) :
 
     else:
         fid = open(filename, 'r')
-        if fid.mode == 'r' :
+        if fid.mode == 'r':
             contents = fid.read()
         fid.close()
         contents = contents.splitlines()

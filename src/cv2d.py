@@ -8,8 +8,8 @@ Version: 20221204
 
 
 def cv2d(data, x, y, bw=5, c1=0.001, c2=0.001, w='default'):
-    import numpy as np
     from astropy.convolution import convolve, Box2DKernel
+    import numpy as np
     # https://docs.astropy.org/en/latest/api/astropy.convolution.Box2DKernel.html
     # https://docs.astropy.org/en/latest/api/astropy.convolution.convolve.html
 

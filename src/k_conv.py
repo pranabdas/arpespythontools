@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*-
 """
 Purpose: Ek vs energy to Ebin vs k conversion of ARPES spectra
-Version: 20191207
+Version: 20230208
 @author: Pranab Das (GitHub: @pranabdas)
 """
-def k_conv(data, energy, angle, fermi_energy) :
+
+
+def k_conv(data, energy, angle, fermi_energy):
     '''
     [data_k, e_bin, k] = k_conv(data, energy, angle, fermi_energy)
     This function requires intensity data as two dimensional array (x-dimension
@@ -16,13 +18,26 @@ def k_conv(data, energy, angle, fermi_energy) :
     '''
     import numpy as np
 
+    # transform energy and angle in increasing order
+    is_energy_flipped = False
+    if (energy[0] > energy[-1]):
+        is_energy_flipped = True
+        energy = np.flip(energy)
+        data = np.flip(data, 0)
+
+    is_angle_flipped = False
+    if (angle[0] > angle[-1]):
+        is_angle_flipped = True
+        angle = np.flip(angle)
+        data = np.flip(data, 1)
+
     k_min = 0.512 * np.sqrt(energy[np.shape(energy)[0] - 1]) \
-    * np.sin(angle[0]*np.pi/180)
+        * np.sin(np.deg2rad(angle[0]))
 
     k_max = 0.512 * np.sqrt(energy[np.shape(energy)[0] - 1]) \
-    * np.sin(angle[np.shape(angle)[0] - 1]*np.pi/180)
+        * np.sin(np.deg2rad(angle[np.shape(angle)[0] - 1]))
 
-    k = np.linspace(k_min, k_max, num = np.shape(angle)[0])
+    k = np.linspace(k_min, k_max, num=np.shape(angle)[0])
     k_temp = np.linspace(0, 0, np.shape(angle)[0])
 
     data_k = np.ndarray((np.shape(energy)[0], np.shape(angle)[0]))
@@ -30,9 +45,18 @@ def k_conv(data, energy, angle, fermi_energy) :
     for ii in range(np.shape(energy)[0]):
         for jj in range(np.shape(angle)[0]):
             k_temp[jj] = 0.512 * np.sqrt(energy[ii]) \
-            * np.sin(angle[jj]*np.pi/180)
-        data_k[ii] = np.interp(k, k_temp, data[ii], left=float('nan'),\
-                 right=float('nan'))
+                * np.sin(np.deg2rad(angle[jj]))
+        data_k[ii] = np.interp(k, k_temp, data[ii], left=float('nan'),
+                               right=float('nan'))
+
+    # transform back into original order
+    if is_energy_flipped:
+        energy = np.flip(energy)
+        data_k = np.flip(data_k, 0)
+
+    if is_angle_flipped:
+        k = np.flip(k)
+        data_k = np.flip(data_k, 1)
 
     e_bin = fermi_energy - energy
 

@@ -2,13 +2,21 @@
 # -*- coding: utf-8 -*-
 """
 Program: Extracts line profile from 2D data.
-Version: 20220203
+Version: 20230208
 @author: Pranab Das (GitHub: @pranabdas)
 """
 
 
 def line_profile(data, y, y_min, y_max):
     import numpy as np
+
+    # make sure `y_min` is less than `y_max`
+    if (y_min > y_max):
+        y_min, y_max = y_max, y_min
+
+    # in case `y` is not in increasing order, reverse `y_min` and `y_max`
+    if (y[0] > y[-1]):
+        y_min, y_max = y_max, y_min
 
     index_min = np.argmin(abs(y - y_min))
     index_max = np.argmin(abs(y - y_max))

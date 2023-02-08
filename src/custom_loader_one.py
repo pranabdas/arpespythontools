@@ -9,8 +9,8 @@ Version: 20220204
 
 def custom_loader_one(fname, polar_start=None, polar_end=None):
     import itertools
-    import numpy as np
     import math
+    import numpy as np
     import warnings
 
     # suppress numpy warning related to max_rows behavior

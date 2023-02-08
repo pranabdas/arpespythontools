@@ -3,9 +3,10 @@
 """
 Program: This program converts 3D ARPES Fermi map data from real space to
 k-space.
-Version: 20191207
+Version: 20230208
 @author: Pranab Das (GitHub: @pranabdas)
 """
+
 
 def k_conv3d(data, energy, theta, phi, fermi_energy):
     '''
@@ -21,11 +22,33 @@ def k_conv3d(data, energy, theta, phi, fermi_energy):
     import numpy as np
     from scipy import interpolate
 
+    # transform sure energy, theta, and phi into strictly increasing order
+    # necessary for using scipy `interpolate.RectBivariateSpline`
+    is_energy_flipped = False
+    if (energy[0] > energy[-1]):
+        is_energy_flipped = True
+        energy = np.flip(energy)
+        data = np.flip(data, 0)
+
+    is_theta_flipped = False
+    if (theta[0] > theta[-1]):
+        is_theta_flipped = True
+        theta = np.flip(theta)
+        data = np.flip(data, 1)
+
+    is_phi_flipped = False
+    if (phi[0] > phi[-1]):
+        is_phi_flipped = True
+        phi = np.flip(phi)
+        data = np.flip(data, 2)
+
     data = np.transpose(data, (2, 1, 0))
     # Transpose the data, 0 -> phi axis, 1 -> theta axis, 2 -> energy axis
-    data_k = np.zeros([np.shape(data)[0], np.shape(data)[1], np.shape(data)[2]])
+    data_k = np.zeros(
+        [np.shape(data)[0], np.shape(data)[1], np.shape(data)[2]])
     kx_min = 0.512 * np.sqrt(energy[-1]) * np.sin(theta[0]*np.pi/180)
-    kx_max = 0.512 * np.sqrt(energy[-1]) * np.sin(theta[len(theta)-1]*np.pi/180)
+    kx_max = 0.512 * np.sqrt(energy[-1]) * \
+        np.sin(theta[len(theta)-1]*np.pi/180)
     kx = np.linspace(kx_min, kx_max, len(theta))
 
     ky_min = 0.512 * np.sqrt(energy[-1]) * np.sin(phi[0]*np.pi/180)
@@ -39,8 +62,8 @@ def k_conv3d(data, energy, theta, phi, fermi_energy):
 
         for jj in range(np.shape(data)[1]):
             for kk in range(np.shape(data)[0]):
-                phi_grid[kk, jj] = np.arcsin(ky[kk]/(0.512*np.sqrt(energy[ii])\
-                        *np.cos(theta_grid[0, jj]*np.pi/180)))*180/np.pi
+                phi_grid[kk, jj] = np.arcsin(ky[kk]/(0.512*np.sqrt(energy[ii])
+                                                     * np.cos(theta_grid[0, jj]*np.pi/180)))*180/np.pi
 
         func = interpolate.RectBivariateSpline(phi, theta, data[:, :, ii])
         data_k[:, :, ii] = func.ev(phi_grid, theta_grid)
@@ -49,10 +72,24 @@ def k_conv3d(data, energy, theta, phi, fermi_energy):
         for jj in range(np.shape(data)[1]):
             for kk in range(np.shape(data)[0]):
                 if theta_temp[jj] < theta[0] or theta_temp[jj] > theta[-1] or \
-                    phi_grid[kk, jj] < phi[0] or phi_grid[kk, jj] > phi[-1]:
+                        phi_grid[kk, jj] < phi[0] or phi_grid[kk, jj] > phi[-1]:
                     data_k[kk, jj, ii] = np.nan
 
-    data_k = np.transpose(data_k, (2, 1, 0)) # Transpose back to original order
+    # Transpose back to original order
+    data_k = np.transpose(data_k, (2, 1, 0))
+
+    # transform into original order
+    if is_energy_flipped:
+        energy = np.flip(energy)
+        data_k = np.flip(data_k, 0)
+
+    if is_theta_flipped:
+        kx = np.flip(kx)
+        data_k = np.flip(data_k, 1)
+
+    if is_phi_flipped:
+        ky = np.flip(ky)
+        data_k = np.flip(data_k, 2)
 
     e_bin = fermi_energy - energy
 

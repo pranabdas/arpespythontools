@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 plt.figure(figsize = (8, 6))
 plt.imshow(iso_energy_surf, origin = 'lower', aspect = 'auto', \
             extent = (theta[0], theta[-1], phi[0], phi[-1]))
-plt.xlabel('$\\phi$ (deg)')
+plt.xlabel("$\\phi$ (deg)")
 plt.ylabel("$\\theta$ (deg)")
 plt.show()
 ```
@@ -43,7 +43,7 @@ plt.figure(figsize = (8, 6))
 plt.imshow(phi_slice, origin = 'lower', aspect = 'auto', \
             extent = (phi[0], phi[-1], energy[0], energy[-1]))
 plt.xlabel("$\\theta$ (deg)")
-plt.ylabel('$E_{kin}$ (eV)')
+plt.ylabel("$E_{kin}$ (eV)")
 plt.show()
 ```
 

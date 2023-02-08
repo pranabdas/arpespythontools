@@ -42,7 +42,7 @@ plt.figure(figsize = (8, 6))
 plt.imshow(data_k, origin = 'lower', aspect = 'auto', \
             extent = (k[0], k[-1], e_bin[0], e_bin[-1]))
 plt.xlabel("k ($\AA^{-1}$)")
-plt.ylabel('$E_{bin}$ (eV)')
+plt.ylabel("$E_{bin}$ (eV)")
 plt.set_cmap('magma_r')
 plt.show()
 ```

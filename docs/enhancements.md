@@ -29,7 +29,7 @@ data, energy, angle = arp.load_ses_spectra(url)
 plt.imshow(data, origin = 'lower', aspect = 'auto', \
            extent = (angle[0], angle[-1], energy[0], energy[-1]))
 plt.xlabel("$\\theta$ (deg)")
-plt.ylabel('$E_{kin}$ (eV)')
+plt.ylabel("$E_{kin}$ (eV)")
 plt.set_cmap('magma_r')
 plt.show()
 ```

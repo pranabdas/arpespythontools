@@ -5,6 +5,8 @@ Program: Rotate 2D array perpendicular to the plane
 Version: 20210601
 @author: Pranab Das (GitHub: @pranabdas)
 """
+
+
 def rotate_2d(data, rotation, x, y):
     import numpy as np
     from scipy import interpolate
@@ -15,9 +17,9 @@ def rotate_2d(data, rotation, x, y):
     rot_matrix = np.array([[c, s],
                           [-s, c]])
 
-    data_r = np.zeros([int(abs(data.shape[0]*np.cos(rotation)) + \
-                           abs(data.shape[1]*np.sin(rotation))), \
-                       int(abs(data.shape[0]*np.sin(rotation)) + \
+    data_r = np.zeros([int(abs(data.shape[0]*np.cos(rotation)) +
+                           abs(data.shape[1]*np.sin(rotation))),
+                       int(abs(data.shape[0]*np.sin(rotation)) +
                            abs(data.shape[1]*np.cos(rotation)))])
 
     x_start = x[0]
@@ -25,8 +27,8 @@ def rotate_2d(data, rotation, x, y):
     y_start = y[0]
     y_end = y[-1]
 
-    min_max = rot_matrix @[[x_start, x_end, x_end, x_start],\
-                           [y_start, y_start, y_end, y_end]]
+    min_max = rot_matrix @ [[x_start, x_end, x_end, x_start],
+                            [y_start, y_start, y_end, y_end]]
 
     X_start = min_max[0, :].min()
     X_end = min_max[0, :].max()
@@ -40,19 +42,20 @@ def rotate_2d(data, rotation, x, y):
     X_grid = X_grid.transpose()
     Y_grid = Y_grid.transpose()
 
-    rot_matrix = np.array([[c, -s], \
+    rot_matrix = np.array([[c, -s],
                            [s, c]])
 
     x_temp, y_temp = np.copy(data_r), np.copy(data_r)
 
-    mask = np.full([int(abs(data.shape[0]*np.cos(rotation)) + \
-                        abs(data.shape[1]*np.sin(rotation))), \
-                    int(abs(data.shape[0]*np.sin(rotation)) + \
+    mask = np.full([int(abs(data.shape[0]*np.cos(rotation)) +
+                        abs(data.shape[1]*np.sin(rotation))),
+                    int(abs(data.shape[0]*np.sin(rotation)) +
                         abs(data.shape[1]*np.cos(rotation)))], False, dtype=bool)
 
     for ii in range(mask.shape[0]):
         for jj in range(mask.shape[1]):
-            x_temp[ii, jj], y_temp[ii, jj] = rot_matrix @[[X_grid[ii, jj]], [Y_grid[ii, jj]]]
+            x_temp[ii, jj], y_temp[ii,
+                                   jj] = rot_matrix @ [[X_grid[ii, jj]], [Y_grid[ii, jj]]]
             if x_temp[ii, jj] < x_start or x_temp[ii, jj] > x_end or \
                y_temp[ii, jj] < y_start or y_temp[ii, jj] > y_end:
                 mask[ii, jj] = True
