@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Program: Extracts line profile from 2D data.
-Version: 20230208
+Version: 20230210
 @author: Pranab Das (GitHub: @pranabdas)
 """
 
@@ -18,8 +18,11 @@ def line_profile(data, y, y_min, y_max):
     if (y[0] > y[-1]):
         y_min, y_max = y_max, y_min
 
-    index_min = np.argmin(abs(y - y_min))
-    index_max = np.argmin(abs(y - y_max))
+    index_min = np.nanargmin(abs(y - y_min))
+    index_max = np.nanargmin(abs(y - y_max))
+
+    # convert nan values to zero
+    data[np.isnan(data)] = 0
 
     line_profile = np.zeros(data.shape[0])
 

@@ -24,7 +24,9 @@ def rotate_3d(data, rotation, x, y):
         y = np.flip(y)
         data = np.flip(data, 2)
 
+    # convert nan values to zero
     data[np.isnan(data)] = 0
+
     rotation = np.deg2rad(rotation)
     c, s = np.cos(rotation), np.sin(rotation)
     rot_matrix = np.array([[c, s],
