@@ -2,23 +2,21 @@
 # -*- coding: utf-8 -*-
 """
 Program: Second derivative/ Laplacian of 2D spectra
-Version: 20221204
+Version: 20230210
 @author: Pranab Das (GitHub: @pranabdas)
 """
 
 
-def laplacian(data, x, y, bw=5, w='default'):
+def laplacian(data, x, y, bw=5, w=1):
     from astropy.convolution import convolve, Box2DKernel
     import numpy as np
+
     # https://docs.astropy.org/en/latest/api/astropy.convolution.Box2DKernel.html
     # https://docs.astropy.org/en/latest/api/astropy.convolution.convolve.html
-    if (w == 'default'):
-        w = data.shape[0]/data.shape[1]
-
     data_smth = convolve(data, Box2DKernel(bw), boundary='extend')
 
     # Laplacian
-    diff2 = np.gradient(np.gradient(data_smth, axis=0), axis=0) + \
-        w*w*np.gradient(np.gradient(data_smth, axis=1), axis=1)
+    diff2 = np.gradient(np.gradient(data_smth, x, axis=0), x, axis=0) + \
+        w * w * np.gradient(np.gradient(data_smth, y, axis=1), y, axis=1)
 
     return diff2

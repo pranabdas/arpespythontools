@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Program: Extracts plane slice from 3D volume data.
-Version: 20230208
+Version: 20230210
 @author: Pranab Das (GitHub: @pranabdas)
 
 plane_slice = plane_slice(data, x, x_min, x_max)
@@ -20,8 +20,11 @@ def plane_slice(data, x, x_min, x_max):
     if (x[0] > x[-1]):
         x_min, x_max = x_max, x_min
 
-    index_min = np.argmin(abs(x - x_min))
-    index_max = np.argmin(abs(x - x_max))
+    index_min = np.nanargmin(abs(x - x_min))
+    index_max = np.nanargmin(abs(x - x_max))
+
+    # convert nan values to zero
+    data[np.isnan(data)] = 0
 
     plane_slice = np.zeros([data.shape[1], data.shape[2]])
 
