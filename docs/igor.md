@@ -28,6 +28,6 @@ labels (optional) as well.
 :::note
 
 If you need to read Igor Binary Waves (`.ibw` format), you can check out this
-Python implementation: <https://github.com/wking/igor>.
+Python implementation: https://github.com/wking/igor.
 
 :::

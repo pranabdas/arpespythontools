@@ -1,9 +1,9 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
-const math = require("remark-math");
+import { themes } from "prism-react-renderer";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 /** @type {import('@docusaurus/types').Config} */
-async function config() {
-  const katex = (await import("rehype-katex")).default;
-  return {
+const config = {
     title: "ARPES Python Tools",
     tagline: "Import, analyze and visualize ARPES data",
     url: "https://pranabdas.github.io",
@@ -19,9 +19,9 @@ async function config() {
       ({
         metadata: [{name: 'theme-color', content: '#006bb3'}],
         prism: {
-          theme: require("prism-react-renderer/themes/github"),
-          darkTheme: require("prism-react-renderer/themes/nightOwl"),
-          additionalLanguages: ["docker"],
+          theme: themes.github,
+          darkTheme: themes.nightOwl,
+          additionalLanguages: ["bash", "docker"],
         },
         docs: {
           sidebar: {
@@ -154,11 +154,10 @@ async function config() {
         ({
           docs: {
             sidebarPath: require.resolve("./sidebars.js"),
-            // Please change this to your repo.
             editUrl:
               "https://github.com/pranabdas/arpespythontools/blob/main/",
-            remarkPlugins: [math],
-            rehypePlugins: [katex],
+              remarkPlugins: [remarkMath],
+              rehypePlugins: [rehypeKatex],
             breadcrumbs: true,
           },
           theme: {
@@ -189,6 +188,5 @@ async function config() {
       },
     ],
   };
-}
 
-module.exports = config;
+export default config;
