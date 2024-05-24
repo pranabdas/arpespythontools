@@ -6,11 +6,11 @@ Version: 20230210
 @author: Pranab Das (GitHub: @pranabdas)
 """
 
+from astropy.convolution import convolve, Box2DKernel
+import numpy as np
+
 
 def laplacian(data, x, y, bw=5, w=1):
-    from astropy.convolution import convolve, Box2DKernel
-    import numpy as np
-
     # https://docs.astropy.org/en/latest/api/astropy.convolution.Box2DKernel.html
     # https://docs.astropy.org/en/latest/api/astropy.convolution.convolve.html
     data_smth = convolve(data, Box2DKernel(bw), boundary='extend')

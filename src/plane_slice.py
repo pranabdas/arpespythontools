@@ -8,16 +8,17 @@ Version: 20230210
 plane_slice = plane_slice(data, x, x_min, x_max)
 """
 
+import numpy as np
+
 
 def plane_slice(data, x, x_min, x_max):
-    import numpy as np
 
     # make sure `x_min` is less than `x_max`
-    if (x_min > x_max):
+    if x_min > x_max:
         x_min, x_max = x_max, x_min
 
     # in case `x` is not in increasing order, reverse `x_min` and `x_max`
-    if (x[0] > x[-1]):
+    if x[0] > x[-1]:
         x_min, x_max = x_max, x_min
 
     index_min = np.nanargmin(abs(x - x_min))

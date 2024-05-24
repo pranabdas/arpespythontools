@@ -6,12 +6,13 @@ Version: 20220204
 @author: Pranab Das (GitHub: @pranabdas)
 """
 
+import itertools
+import math
+import warnings
+import numpy as np
+
 
 def custom_loader_one(fname, polar_start=None, polar_end=None):
-    import itertools
-    import math
-    import numpy as np
-    import warnings
 
     # suppress numpy warning related to max_rows behavior
     with warnings.catch_warnings():
@@ -21,8 +22,7 @@ def custom_loader_one(fname, polar_start=None, polar_end=None):
 
     data = itertools.islice(open(fname), None)
     # exclude blank and comment lines, comments must begin with `#`
-    data = itertools.dropwhile(
-        lambda x: x.strip() == "" or x.strip()[0] == "#", data)
+    data = itertools.dropwhile(lambda x: x.strip() == "" or x.strip()[0] == "#", data)
     # skip first/theta row
     data = np.loadtxt(data, dtype="float64", skiprows=1)
 
@@ -32,7 +32,7 @@ def custom_loader_one(fname, polar_start=None, polar_end=None):
     # note: assert can be switched off globally using `-O` or `-OO` flag
     assert polar_len * len(energy) == len(data), "dimension mismatch"
 
-    if (polar_start and polar_end):
+    if polar_start and polar_end:
         phi = np.linspace(polar_start, polar_end, num=polar_len)
     else:
         phi = np.arange(polar_len)
@@ -40,8 +40,7 @@ def custom_loader_one(fname, polar_start=None, polar_end=None):
     intensity = np.zeros((len(energy), len(theta), polar_len), dtype="float64")
 
     for i in range(len(data)):
-        assert math.isclose(data[i, 0], energy[i % len(energy)]), \
-            "energy value irregularity"
+        assert math.isclose(data[i, 0], energy[i % len(energy)]), "energy value irregularity"
         intensity[i % len(energy), :, i // len(energy)] = data[i, 1:]
 
     return intensity, energy, theta, phi
@@ -66,8 +65,6 @@ def gen_test_data():
     ...     with redirect_stdout(f):
     ...         gen_test_data()
     """
-    import numpy as np
-
     print("# generated fake/random data to test `custom_loader_one`")
     print("\n\t", end="")
 
@@ -80,8 +77,8 @@ def gen_test_data():
     ph = np.linspace(-3, 3, 5, dtype="float64")
     e = np.linspace(10, 15, 15, dtype="float64")
 
-    for i in range(len(ph)*len(e)):
+    for i in range(len(ph) * len(e)):
         print(e[i % len(e)], end=" ")
         for _ in range(len(th)):
-            print(np.random.rand()*50, end=" ")
+            print(np.random.rand() * 50, end=" ")
         print()

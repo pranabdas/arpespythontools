@@ -6,9 +6,10 @@ Version: 20230210
 @author: Pranab Das (GitHub: @pranabdas)
 """
 
+import numpy as np
+
 
 def line_profile(data, y, y_min, y_max):
-    import numpy as np
 
     # make sure `y_min` is less than `y_max`
     if (y_min > y_max):
