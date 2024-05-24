@@ -78,9 +78,8 @@ def export_itx(
             fid.write("END\n")
             fid.write(
                 (
-                    'X SetScale/P x {0}, {1}, "{2}", {3}; SetScale/P y {4},\
-                {5}, "{6}", {7}; SetScale d 0,0,"", {8}\n'.format(
-                        x_offset, x_delta, x_label, wave_name, y_offset, y_delta, y_label, wave_name, wave_name
+                    'X SetScale/P x {0}, {1}, "{2}", {3}; SetScale/P y {4}, {5}, "{6}", {3}; SetScale d 0,0,"", {3}\n'.format(
+                        x_offset, x_delta, x_label, wave_name, y_offset, y_delta, y_label
                     )
                 )
             )
@@ -104,22 +103,8 @@ def export_itx(
             fid.write("END\n")
             fid.write(
                 (
-                    'X SetScale/P x {0}, {1}, "{2}", {3}; SetScale/P y {4},\
-                {5}, "{6}", {7}; SetScale/P z {8}, {9}, "{10}", {11}; \
-                SetScale d 0,0,"", {12}\n'.format(
-                        x_offset,
-                        x_delta,
-                        x_label,
-                        wave_name,
-                        y_offset,
-                        y_delta,
-                        y_label,
-                        wave_name,
-                        z_offset,
-                        z_delta,
-                        z_label,
-                        wave_name,
-                        wave_name,
+                    'X SetScale/P x {0}, {1}, "{2}", {3}; SetScale/P y {4}, {5}, "{6}", {3}; SetScale/P z {7}, {8}, "{9}", {3}; SetScale d 0,0,"", {3}\n'.format(
+                        x_offset, x_delta, x_label, wave_name, y_offset, y_delta, y_label, z_offset, z_delta, z_label
                     )
                 )
             )
