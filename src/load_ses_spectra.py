@@ -2,84 +2,73 @@
 # -*- coding: utf-8 -*-
 """
 Program: To load ARPES data from SES text output file.
-Version: 20191205
+Version: 20240524
 @author: Pranab Das (GitHub: @pranabdas)
 [data, energy, angle] = load_arpes_text_data("example_spectrum.txt")
 """
 
+import re
+import urllib.request
+import numpy as np
+from src.utils import REGEX_DICT
+
 
 def load_ses_spectra(filename):
-    import numpy as np
-    import urllib.request
+    """
+    Reads SES 2D spectra from file.
+    """
 
-    if (filename[:7] == 'http://') or (filename[:8] == 'https://'):
+    if (filename[:7] == "http://") or (filename[:8] == "https://"):
         web = True
     else:
         web = False
 
-    if (web):
+    if web:
         try:
-            headers = {'User-Agent': 'Mozilla/5.0'}
+            headers = {"User-Agent": "Mozilla/5.0"}
             req = urllib.request.Request(url=filename, headers=headers)
             contents = urllib.request.urlopen(req).read().decode()
             contents = contents.splitlines()
-        except:
-            print('Could not read url.')
+        except FileNotFoundError:
+            print("Could not read url.")
 
     else:
-        fid = open(filename, 'r')
-        if fid.mode == 'r':
+        fid = open(filename, "r", encoding="utf-8")
+        if fid.mode == "r":
             contents = fid.read()
         fid.close()
         contents = contents.splitlines()
+        contents = list(filter(lambda x: x.strip(), contents))
+        contents = list(filter(None, contents))
 
-    lineNumberEnergyLength = -1
-    lineNumberAngleLength = -1
-    # lineNumberEnergy = -1
-    lineNumberAngle = -1
-    lineNumberData = -1
+    energy_length = 0
+    angle_length = 0
+    line_number_data = -1
 
-    for line in np.arange(len(contents)):
-        if (contents[line].find('Dimension 1 size') != -1):
-            lineNumberEnergyLength = line
+    for index, line in enumerate(contents):
+        if re.match(REGEX_DICT["energy_len"], line):
+            energy_length = int(line.split("=")[-1])
 
-        if (contents[line].find('Dimension 2 size') != -1):
-            lineNumberAngleLength = line
+        if re.match(REGEX_DICT["angle_len"], line):
+            angle_length = int(line.split("=")[-1])
 
-        # if (contents[line].find('Dimension 1 scale') != -1):
-        #     lineNumberEnergy = line
+        if re.match(REGEX_DICT["angle_data"], line):
+            angle = line.split("=")[-1]
+            angle = re.split(r"\s", angle)
+            angle = list(filter(None, angle))
+            angle = np.array(list(map(float, angle)))
 
-        if (contents[line].find('Dimension 2 scale') != -1):
-            lineNumberAngle = line
+        if line.find("Data 1") != -1:
+            line_number_data = index
 
-        if (contents[line].find('Data 1') != -1):
-            lineNumberData = line
-
-    energy_length = contents[lineNumberEnergyLength]
-    energy_length = int(energy_length.split("=")[-1])
-
-    angle_length = contents[lineNumberAngleLength]
-    angle_length = int(angle_length.split("=")[-1])
-
-    angle = contents[lineNumberAngle].split("=")[-1]
-    angle = angle.split(" ")
-
-    for ii in range(len(angle)):
-        angle[ii] = float(angle[ii])
-
-    angle = np.array(angle)
-
-    energy = np.linspace(0, 0, energy_length)
-    data = np.ndarray((energy_length, angle_length))
+    energy = np.zeros(energy_length)
+    data = np.zeros((energy_length, angle_length))
 
     for ii in range(energy_length):
-        data_row = contents[lineNumberData + 1 + ii]
-        data_row = data_row.split(" ")
+        data_row = contents[line_number_data + 1 + ii]
+        data_row = re.split(r"\s", data_row)
         data_row = list(filter(None, data_row))
-
-        for jj in range(len(data_row)):
-            data_row[jj] = float(data_row[jj])
-
+        data_row = np.array(list(map(float, data_row)))
         energy[ii] = data_row[0]
         data[ii, :] = data_row[1:]
 
