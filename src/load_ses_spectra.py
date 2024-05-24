@@ -10,7 +10,12 @@ Version: 20240524
 import re
 import urllib.request
 import numpy as np
-from src.utils import REGEX_DICT
+
+REGEX_DICT = {"num_int": r"[+-]?\d+"}
+REGEX_DICT.update({"num_dbl": r"[-+]?\d*\.\d+(?:[eE][-+]?\d+)?"})
+REGEX_DICT.update({"energy_len": (r"^\s*Dimension\s+1\s+size\s*=\s*{0}").format(REGEX_DICT["num_int"])})
+REGEX_DICT.update({"angle_len": (r"^\s*Dimension\s+2\s+size\s*=\s*{0}").format(REGEX_DICT["num_int"])})
+REGEX_DICT.update({"angle_data": r"^\s*Dimension\s+2\s+scale\s*="})
 
 
 def load_ses_spectra(filename):
