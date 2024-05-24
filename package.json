@@ -1,7 +1,7 @@
 {
   "homepage": ".",
   "name": "arpespythontools",
-  "version": "0.5.1",
+  "version": "0.6.1",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",

@@ -13,9 +13,10 @@ import numpy as np
 
 REGEX_DICT = {"num_int": r"[+-]?\d+"}
 REGEX_DICT.update({"num_dbl": r"[-+]?\d*\.\d+(?:[eE][-+]?\d+)?"})
-REGEX_DICT.update({"energy_len": (r"^\s*Dimension\s+1\s+size\s*=\s*{0}").format(REGEX_DICT["num_int"])})
-REGEX_DICT.update({"angle_len": (r"^\s*Dimension\s+2\s+size\s*=\s*{0}").format(REGEX_DICT["num_int"])})
-REGEX_DICT.update({"angle_data": r"^\s*Dimension\s+2\s+scale\s*="})
+REGEX_DICT.update({"energy_len": (r"^Dimension\s+1\s+size\s*=\s*{0}").format(REGEX_DICT["num_int"])})
+REGEX_DICT.update({"angle_len": (r"^Dimension\s+2\s+size\s*=\s*{0}").format(REGEX_DICT["num_int"])})
+REGEX_DICT.update({"angle_data": r"^Dimension\s+2\s+scale\s*="})
+REGEX_DICT.update({"data_block": r"^\[Data\s+\d+\]$"})
 
 
 def load_ses_spectra(filename):
@@ -63,8 +64,9 @@ def load_ses_spectra(filename):
             angle = list(filter(None, angle))
             angle = np.array(list(map(float, angle)))
 
-        if line.find("Data 1") != -1:
+        if re.match(REGEX_DICT["data_block"], line):
             line_number_data = index
+            break
 
     energy = np.zeros(energy_length)
     data = np.zeros((energy_length, angle_length))

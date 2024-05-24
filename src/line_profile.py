@@ -12,11 +12,11 @@ import numpy as np
 def line_profile(data, y, y_min, y_max):
 
     # make sure `y_min` is less than `y_max`
-    if (y_min > y_max):
+    if y_min > y_max:
         y_min, y_max = y_max, y_min
 
     # in case `y` is not in increasing order, reverse `y_min` and `y_max`
-    if (y[0] > y[-1]):
+    if y[0] > y[-1]:
         y_min, y_max = y_max, y_min
 
     index_min = np.nanargmin(abs(y - y_min))
@@ -25,10 +25,10 @@ def line_profile(data, y, y_min, y_max):
     # convert nan values to zero
     data[np.isnan(data)] = 0
 
-    line_profile = np.zeros(data.shape[0])
+    line_prof = np.zeros(data.shape[0])
 
     # note that `range` includes index_min but excludes index_max
     for ii in range(index_min, index_max + 1):
-        line_profile = line_profile + data[:, ii]
+        line_prof = line_prof + data[:, ii]
 
-    return line_profile
+    return line_prof
