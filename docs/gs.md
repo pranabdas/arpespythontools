@@ -4,20 +4,20 @@ slug: /
 keywords: ["arpes", "data analysis", "data visualization", "python", "matplotlib", "scienta-omicron", "scienta", "ses"]
 ---
 ### Prerequisite
-You will need [Python 3](https://www.python.org/), and following Python packages
-installed in your computer:
 
-- [numpy](https://numpy.org/)
-- [matplotlib](https://matplotlib.org/)
-- [scipy](https://www.scipy.org/)
-- [astropy](https://www.astropy.org)
+You will need [Python 3](https://www.python.org/) installed in your system,
+other python dependencies such as [numpy](https://numpy.org/), [matplotlib](
+https://matplotlib.org/), [scipy](https://www.scipy.org/), [astropy](
+https://www.astropy.org) will be install when installing **arpespythontools**.
+
+I will be using Jupyter notebook to write and execute our python codes. You can
+install Jupyter Lab using pip:
 
 ```bash
-pip install --upgrade numpy scipy matplotlib astropy jupyterlab
+pip install --upgrade jupyterlab
 ```
 
-I will be using Jupyter notebook to write and execute our python codes. Of
-course, you can use any other IDE or code editor of your choice.
+Of course, you can use any other IDE or code editor of your choice.
 
 :::info
 
@@ -26,22 +26,12 @@ https://pranabdas.github.io/python-tutorial/).
 
 :::
 
-### Getting ARPES Python tools
-You can clone the repository using git:
+### Installing ARPES Python tools
+
+You can install latest stable release of **arpespytontools** from PyPI:
 
 ```bash
-git clone https://github.com/pranabdas/arpespythontools.git
-```
-
-Alternatively, you can download the package archive [here](
-https://github.com/pranabdas/arpespythontools/releases). Unzip the folder inside
-your project/ working directory or any other preferred location.
-
-You can install the required python packages from the `requirements.txt`
-specification:
-```bash
-cd arpespythontools
-pip install --upgrade -r requirements.txt
+pip install --upgrade arpespythontools
 ```
 
 ### Importing arpespythontools
@@ -49,9 +39,6 @@ pip install --upgrade -r requirements.txt
 We can import the module by `import arpespythontools as arp` so that later in
 the code we can refer to the module as `arp` in short.
 ```python
-import sys
-sys.path.append("/workspaces/projects/")
-# module is path is `/workspaces/projects/arpespythontools`
 import arpespythontools as arp
 ```
 
@@ -107,14 +94,6 @@ docker run -ti --net=host -v /host/path:/home arptools bash
 Launch Jupyterlab inside the container:
 ```bash
 jupyter-lab
-```
-
-Now we can create Python 3 notebook, and start writing our code. To import
-arpespythontools, include in your notebook:
-```python
-import sys
-sys.path.append("/root")
-import arpespythontools as arp
 ```
 
 ### Sample dataset

@@ -18,7 +18,7 @@ RUN apt update && apt upgrade -y
 RUN apt install -y python3 python3-pip git fonts-open-sans
 
 # Install pip packages
-RUN pip3 install jupyterlab numpy scipy matplotlib astropy
+RUN pip3 install arpespythontools
 
 # jupyterlab settings
 RUN mkdir /etc/jupyter && \
@@ -29,7 +29,6 @@ RUN mkdir /etc/jupyter && \
 
 # clone arpespythontools to `/root` directory
 WORKDIR /root
-RUN git clone --depth 1 https://github.com/pranabdas/arpespythontools.git
 
 # matplotlib customizations (optional)
 RUN mkdir -p /root/.config/matplotlib && \
