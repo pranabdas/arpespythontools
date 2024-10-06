@@ -31,12 +31,12 @@ Please find the detailed documentation here:
 ## Development
 
 Clone repository:
-```bash
+```console
 git clone https://github.com/pranabdas/arpespythontools
 ```
 
 Install project in editable mode:
-```bash
+```console
 pip install -e .
 ```
 
