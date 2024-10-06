@@ -11,24 +11,16 @@ This python library helps you load, analyze and visualize ARPES data.
 
 ## Quick start
 
-Clone or [download](https://github.com/pranabdas/arpespythontools/releases) the
-repository:
+Install latest stable version:
 ```console
-git clone https://github.com/pranabdas/arpespythontools.git
+pip install --upgrade arpespythontools
 ```
 
-Include path of parent `arpespythontools` folder (not required if you place it
-under your working directory) and `import` in your program:
+Import and start using:
 
 ```python
-import sys
-sys.path.append("/parent/arpespythontools/path/")
 import arpespythontools as arp
-```
 
-Use the modules:
-
-```python
 data, energy, angle = arp.load_ses_spectra("sample_spectrum.txt")
 data_k, e_bin, k = arp.k_conv(data, energy, angle, 16.67)
 ```
