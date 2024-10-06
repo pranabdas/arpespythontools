@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "arpespythontools"
-version = "0.6.1"
+version = "1.0.0"
 description = "Explore, analyze, visualize Angle Resolved Photoemission Spectroscopy (ARPES) data."
 authors = ["Pranab Das"]
 license = "MIT"
