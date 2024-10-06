@@ -29,7 +29,18 @@ Please find the detailed documentation here:
 <https://pranabdas.github.io/arpespythontools/>
 
 ## Development
+
+Clone repository:
+```bash
+git clone https://github.com/pranabdas/arpespythontools
+```
+
+Install project in editable mode:
+```bash
+pip install -e .
+```
+
 Run tests locally:
 ```python
-python3 -m unittest tests.py
+python3 -m unittest discover tests
 ```
