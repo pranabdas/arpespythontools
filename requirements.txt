@@ -1,4 +1,5 @@
 astropy>=5.2.2
 matplotlib>=3.7.5
 numpy>=1.24.4
+psutil>=6.0.0
 scipy>=1.9.3
