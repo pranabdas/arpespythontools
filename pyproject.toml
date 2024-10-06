@@ -12,10 +12,9 @@ keywords = [
     "python", "data-analysis", "matplotlib", "materials-science",
     "surface-science", "condensed-matter-physics", "photoelectron-spectroscopy",
     "arpes"]
-package-mode = false
 
 [tool.poetry.dependencies]
-python = ">=3.8"
+python = "^3.8"
 astropy = "^5.2.2"
 matplotlib = "^3.7.5"
 numpy = "^1.24.4"
