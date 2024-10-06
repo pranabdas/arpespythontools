@@ -73,7 +73,7 @@ def rotate_2d(data, rotation, x, y):
 
     for ii in range(mask.shape[0]):
         for jj in range(mask.shape[1]):
-            x_temp[ii, jj], y_temp[ii, jj] = rot_matrix @ [[X_grid[ii, jj]], [Y_grid[ii, jj]]]
+            x_temp[ii, jj], y_temp[ii, jj] = np.ndarray.flatten(rot_matrix @ [[X_grid[ii, jj]], [Y_grid[ii, jj]]])
             if (
                 x_temp[ii, jj] < x_start
                 or x_temp[ii, jj] > x_end
