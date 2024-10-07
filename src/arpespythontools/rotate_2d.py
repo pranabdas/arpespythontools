@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: Rotate 2D array perpendicular to the plane
-Version: 20230208
 @author: Pranab Das (GitHub: @pranabdas)
 """
 

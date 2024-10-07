@@ -41,6 +41,6 @@ pip install -e .
 ```
 
 Run tests locally:
-```python
+```console
 python3 -m unittest discover tests
 ```

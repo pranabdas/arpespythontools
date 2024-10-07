@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 Program: To load ARPES data from SES text output file.
-Version: 20240524
 @author: Pranab Das (GitHub: @pranabdas)
-[data, energy, angle] = load_arpes_text_data("example_spectrum.txt")
+
+example: data, energy, angle = load_arpes_text_data("example_spectrum.txt")
 """
 
 import re

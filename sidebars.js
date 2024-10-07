@@ -1,6 +1,6 @@
 module.exports = {
   docs: [
-    "gs",
+    "getting-started",
     {
       type: "category",
       label: "Hands-on",

@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Purpose: Igor text (.itx) file writer
-Version: 20191208
 @author: Pranab Das (GitHub: @pranabdas)
 """
 

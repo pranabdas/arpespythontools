@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: Save XPS data in two column format
-Version: 20220325
 @author: Pranab Das (GitHub: @pranabdas)
 """
 

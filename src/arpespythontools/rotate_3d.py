@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: Rotate 3D array, axis of rotation is along first dimension
-Version: 20230208
 @author: Pranab Das (GitHub: @pranabdas)
 """
 

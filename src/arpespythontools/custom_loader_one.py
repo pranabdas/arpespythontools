@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: custom loader to suit specific data format as requested by a user
-Version: 20220204
 @author: Pranab Das (GitHub: @pranabdas)
 """
 

@@ -2,24 +2,24 @@
 # -*- coding: utf-8 -*-
 """
 Program: Python unittest
-Version: 20230208
 @author: Pranab Das (GitHub: @pranabdas)
-Run    : python3 tests.py
-or     : python3 -m unittest tests.py
+Run    : python3 -m unittest discover tests
 """
 import unittest
 from numpy import testing, flip
-from arpespythontools.load_ses_spectra import load_ses_spectra
-from arpespythontools.load_ses_map import load_ses_map
-from arpespythontools.k_conv import k_conv
-from arpespythontools.k_conv3d import k_conv3d
-from arpespythontools.k_conv3d_mp import k_conv3d_mp
-from arpespythontools.k_conv3d_mp_alt import k_conv3d_mp_alt
-from arpespythontools.crop_2d import crop_2d
-from arpespythontools.line_profile import line_profile
-from arpespythontools.plane_slice import plane_slice
-from arpespythontools.rotate_2d import rotate_2d
-from arpespythontools.rotate_3d import rotate_3d
+from arpespythontools import (
+    crop_2d,
+    k_conv,
+    k_conv3d,
+    k_conv3d_mp,
+    k_conv3d_mp_alt,
+    line_profile,
+    load_ses_map,
+    load_ses_spectra,
+    plane_slice,
+    rotate_2d,
+    rotate_3d,
+)
 
 # load the data from url. If you have the data files locally, you may replace
 # the urls with local file path

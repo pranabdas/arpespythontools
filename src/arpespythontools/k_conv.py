@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Purpose: Ek vs energy to Ebin vs k conversion of ARPES spectra
-Version: 20230208
 @author: Pranab Das (GitHub: @pranabdas)
 """
 

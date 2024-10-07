@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: Import Igor text data.
-Version: 20191207
 @author: Pranab Das (GitHub: @pranabdas)
 """
 

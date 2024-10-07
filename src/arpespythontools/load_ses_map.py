@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 Purpose: To load ARPES MAP data from the ZIP file produced by Scienta SES program.
-Version: 20240524
 @author: Pranab Das (GitHub: @pranabdas)
-[data, energy, theta, phi] = load_map_data("map_data.zip")
+
+example: data, energy, theta, phi = load_map_data("map_data.zip")
 """
 
 from io import BytesIO

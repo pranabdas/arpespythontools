@@ -2,10 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 Program: Extracts plane slice from 3D volume data.
-Version: 20230210
 @author: Pranab Das (GitHub: @pranabdas)
 
-plane_slice = plane_slice(data, x, x_min, x_max)
+example: plane_slice = plane_slice(data, x, x_min, x_max)
 """
 
 import numpy as np

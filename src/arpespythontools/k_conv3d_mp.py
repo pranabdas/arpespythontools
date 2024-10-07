@@ -3,7 +3,6 @@
 """
 Program: This program converts 3D ARPES Fermi map data from real space to
 k-space.
-Version: 20230208
 @author: Pranab Das (GitHub: @pranabdas)
 """
 

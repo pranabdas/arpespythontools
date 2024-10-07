@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: 2D curvature of a spectra
-Version: 20230210
 @author: Pranab Das (GitHub: @pranabdas)
 """
 

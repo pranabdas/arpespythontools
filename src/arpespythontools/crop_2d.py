@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: Crop image/ 2-dimensional data
-Version: 20230208
 @author: Pranab Das (GitHub: @pranabdas)
 """
 

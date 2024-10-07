@@ -7,7 +7,6 @@ The results are almost equal, but not exactly same as the interpolation axes are
 changed.
 data_k_mp_alt[150][271][25] = 181.98429096643224
 data_k_mp[150][271][25]     = 181.98429096643216
-Version: 20230208
 @author: Pranab Das (GitHub: @pranabdas)
 """
 

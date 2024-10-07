@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: Second derivative/ Laplacian of 2D spectra
-Version: 20230210
 @author: Pranab Das (GitHub: @pranabdas)
 """
 

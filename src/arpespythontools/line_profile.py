@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: Extracts line profile from 2D data.
-Version: 20230210
 @author: Pranab Das (GitHub: @pranabdas)
 """
 
