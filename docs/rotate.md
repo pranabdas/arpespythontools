@@ -29,10 +29,7 @@ plt.show()
 
 This is how a constant energy cut looks like before rotation:
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/rotate-before.webp").default} />
-  <img src={require("/img/rotate-before.png").default} alt="rotate-before" />
-</picture>
+![rotate-before](../static/img/rotate-before.webp)
 
 Now, we can rotate only a single slice first.
 
@@ -47,10 +44,7 @@ plt.show()
 ```
 Let us plot a slice again. This is what we get after the rotation.
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/rotate-after.webp").default} />
-  <img src={require("/img/rotate-after.png").default} alt="rotate-after" />
-</picture>
+![rotate-after](../static/img/rotate-after.webp)
 
 ## Rotate 3D Fermi map data
 

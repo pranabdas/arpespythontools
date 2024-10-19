@@ -24,10 +24,7 @@ plt.show()
 
 You should see a plot like this upon successful execution:
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/plot-sample-spectra.webp").default} />
-  <img src={require("/img/plot-sample-spectra.png").default} alt="plot-sample-spectra" />
-</picture>
+![plot-sample-spectra](../static/img/plot-sample-spectra.webp)
 
 ## Crop image
 
@@ -48,10 +45,7 @@ plt.set_cmap('magma_r')
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/crop-image.webp").default} />
-  <img src={require("/img/crop-image.png").default} alt="crop-image" />
-</picture>
+![crop-image](../static/img/crop-image.webp)
 
 That's what we wanted to achieve.
 

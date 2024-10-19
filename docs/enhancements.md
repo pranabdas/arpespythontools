@@ -34,10 +34,7 @@ plt.set_cmap('magma_r')
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/plot-sample-spectra.webp").default} />
-  <img src={require("/img/plot-sample-spectra.png").default} alt="plot-sample-spectra" />
-</picture>
+![plot-sample-spectra](../static/img/plot-sample-spectra.webp)
 
 ## Laplacian
 We can take the double derivative of the spectra in order to enhance the edges:
@@ -58,10 +55,7 @@ plt.axis('off')
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/laplacian.webp").default} />
-  <img src={require("/img/laplacian.png").default} alt="laplacian" />
-</picture>
+![laplacian](../static/img/laplacian.webp)
 
 ## 2D curvature
 
@@ -92,10 +86,7 @@ plt.axis('off')
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/cv2d.webp").default} />
-  <img src={require("/img/cv2d.png").default} alt="cv2d" />
-</picture>
+![cv2d](../static/img/cv2d.webp)
 
 You may vary various free parameters ($C_x$, $C_y$, $w$) in order to get the
 best result specific to your dataset.

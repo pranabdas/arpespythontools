@@ -48,10 +48,7 @@ plt.show()
 ```
 Which would produce a plot like this:
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/k-space-image-plot.webp").default} />
-  <img src={require("/img/k-space-image-plot.png").default} alt="k-space-image-plot" />
-</picture>
+![k-space-image-plot](../static/img/k-space-image-plot.webp)
 
 ### k-space conversion for 3D Fermi map data
 Similarly, we can convert three dimensional (Energy, theta, phi)  Fermi map data
