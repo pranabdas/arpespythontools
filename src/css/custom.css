@@ -44,13 +44,13 @@ html[data-theme="dark"] {
 
 .hero--primary {
   --ifm-hero-text-color: var(--color-black);
-  /* --ifm-hero-background-color: rgba(0, 0, 0, 0.05); */
   background: #eee url(/img/hero-bg.svg) center top no-repeat;
   background-attachment: fixed;
 }
 
 html[data-theme="dark"] .hero--primary {
-  background: rgb(1, 22, 39);
+  background: rgb(1, 22, 39) url(/img/hero-bg-dark.svg) center top no-repeat;
+  background-attachment: fixed;
   --ifm-hero-text-color: var(--ifm-color-secondary);
 }
 

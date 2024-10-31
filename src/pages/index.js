@@ -21,11 +21,8 @@ const features = [
     description: (
       <>
         All the modules are available under MIT License for free of charge to
-        use, modify, and extend. Visit project repository at {" "}
-        <a href="https://github.com/pranabdas/arpespythontools">
-          GitHub
-        </a>
-        .
+        use, modify, and extend. Visit project repository at{" "}
+        <a href="https://github.com/pranabdas/arpespythontools">GitHub</a>.
       </>
     ),
   },
@@ -33,12 +30,10 @@ const features = [
     title: "Download",
     description: (
       <>
-        In case you do not use git, download the ZIP archive of the package {" "}
-        <a href="https://github.com/pranabdas/arpespythontools/releases">
-          here
-        </a>
-        . If you need to export integrated intensity for XPS analysis, you may
-        use this <a href="https://pranabdas.github.io/xps/">webapp</a>.
+        Download and install the package from PyPI{" "}
+        <a href="https://pypi.org/project/arpespythontools/">PyPI</a>. If you
+        only need to export integrated intensity for XPS analysis, you may use
+        the <a href="https://pranabdas.github.io/xps/">webapp</a>.
       </>
     ),
   },
