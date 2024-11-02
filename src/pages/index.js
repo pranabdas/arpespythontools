@@ -30,7 +30,7 @@ const features = [
     title: "Download",
     description: (
       <>
-        Download and install the package from PyPI{" "}
+        Download and install the package from{" "}
         <a href="https://pypi.org/project/arpespythontools/">PyPI</a>. If you
         only need to export integrated intensity for XPS analysis, you may use
         the <a href="https://pranabdas.github.io/xps/">webapp</a>.
