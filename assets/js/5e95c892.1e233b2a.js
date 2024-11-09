@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkarpespythontools=self.webpackChunkarpespythontools||[]).push([[647],{7121:(e,s,r)=>{r.r(s),r.d(s,{default:()=>c});r(6540);var t=r(4164),a=r(1003),o=r(7559),n=r(2831),p=r(7823),u=r(4848);function c(e){return(0,u.jsx)(a.e3,{className:(0,t.A)(o.G.wrapper.docsPages),children:(0,u.jsx)(p.A,{children:(0,n.v)(e.route.routes)})})}}}]);
