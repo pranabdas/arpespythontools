@@ -7,9 +7,14 @@ readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.10,<4.0"
 keywords = [
-    "python", "data-analysis", "matplotlib", "materials-science",
-    "surface-science", "condensed-matter-physics", "photoelectron-spectroscopy",
-    "arpes"
+    "arpes",
+    "condensed-matter-physics",
+    "data-analysis",
+    "materials-science",
+    "matplotlib",
+    "photoelectron-spectroscopy",
+    "python",
+    "surface-science",
 ]
 
 dependencies = [

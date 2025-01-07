@@ -6,6 +6,15 @@ on:
   push:
     branches:
       - main
+    paths:
+      - docs/**
+      - docusaurus.config.js
+      - package.json
+      - package-lock.json
+      - sidebars.js
+      - src/css/**
+      - src/pages/**
+      - static/**
 
 jobs:
   deploy:
