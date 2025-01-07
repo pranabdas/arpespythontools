@@ -25,16 +25,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Install Python 3
+      - name: Install Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Install poetry
+        run: pip install --upgrade poetry
+
       - name: Install dependencies
-        run: |
-          python3 -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install .
+        run: poetry install
 
       - name: Run tests
-        run: python3 -m unittest discover tests
+        run: python -m unittest discover tests
