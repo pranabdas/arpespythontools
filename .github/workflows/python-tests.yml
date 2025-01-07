@@ -36,5 +36,13 @@ jobs:
       - name: Install dependencies
         run: poetry install
 
+      - name: Activate poetry virtualenv (windows)
+        if: runner.os == 'Windows'
+        run: '& ((poetry env info --path) + "\Scripts\activate.ps1")'
+
+      - name: Activate poetry virtualenv (linux and macos)
+        if: runner.os != 'Windows'
+        run: source $(poetry env info --path)/bin/activate
+
       - name: Run tests
         run: python -m unittest discover tests
