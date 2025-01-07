@@ -1,21 +1,21 @@
 [project]
 name = "arpespythontools"
-version = "1.1.1"
+version = "1.2.0"
 description = "Explore, analyze, visualize Angle Resolved Photoemission Spectroscopy (ARPES) data."
 authors = [{ name = "Pranab Das" }]
 readme = "README.md"
 license = { text = "MIT" }
-requires-python = ">=3.9,<3.13"
+requires-python = ">=3.10,<4.0"
 keywords = [
     "python", "data-analysis", "matplotlib", "materials-science",
     "surface-science", "condensed-matter-physics", "photoelectron-spectroscopy",
     "arpes"]
 
 dependencies = [
-    "astropy>=6.0.1",
-    "matplotlib>=3.9.4",
-    "numpy>=1.26.4",
-    "scipy>=1.13.1",
+    "astropy>=6.1.7",
+    "matplotlib>=3.10.0",
+    "numpy>=2.2.1",
+    "scipy>=1.15.0",
 ]
 
 [project.optional-dependencies]
