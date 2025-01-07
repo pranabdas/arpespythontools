@@ -1,12 +1,6 @@
 # Build command  : docker build -t arptools .
-# Run docker     : docker run -ti --net=host -v /host/path:/home arptools bash
-#                : docker run -ti -p 8888:8888 -v ${PWD}:/home arptools bash
-# Launch jupyter : jupyter-notebook
-#                : jupyter-notebook --ip 0.0.0.0
-#                : jupyter-notebook --ip 0.0.0.0 --port 9999
-# In Jupyter     : import sys
-#                : sys.path.append("/root")
-#                : import arpespythontools as arp
+# Run docker     : docker run -ti -p 8888:8888 -v ${PWD}:/home --rm arptools bash
+# Launch jupyter : jupyter lab
 
 # Start from Ubuntu 22.04 LTS
 FROM ubuntu:jammy
@@ -15,10 +9,10 @@ FROM ubuntu:jammy
 RUN apt update && apt upgrade -y
 
 # Install software packages
-RUN apt install -y python3 python3-pip git fonts-open-sans
+RUN apt install -y python3 python3-pip && rm -rf /var/lib/apt/lists/*
 
 # Install pip packages
-RUN pip3 install arpespythontools
+RUN pip install --upgrade arpespythontools jupyterlab
 
 # jupyterlab settings
 RUN mkdir /etc/jupyter && \
@@ -27,16 +21,13 @@ RUN mkdir /etc/jupyter && \
      echo "c.ServerApp.open_browser = False") \
         >> /etc/jupyter/jupyter_server_config.py
 
-# clone arpespythontools to `/root` directory
-WORKDIR /root
-
 # matplotlib customizations (optional)
 RUN mkdir -p /root/.config/matplotlib && \
  touch /root/.config/matplotlib/matplotlibrc && \
  (echo 'font.family       : sans-serif' && \
   echo 'font.style        : normal' && \
   echo 'font.weight       : regular' && \
-  echo 'font.sans-serif   : Open Sans, DejaVu Sans' && \
+  echo 'font.sans-serif   : DejaVu Sans' && \
   echo 'axes.linewidth    : 0.8' && \
   echo 'axes.titlesize    : 16' && \
   echo 'axes.labelsize    : 16' && \

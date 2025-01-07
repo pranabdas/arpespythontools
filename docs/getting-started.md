@@ -5,8 +5,9 @@ keywords: ["arpes", "data analysis", "data visualization", "python", "matplotlib
 ---
 ### Installation
 
-We will need [Python 3](https://www.python.org/) installed in your system. We
-can install latest stable release of **arpespytontools** from PyPI:
+We will need [Python 3](https://www.python.org/) (version 3.9 - 3.12) installed
+in your system. We can install latest stable release of **arpespytontools** from
+PyPI:
 
 ```bash
 pip install --upgrade arpespythontools

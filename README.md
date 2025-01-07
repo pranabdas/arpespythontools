@@ -26,22 +26,4 @@ data, energy, angle = arp.load_ses_spectra("sample_spectrum.txt")
 data_k, e_bin, k = arp.k_conv(data, energy, angle, 16.67)
 ```
 
-Please find the detailed documentation here:
-<https://pranabdas.github.io/arpespythontools/>
-
-## Development
-
-Clone repository:
-```console
-git clone https://github.com/pranabdas/arpespythontools
-```
-
-Install project in editable mode:
-```console
-pip install -e .
-```
-
-Run tests locally:
-```console
-python3 -m unittest discover tests
-```
+Please find the detailed documentation here: https://pranabdas.github.io/arpespythontools/
