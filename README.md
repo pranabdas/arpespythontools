@@ -5,7 +5,8 @@
   <a href="https://github.com/pranabdas/arpespythontools/actions/workflows/deploy-gh-pages.yml"><img src="https://github.com/pranabdas/arpespythontools/actions/workflows/deploy-gh-pages.yml/badge.svg" alt="Deploy gh-pages status"></a>
   <a href="https://github.com/pranabdas/arpespythontools/actions/workflows/publish.yml"><img src="https://github.com/pranabdas/arpespythontools/actions/workflows/publish.yml/badge.svg" alt="Deploy gh-pages status"></a>
   <a href="https://github.com/pranabdas/arpespythontools/blob/master/LICENSE"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=A31F34"></a>
-  <a href="https://pypi.org/project/arpespythontools/"><img src="https://img.shields.io/github/v/release/pranabdas/arpespythontools.svg" alt="Latest Release"/></a>
+  <a href="https://pypi.org/project/arpespythontools/#history"><img src="https://img.shields.io/github/v/release/pranabdas/arpespythontools.svg" alt="Latest Release"/></a>
+  <a href="https://pypi.org/project/arpespythontools/"><img src="https://img.shields.io/pypi/pyversions/arpespythontools" alt="Supported Python versions"/></a>
 </p>
 
 This python library helps you load, analyze and visualize ARPES data.
