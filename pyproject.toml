@@ -1,32 +1,44 @@
-[tool.poetry]
+[project]
 name = "arpespythontools"
-version = "1.0.3"
+version = "1.1.0"
 description = "Explore, analyze, visualize Angle Resolved Photoemission Spectroscopy (ARPES) data."
-authors = ["Pranab Das"]
-license = "MIT"
+authors = [{ name = "Pranab Das" }]
 readme = "README.md"
-homepage = "https://pranabdas.github.io/arpespythontools/"
-repository = "https://github.com/pranabdas/arpespythontools"
-documentation = "https://pranabdas.github.io/arpespythontools/docs/"
+license = { text = "MIT" }
+requires-python = ">=3.9"
 keywords = [
     "python", "data-analysis", "matplotlib", "materials-science",
     "surface-science", "condensed-matter-physics", "photoelectron-spectroscopy",
     "arpes"]
 
-[tool.poetry.dependencies]
-python = "^3.8"
-astropy = "^5.2.2"
-matplotlib = "^3.7.5"
-numpy = "^1.24.4"
-scipy = "^1.9.3"
+dependencies = [
+    "astropy>=6.0.1",
+    "matplotlib>=3.9.4",
+    "numpy>=1.26.4",
+    "scipy>=1.13.1",
+]
 
-[tool.poetry.group.dev.dependencies]
-autopep8 = "^2.3.1"
-jupyterlab = "^4.2.5"
+[project.optional-dependencies]
+lint = [
+    "autopep8>=2.3.1",
+]
 
-[tool.poetry.group.tests.dependencies]
-psutil = "^6.0.0"
+notebook = [
+    "jupyterlab>=4.3.4",
+]
+
+test = [
+    "psutil>=6.1.1",
+]
+
+[project.urls]
+homepage = "https://pranabdas.github.io/arpespythontools/"
+repository = "https://github.com/pranabdas/arpespythontools"
+documentation = "https://pranabdas.github.io/arpespythontools/docs/"
+
+[tool.poetry]
+requires-poetry = ">=2.0"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0"]
 build-backend = "poetry.core.masonry.api"
