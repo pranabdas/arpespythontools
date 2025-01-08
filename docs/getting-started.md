@@ -14,23 +14,6 @@ release of **arpespytontools** from PyPI:
 pip install --upgrade arpespythontools
 ```
 
-:::warning Still using older Python?
-
-If you are still using an older version of Python, please use a compatible
-version. If you are using Python `v3.9`, please install:
-
-```bash
-pip install --upgrade arpespythontools==1.1.*
-```
-
-If you are using Python `v3.8`, please install:
-
-```bash
-pip install --upgrade arpespythontools==1.0.*
-```
-
-::::
-
 I will be using Jupyter notebook to write and execute our python codes. You can
 install Jupyter Lab using pip:
 
