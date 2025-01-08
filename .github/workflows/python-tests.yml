@@ -46,7 +46,7 @@ jobs:
         run: pip install --upgrade poetry
 
       - name: Install dependencies
-        run: poetry install --extras test
+        run: poetry install
 
       - name: Run unittest
         run: poetry run python -m unittest discover tests
