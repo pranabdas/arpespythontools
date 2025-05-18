@@ -35,7 +35,16 @@ jobs:
         run: npm install
 
       - name: Build website
-        run: npm run build
+        run: |
+          npm run build
+          for file in `find build/assets/css -type f -name '*.css'`; do
+            npx -y purgecss \
+              --css ${file} \
+              --content "build/**/*.{html,js}" \
+              --variables \
+              --keyframes \
+              --output ${file}
+          done
 
       - name: Deploy on gh-pages
         uses: peaceiris/actions-gh-pages@v4
@@ -51,6 +60,14 @@ jobs:
         run: |
           sed -i 's|^const site_url\ =.*|const site_url\ =\ "https://pranab.pages.dev";|I' docusaurus.config.js
           npm run build
+          for file in `find build/assets/css -type f -name '*.css'`; do
+            npx -y purgecss \
+              --css ${file} \
+              --content "build/**/*.{html,js}" \
+              --variables \
+              --keyframes \
+              --output ${file}
+          done
           COMMIT_HASH=$( git rev-parse --short HEAD )
           cd ..
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
