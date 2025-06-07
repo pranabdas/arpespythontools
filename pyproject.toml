@@ -1,6 +1,6 @@
 [project]
 name = "arpespythontools"
-version = "1.2.2"
+version = "1.2.3"
 description = "Explore, analyze, visualize Angle Resolved Photoemission Spectroscopy (ARPES) data."
 authors = [{ name = "Pranab Das" }]
 readme = "README.md"
@@ -19,10 +19,10 @@ keywords = [
 
 dependencies = [
     "astropy>=6.1.7",
-    "matplotlib>=3.10.0",
-    "numpy>=2.2.1",
-    "psutil>=6.1.1",
-    "scipy>=1.15.0",
+    "matplotlib>=3.10.3",
+    "numpy>=2.2.6",
+    "psutil>=7.0.0",
+    "scipy>=1.15.3",
 ]
 
 [project.optional-dependencies]
@@ -31,7 +31,7 @@ lint = [
 ]
 
 notebook = [
-    "jupyterlab>=4.3.4",
+    "jupyterlab>=4.4.3",
 ]
 
 [project.urls]
