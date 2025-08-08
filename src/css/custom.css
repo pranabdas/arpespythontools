@@ -17,23 +17,13 @@ html[data-theme="dark"] .hero--primary {
 }
 
 .hero--primary .button--outline {
-  background-color: var(--color-primary);
+  background-color: #0076df;
+  border-color: #0076df;
   --ifm-font-color-base: var(--color-white);
 }
 
 .hero--primary .button--outline:hover {
   opacity: 0.85;
   color: var(--color-white);
-  transition: 0.2s;
-}
-
-html[data-theme="dark"] .hero--primary .button--outline {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-}
-
-html[data-theme="dark"] .hero--primary .button--outline:hover {
-  opacity: 0.85;
-  color: var(--color-white);
-  transition: 0.2s;
+  transition: 0.25s;
 }
