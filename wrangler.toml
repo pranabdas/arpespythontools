@@ -1,5 +1,5 @@
 name = "arpespythontools"
-build = "./build.sh"
+build = "sed -i 's|baseUrl:.*|baseUrl:\s\"/\",|I' docusaurus.config.js && npm run build"
 pages_build_output_dir = "./build"
 
 [vars]
