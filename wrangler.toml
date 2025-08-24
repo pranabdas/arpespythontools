@@ -1,6 +1,6 @@
 name = "arpespythontools"
-pages_build_output_dir = "./build"
 build = "bash build.sh"
+pages_build_output_dir = "./build"
 
 [vars]
 NODE_VERSION = "lts/*"
