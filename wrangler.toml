@@ -1,5 +1,5 @@
 name = "arpespythontools"
-build = "bash build.sh"
+build = "./build.sh"
 pages_build_output_dir = "./build"
 
 [vars]
