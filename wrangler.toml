@@ -1,0 +1,11 @@
+name = "arpespythontools"
+pages_build_output_dir = "./build"
+
+[build]
+command = """
+    sed -i 's|baseUrl:.*|baseUrl: "/",|I' docusaurus.config.js
+    npm run build
+    """
+
+[vars]
+NODE_VERSION = "lts/*"
