@@ -20,6 +20,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
 
@@ -31,51 +33,35 @@ jobs:
         with:
           node-version: "lts/*"
 
-      - name: Install NPM packages
-        run: npm install
-
       - name: Build website
         run: |
-          npm run build
-          for file in `find build/assets/css -type f -name '*.css'`; do
-            npx -y purgecss \
-              --css ${file} \
-              --content "build/**/*.{html,js}" \
-              --variables \
-              --keyframes \
-              --output ${file}
-          done
+          wget https://raw.githubusercontent.com/pranabdas/espresso/refs/heads/main/scripts/build_docusaurus.sh
+          npm install
+          bash build_docusaurus.sh
 
       - name: Deploy on gh-pages
         uses: peaceiris/actions-gh-pages@v4
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: build
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
 
+      - name: Build for cloudflare-pages
+        run: |
+          sed -i 's|^const site_url\s*=.*|const site_url="https://pranab.pages.dev";|I' docusaurus.config.js
+          bash build_docusaurus.sh
+
       - name: Deploy on cloudflare
         if: ${{ github.event_name != 'schedule' }}
-        run: |
-          sed -i 's|^const site_url\ =.*|const site_url\ =\ "https://pranab.pages.dev";|I' docusaurus.config.js
-          npm run build
-          for file in `find build/assets/css -type f -name '*.css'`; do
-            npx -y purgecss \
-              --css ${file} \
-              --content "build/**/*.{html,js}" \
-              --variables \
-              --keyframes \
-              --output ${file}
-          done
-          COMMIT_HASH=$( git rev-parse --short HEAD )
-          cd ..
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git config --global credential.helper cache
-          git clone --branch cf-pages --depth 1 https://${{ secrets.CLOUDFLARE_DEPLOY_KEY }}@github.com/${{ github.repository_owner }}/${{ secrets.CLOUDFLARE_REPO_NAME }}
-          cd ${{ secrets.CLOUDFLARE_REPO_NAME }}
-          rsync -azh --exclude .git --delete ../${{ github.event.repository.name }}/build/ ${{ github.event.repository.name }}
-          git add --all
-          git commit -m "deploying ${{ github.event.repository.name }} ${COMMIT_HASH}" || echo "No changes to commit"
-          git push origin cf-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.CLOUDFLARE_DEPLOY_KEY }}
+          publish_dir: build
+          external_repository: ${{ github.repository_owner }}/${{ secrets.CLOUDFLARE_REPO_NAME }}
+          publish_branch: cf-pages
+          destination_dir: ${{ github.event.repository.name }}
+          enable_jekyll: true
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
