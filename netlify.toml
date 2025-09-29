@@ -1,7 +1,8 @@
 [build]
   command = """
+  wget https://raw.githubusercontent.com/pranabdas/espresso/refs/heads/main/scripts/build_docusaurus.sh
   sed -i 's|baseUrl:.*|baseUrl: "/",|I' docusaurus.config.js
-  npm run build
+  bash build_docusaurus.sh
   """
 
   publish = "build"
