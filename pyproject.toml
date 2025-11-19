@@ -18,7 +18,8 @@ keywords = [
 ]
 
 dependencies = [
-    "astropy>=6.1.7",
+    "astropy>=6.1.7; python_version < '3.14'",
+    "astropy>=7.2.0rc2; python_version >= '3.14'",
     "matplotlib>=3.10.5",
     "numpy>=2.2.6",
     "psutil>=7.0.0",
