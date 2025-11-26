@@ -172,22 +172,22 @@ typing = ["typing_extensions (>=4.0.0)"]
 
 [[package]]
 name = "astropy"
-version = "7.2.0rc2"
+version = "7.2.0"
 description = "Astronomy and astrophysics core library"
 optional = false
 python-versions = ">=3.11"
 groups = ["main"]
 markers = "python_version >= \"3.14\""
 files = [
-    {file = "astropy-7.2.0rc2-cp311-abi3-macosx_10_9_x86_64.whl", hash = "sha256:3fda07be5deb9f453bf863ab4cccc432f5497ed756cee64a82996ceb402e1f0a"},
-    {file = "astropy-7.2.0rc2-cp311-abi3-macosx_11_0_arm64.whl", hash = "sha256:b54a3638c85155cd7f8f4daf7f12553013a5e5bf8ed96858bd39356c003b6768"},
-    {file = "astropy-7.2.0rc2-cp311-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:5d81a7c29739fdc05d023b4536306005f363c92845349adde2ac624be0fce54e"},
-    {file = "astropy-7.2.0rc2-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:b5777421cfd69c7231ba24cc0cce7702bc021f4cd9bcf14eaff560895a9c210d"},
-    {file = "astropy-7.2.0rc2-cp311-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:216f0c1faaefd05ab23bfa20facb44fa6b3ce6f68dc9ad5daf0ef15ce4d393ae"},
-    {file = "astropy-7.2.0rc2-cp311-abi3-win32.whl", hash = "sha256:27d268dfd776933c4f51ae052da4bac07518f89c97ad8b7cbe9488a97ccc5f52"},
-    {file = "astropy-7.2.0rc2-cp311-abi3-win_amd64.whl", hash = "sha256:2f5c045d6ccefbbc5bcc58bbd6f48ca26cf90c9f384d34bc440859f59401947d"},
-    {file = "astropy-7.2.0rc2-cp311-abi3-win_arm64.whl", hash = "sha256:63f6eb02559c1a675fde2f39854cf8eb3570f7a26d2d853ede98c7334c509665"},
-    {file = "astropy-7.2.0rc2.tar.gz", hash = "sha256:72f01ce034058c0e226834a57d3a304ff55d19f6efb0ddc1115caefd7f7f8389"},
+    {file = "astropy-7.2.0-cp311-abi3-macosx_10_9_x86_64.whl", hash = "sha256:efac04df4cc488efe630c2fff1992d6516dfb16a06e197fb68bc9e8e3b85def1"},
+    {file = "astropy-7.2.0-cp311-abi3-macosx_11_0_arm64.whl", hash = "sha256:52e9a7d9c86b21f1af911a2930cd0c4a275fb302d455c89e11eedaffef6f2ad0"},
+    {file = "astropy-7.2.0-cp311-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:97c370421b9bb13d4c762c7af06d172bad7c01bd5bcf88314f6913c3c235b770"},
+    {file = "astropy-7.2.0-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:2f39ce2c80211fbceb005d377a5478cd0d66c42aa1498d252f2239fe5a025c24"},
+    {file = "astropy-7.2.0-cp311-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:ad4d71db994d45f046a1a5449000cf0f88ab6367cb67658500654a0586d6ab19"},
+    {file = "astropy-7.2.0-cp311-abi3-win32.whl", hash = "sha256:95161f26602433176483e8bde8ab1a8ca09148f5b4bf5190569a26d381091598"},
+    {file = "astropy-7.2.0-cp311-abi3-win_amd64.whl", hash = "sha256:dc7c340ba1713e55c93071b32033f3153470a0f663a4d539c03a7c9b44020790"},
+    {file = "astropy-7.2.0-cp311-abi3-win_arm64.whl", hash = "sha256:0c428735a3f15b05c2095bc6ccb5f98a64bc99fb7015866af19ff8492420ddaf"},
+    {file = "astropy-7.2.0.tar.gz", hash = "sha256:ae48bc26b1feaeb603cd94bd1fa1aa39137a115fe931b7f13787ab420e8c3070"},
 ]
 
 [package.dependencies]
@@ -211,14 +211,14 @@ typing = ["narwhals (>=1.42.0)", "pandas-stubs (>=2.0.0)"]
 
 [[package]]
 name = "astropy-iers-data"
-version = "0.2025.11.10.0.38.31"
+version = "0.2025.11.24.0.39.11"
 description = "IERS Earth Rotation and Leap Second tables for the astropy core package"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
 files = [
-    {file = "astropy_iers_data-0.2025.11.10.0.38.31-py3-none-any.whl", hash = "sha256:620155a3f04d7c96e7f4aaa498dc4571e15449f23963574106d29d8959d4c66f"},
-    {file = "astropy_iers_data-0.2025.11.10.0.38.31.tar.gz", hash = "sha256:487dc974b9a5114ac75ff4fd96244e8fa7d07e1504092f7c2b8138c2b9c842e9"},
+    {file = "astropy_iers_data-0.2025.11.24.0.39.11-py3-none-any.whl", hash = "sha256:219a9fa61ba454e7413b5e3165ecfa9affed8433549df2ca1bb11cb3f590cc2f"},
+    {file = "astropy_iers_data-0.2025.11.24.0.39.11.tar.gz", hash = "sha256:de73939bf2aaae6ca1b8a62904ae93c50285d1ed7a6aeb6967b4f0d113f19afc"},
 ]
 
 [package.extras]
@@ -868,15 +868,15 @@ files = [
 
 [[package]]
 name = "exceptiongroup"
-version = "1.3.0"
+version = "1.3.1"
 description = "Backport of PEP 654 (exception groups)"
 optional = true
 python-versions = ">=3.7"
 groups = ["main"]
 markers = "extra == \"notebook\" and python_version == \"3.10\""
 files = [
-    {file = "exceptiongroup-1.3.0-py3-none-any.whl", hash = "sha256:4d111e6e0c13d0644cad6ddaa7ed0261a0b36971f6d23e7ec9b4b9097da78a10"},
-    {file = "exceptiongroup-1.3.0.tar.gz", hash = "sha256:b241f5885f560bc56a59ee63ca4c6a8bfa46ae4ad651af316d4e81817bb9fd88"},
+    {file = "exceptiongroup-1.3.1-py3-none-any.whl", hash = "sha256:a7a39a3bd276781e98394987d3a5701d0c4edffb633bb7a5144577f82c773598"},
+    {file = "exceptiongroup-1.3.1.tar.gz", hash = "sha256:8b412432c6055b0b7d14c310000ae93352ed6754f70fa8f7c34141f91c4e3219"},
 ]
 
 [package.dependencies]
@@ -3519,4 +3519,4 @@ notebook = ["jupyterlab"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "aa24adee65b1d8cfc99ce8188ee67b3ea54432a5d6d2712bd0a5c300ceff5b75"
+content-hash = "4712fd143f9de4ab9039382f0ae4ce606fa1e093bb3786903a26b23254216178"
