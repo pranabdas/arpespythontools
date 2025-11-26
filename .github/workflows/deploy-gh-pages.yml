@@ -36,7 +36,8 @@ jobs:
       - name: Build website
         run: |
           npm install
-          wget -qO- https://raw.githubusercontent.com/pranabdas/espresso/main/scripts/build_docusaurus.sh | bash
+          wget https://raw.githubusercontent.com/pranabdas/espresso/main/scripts/build_docusaurus.sh
+          bash build_docusaurus.sh
 
       - name: Deploy on gh-pages
         uses: peaceiris/actions-gh-pages@v4
