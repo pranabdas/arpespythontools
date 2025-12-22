@@ -2,7 +2,7 @@
 title: Glossary
 ---
 
-Full list of **arpespythontools** modules/ routines in alphabetical order:
+Full list of **arpespythontools** modules/<wbr/>routines in alphabetical order:
 
 ```python
 import arpespythontools as arp
