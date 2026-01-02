@@ -5,12 +5,7 @@ keywords: ["data processing", "data refinement", "second derivative", "laplacian
 ---
 
 Sometimes our spectra are not well resolved. In such cases, we may perform some
-post processing to enhance the spectral features. You will need [astropy](
-https://docs.astropy.org/en/latest/api/astropy.convolution.Box2DKernel.html)
-module to be installed:
-```bash
-pip install astropy
-```
+post processing to enhance the spectral features.
 
 :::caution
 
@@ -20,7 +15,7 @@ https://github.com/zhangpengphi/curvature) implemented by Prof. P. Zhang.
 
 :::
 
-Here is our original data:
+Here is how the original data looks like:
 
 ```python showLineNumbers
 url = 'https://pranabdas.github.io/drive/datasets/arpes/sample_spectrum.txt'
@@ -37,14 +32,15 @@ plt.show()
 ![plot-sample-spectra](../static/img/plot-sample-spectra.webp)
 
 ## Laplacian
-We can take the double derivative of the spectra in order to enhance the edges:
+We can take the double derivative of the spectra in order to enhance the
+spectral features:
 
 $$
 I' = \frac{\partial^2 I}{\partial x^2} + w^2 \frac{\partial^2 I}{\partial y^2}
 $$
 
-Since the $x$ and $y$ scales represent different quantities (units), we also
-have a weight factor $w$.
+Since the $x$ and $y$ scales represent different quantities (units), we have a
+weight factor $w$ to account for this.
 
 ```python showLineNumbers
 # diff2 = arp.laplacian(data, x, y, bw=5, w=1)
