@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-    paths:
+    paths: &monitor_paths
       - .github/workflows/python-tests.yml
       - poetry.lock
       - pyproject.toml
@@ -12,12 +12,7 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - .github/workflows/python-tests.yml
-      - poetry.lock
-      - pyproject.toml
-      - src/arpespythontools/**
-      - tests/**
+    paths: *monitor_paths
 
 jobs:
   tests:
