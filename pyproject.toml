@@ -1,6 +1,6 @@
 [project]
 name = "arpespythontools"
-version = "1.3.2"
+version = "1.4.0"
 description = "Explore, analyze, visualize Angle Resolved Photoemission Spectroscopy (ARPES) data."
 authors = [{ name = "Pranab Das" }]
 readme = "README.md"
